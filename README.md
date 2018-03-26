@@ -40,6 +40,10 @@ sudo pip install -r requirements.txt
 ```
 
 ```
+chmod 777 SocialFish.py
+```
+
+```
 python SocialFish.py
     
     OR
