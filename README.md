@@ -93,7 +93,7 @@ python SocialFish.py
 
 
 ### SCREENSHOT
-![Shot](https://github.com/An0nUD4Y/SocialFish/sc.png)
+![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc.png)
 
 ## DISCLAIMER
 <p align="center">
@@ -115,7 +115,7 @@ Taken from [LICENSE](LICENSE).
 ## Donation To UndeadSec
 If you liked the work and want to support us all, you can donate :D
 
-<img src="https://raw.githubusercontent.com//SocialFish/donation.png"></img>
+<img src="https://github.com/An0nUD4Y/SocialFish/blob/master/donation.png"></img>
 
 Bitcoin Address: 1EmJ5KiAKzpyqGGHopAq9qukrVPS47T9bA
 
