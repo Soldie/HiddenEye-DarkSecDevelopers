@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/An0nUD4Y/SocialFish/master/social.png">  
 </p>
 
-<h1 align="center">SocialFish v1.0</h1>
+<h1 align="center">SocialFish v2.0</h1>
 <p align="center">
        NOW MORE ATTACKS ARE AVAILABLE.
   In Ultimate phishing tool with Ngrok integrated
@@ -80,18 +80,20 @@ python SocialFish.py
 
 ### WHAT'S NEW
 <p align="center">
-  1) NEW FACEBOOK PAGES ARE AVAILABLE NOW.
-     - Mobile Facebook login page.
-     - Fake Security login with Facebook Page. 
-     - Facebook messenger login page. 
+ **+New Facebook Pages Are Available now:**
+- Traditional Facebook login page.
+- Advanced login with Facebook.
+- Mobile Facebook login page.
+- Fake Security login with Facebook Page. 
+- Facebook messenger login page.
         
-  2) INSTAGRAM LOGIN PAGE IS ALSO AVAILABLE NOW.
+ **2) INSTAGRAM LOGIN PAGE IS ALSO AVAILABLE NOW:**
 </p>
 
 
 
 ### SCREENSHOT
-![Shot](https://github.com/An0nUD4Y/SocialFish/master/sc.png)
+![Shot](https://github.com/An0nUD4Y/SocialFish/sc.png)
 
 ## DISCLAIMER
 <p align="center">
@@ -113,7 +115,7 @@ Taken from [LICENSE](LICENSE).
 ## Donation To UndeadSec
 If you liked the work and want to support us all, you can donate :D
 
-<img src="https://raw.githubusercontent.com//SocialFish/master/donation.png"></img>
+<img src="https://raw.githubusercontent.com//SocialFish/donation.png"></img>
 
 Bitcoin Address: 1EmJ5KiAKzpyqGGHopAq9qukrVPS47T9bA
 
