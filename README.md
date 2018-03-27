@@ -99,6 +99,9 @@ python SocialFish.py
 ### SCREENSHOT
 ![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc.png)
 
+![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc1.png)
+
+![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc2.png)
 ## DISCLAIMER
 <p align="center">
   TO BE USED FOR EDUCATIONAL PURPOSES ONLY
