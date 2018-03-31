@@ -29,7 +29,7 @@
 git clone https://github.com/An0nUD4Y/SocialFish.git
 ```
 
-### RUNNING
+### RUNNING (In Linux)
 
 ```
 cd SocialFish
@@ -45,12 +45,46 @@ chmod 777 SocialFish.py
 
 ```
 python SocialFish.py
-    
-    OR
-    
+
+```
+   OR
+   
+```
 ./SocialFish.py    
 
 ```
+### RUNNING (IN TERMUX)
+
+```
+pkg install git python2 php curl
+
+```
+```
+pip2 install wget
+
+```
+```
+git clone https://github.com/An0nUD4Y/SocialFish 
+
+```
+```
+cd SocialFish
+
+```
+```
+pkg install grep
+
+```
+```
+chmod 777 SocialFishTermux.py
+
+```
+```
+python2 SocialFishTermux.py
+
+```
+
+
 ## AVAILABLE PAGES
 
 **+ Facebook:**
