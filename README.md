@@ -56,6 +56,16 @@ python SocialFish.py
 ### RUNNING (IN TERMUX)
 
 ```
+First install { Termux } from Playstore.
+
+```
+
+```
+After opening Follow below commands One by one
+
+```
+
+```
 pkg install git python2 php curl
 
 ```
