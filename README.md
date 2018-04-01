@@ -162,6 +162,6 @@ Bitcoin Address: 1EmJ5KiAKzpyqGGHopAq9qukrVPS47T9bA
 
 ### VIDEO DEMO
 <p align="center">
-<a href="https://youtu.be/mj6nnD5zzaE">
+<a href="https://www.youtube.com/watch?v=dCuZR2C7Hhw">
   <img src="https://raw.githubusercontent.com/An0nUD4Y/SocialFish/master/video.png" />
 </a></p>
