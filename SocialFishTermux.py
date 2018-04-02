@@ -35,11 +35,10 @@ if connected() == False:
 def checkNgrok():
     if path.isfile('Server/ngrok') == False: 
         print '[*] Downloading Ngrok...'
-        ostype = systemos().lower()
         if architecture()[0] == '64bit':
-            filename = 'ngrok-stable-{0}-amd64.zip'.format(ostype)
+            filename = 'ngrok-stable-linux-arm.zip'
         else:
-            filename = 'ngrok-stable-{0}-386.zip'.format(ostype)
+            filename = 'ngrok-stable-linux-arm.zip'
         url = 'https://bin.equinox.io/c/4VmDzA7iaHb/' + filename
         download(url)
         system('unzip ' + filename)
@@ -199,9 +198,9 @@ def runPEnv():
 def runNgrok():
     system('./Server/ngrok http 8080 > /dev/null &')
     sleep(10)
-    system('curl -s http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
+    system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, GREEN)
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, END, GREEN)
     url.close()
 
 def runServer():
