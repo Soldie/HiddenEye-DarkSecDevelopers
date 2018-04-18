@@ -18,6 +18,8 @@
 ### TESTED BY UNDEADSEC ON
 * **Kali Linux - Rolling Edition**
 
+* **Parrot OS - Rolling Edition**
+
 * **Linux Mint - 18.3 Sylvia**
 
 * **Ubuntu - 16.04.3 LTS**
@@ -125,17 +127,20 @@ python2 SocialFishTermux.py
 
 **+ Instagram:**
 - Traditional Instagram login page.
+- Instagram Autoliker Phishing Page [ ADVANCED METHOD ADOPTED ].
 
 ### WHAT'S NEW
 <p align="center">
- **+New Facebook Pages Are Available now:**
+**1) fACEBOOK PHISHING:**
 - Traditional Facebook login page.
 - Advanced login with Facebook.
 - Mobile Facebook login page.
 - Fake Security login with Facebook Page. 
 - Facebook messenger login page.
         
- **2) INSTAGRAM LOGIN PAGE IS ALSO AVAILABLE NOW:**
+ **2) INSTAGRAM PHISHING:**
+ - Traditional Login Page
+ - FAke instagram Autoliker Page [ REDIRECTS TO ORIGINAL AUTOLIKER PAGE AFTER SUBMIT ] 
 </p>
 
 
