@@ -136,7 +136,7 @@ python2 SocialFishTermux.py
 
 ### WHAT'S NEW FEATURES
 **1) LIVE ATTACK**
-- Now you will live information about the victims such as : IP ADDRESS, Geolocation, ISP, Country, & many more.
+- Now you will have live information about the victims such as : IP ADDRESS, Geolocation, ISP, Country, & many more.
 
 ### NEW PAGES
 <p align="center">
