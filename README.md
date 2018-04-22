@@ -8,6 +8,11 @@
   In Ultimate phishing tool with Ngrok integrated
 </p>
 
+<p align="center">
+ NOW YOU WILL GET LIVE INFORMATION ABOUT YOUR VICTIM'S IP, GEOLOCATION, COUNTRY, ISP, AND MANY MORE.
+ Just goto the [ server/www/iplog.txt ] and everything done. You will get alot of information about victim.
+</p>
+
 ### PREREQUISITES
 
 * Python 2.7 
@@ -129,7 +134,11 @@ python2 SocialFishTermux.py
 - Traditional Instagram login page.
 - Instagram Autoliker Phishing Page [ ADVANCED METHOD ADOPTED ].
 
-### WHAT'S NEW
+### WHAT'S NEW FEATURES
+**1) LIVE ATTACK**
+- Now you will live information about the victims such as : IP ADDRESS, Geolocation, ISP, Country, & many more.
+
+### NEW PAGES
 <p align="center">
 **1) fACEBOOK PHISHING:**
 - Traditional Facebook login page.
