@@ -13,7 +13,7 @@
  Just goto the [ server/www/iplog.txt ] and everything done. You will get alot of information about victim.
 </p>
 
-### PREREQUISITES
+### PREREQUISITES ( Please verify if you have installed )
 
 * Python 2.7 
 * Wget from Python
