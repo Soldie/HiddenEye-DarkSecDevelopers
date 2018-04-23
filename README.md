@@ -140,7 +140,8 @@ python2 SocialFishTermux.py
 
 ### NEW PAGES
 <p align="center">
-**1) fACEBOOK PHISHING:**
+  
+**1) FACEBOOK PHISHING:**
 - Traditional Facebook login page.
 - Advanced login with Facebook.
 - Mobile Facebook login page.
