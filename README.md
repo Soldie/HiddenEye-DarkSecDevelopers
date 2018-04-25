@@ -155,7 +155,7 @@ python2 SocialFishTermux.py
  **3) SNAPCHAT PHISHING:**
  - Traditional Snapchat Login Page
  
- **3) YAHOO PHISHING:**
+ **4) YAHOO PHISHING:**
  - Traditional Yahoo Login Page
 </p>
 
