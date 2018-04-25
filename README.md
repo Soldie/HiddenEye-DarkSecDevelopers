@@ -184,12 +184,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 Taken from [LICENSE](LICENSE).
 
 
-## Donation To UndeadSec
+## Help us with Donation
 If you liked the work and want to support us all, you can donate :D
 
 <img src="https://github.com/An0nUD4Y/SocialFish/blob/master/donation.png"></img>
 
-Bitcoin Address: 1EmJ5KiAKzpyqGGHopAq9qukrVPS47T9bA
+Bitcoin Address: qpuwdfv3p3gpufzctjapp0dp9z4kkk9x6cgl2hhghe
 
 ### VIDEO DEMO
 <p align="center">
