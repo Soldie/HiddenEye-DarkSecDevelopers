@@ -153,7 +153,10 @@ python2 SocialFishTermux.py
  - FAke instagram Autoliker Page [ REDIRECTS TO ORIGINAL AUTOLIKER PAGE AFTER SUBMIT ] 
 
  **3) SNAPCHAT PHISHING:**
- - Traditional Login Page
+ - Traditional Snapchat Login Page
+ 
+ **3) YAHOO PHISHING:**
+ - Traditional Yahoo Login Page
 </p>
 
 
