@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
- NOW YOU WILL GET LIVE INFORMATION ABOUT YOUR VICTIM'S IP, GEOLOCATION, COUNTRY, ISP, AND MANY MORE.
- Just goto the [ server/www/iplog.txt ] and everything done. You will get alot of information about victim.
+ NOW YOU WILL GET LIVE INFORMATION ABOUT YOUR VICTIM'S IP, GEOLOCATION, COUNTRY, ISP, CITY, ATTACKED DATE & TIME, AND MANY MORE.
+ 
 </p>
 
 ### PREREQUISITES ( Please verify if you have installed )
