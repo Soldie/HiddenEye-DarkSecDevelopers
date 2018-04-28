@@ -157,6 +157,9 @@ python2 SocialFishTermux.py
  
  **4) YAHOO PHISHING:**
  - Traditional Yahoo Login Page
+ 
+ **5) TWITCH PHISHING:**
+ - Traditional Twitch Login Page [ Login With  Facebook Also Available ]
 </p>
 
 
