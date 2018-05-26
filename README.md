@@ -19,6 +19,11 @@
 * Wget from Python
 * PHP
 * sudo
+## :octocat: DEVELOPERS 
+1. @An0nUD4Y
+2. @usama7628674
+3. @UNDEADSEC
+4. _______________________ (Waiting For Your Contribution)
 
 ### TESTED BY UNDEADSEC ON
 * **Kali Linux - Rolling Edition**
