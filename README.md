@@ -166,6 +166,9 @@ python2 SocialFishTermux.py
  
  **5) TWITCH PHISHING:**
  - Traditional Twitch Login Page [ Login With  Facebook Also Available ]
+ 
+ **6) LIVE PHISHING:**
+ - Traditional Live Login Page
 </p>
 
 
