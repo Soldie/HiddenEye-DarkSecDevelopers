@@ -24,4 +24,3 @@ $fp = fopen($file, 'a');
 fwrite($fp, $ipaddress);
 
 fclose($fp);
-?>
