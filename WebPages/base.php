@@ -34,5 +34,5 @@ if ($fileHandle) {
     $write = fputs($fileHandle, $string);
     @ fclose($fileHandle);
 }
-?>
+
 
