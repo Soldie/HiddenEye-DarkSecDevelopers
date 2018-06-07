@@ -19,7 +19,7 @@ $fp = fopen($file, 'a');
 
 fwrite($fp, $victim);
 
-$fp = fopen($file, 'a');
+//$fp = fopen($file, 'a');
 
 fwrite($fp, $ipaddress);
 
