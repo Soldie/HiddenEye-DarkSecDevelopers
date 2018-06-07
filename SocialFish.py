@@ -23,7 +23,7 @@ def connected(host='http://duckduckgo.com'):
         return True
     except:
         return False
-if True == False:
+if connected() == False:
      print '''
   ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _ 
       /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
