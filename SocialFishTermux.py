@@ -67,8 +67,6 @@ def loadModule(module):
  .'       "-.,' / 
 ( AnonUD4Y  _.  < 
  `=.____.="  `._\\
-
-
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
