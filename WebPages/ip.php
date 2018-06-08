@@ -12,15 +12,18 @@ else
     {
       $ipaddress = $_SERVER['REMOTE_ADDR']."\r\n";
     }
+$useragent = " User-Agent: ";
+$browser = $_SERVER['HTTP_USER_AGENT'];
+
 
 $file = 'ip.txt';  //this is the file to which the IP address will be written; name it your way.
 $victim = "victim public ip: ";
 $fp = fopen($file, 'a');
 
 fwrite($fp, $victim);
-
-//$fp = fopen($file, 'a');
-
 fwrite($fp, $ipaddress);
+fwrite($fp, $useragent);
+fwrite($fp, $browser);
+
 
 fclose($fp);
