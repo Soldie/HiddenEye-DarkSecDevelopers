@@ -174,6 +174,9 @@ or
  
  **6) MICROSOFT PHISHING:**
  - Traditional Microsoft-Live Web Login Page
+ 
+ **7) STEAM PHISHING:**
+ - Traditional Steam Web Login Page
 </p>
 
 
