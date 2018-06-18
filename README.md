@@ -15,7 +15,7 @@
 
 ### PREREQUISITES ( Please verify if you have installed )
 
-* Python 2.7 
+* Python 3 
 * Wget from Python
 * PHP
 * sudo
@@ -50,7 +50,7 @@ cd SocialFish
 ```
 
 ```
-sudo pip install -r requirements.txt
+sudo pip3 install -r requirements.txt
 ```
 
 ```
@@ -58,7 +58,7 @@ chmod 777 SocialFish.py
 ```
 
 ```
-python SocialFish.py
+python3 SocialFish.py
 
 ```
    OR
