@@ -80,11 +80,11 @@ After opening Follow below commands One by one
 ```
 
 ```
-pkg install git python2 php curl
+pkg install git python php curl
 
 ```
 ```
-pip2 install wget
+pip3 install wget
 
 ```
 ```
@@ -104,7 +104,11 @@ chmod 777 SocialFishTermux.py
 
 ```
 ```
-python2 SocialFishTermux.py
+python SocialFishTermux.py
+
+or
+
+./SocialFishTermux.py
 
 ```
 
