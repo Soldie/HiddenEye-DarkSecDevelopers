@@ -187,6 +187,8 @@ or
 ![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc1.png)
 
 ![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc2.png)
+
+
 ## DISCLAIMER
 <p align="center">
   TO BE USED FOR EDUCATIONAL PURPOSES ONLY
@@ -204,12 +206,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 Taken from [LICENSE](LICENSE).
 
 
-## Help us with Donation
-If you liked the work and want to support us all, you can donate :D
-
-<img src="https://github.com/An0nUD4Y/SocialFish/blob/master/donation.png"></img>
-
-Bitcoin Address: qpuwdfv3p3gpufzctjapp0dp9z4kkk9x6cgl2hhghe
 
 ### VIDEO DEMO
 <p align="center">
