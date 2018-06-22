@@ -149,6 +149,9 @@ or
 **1) LIVE ATTACK**
 - Now you will have live information about the victims such as : IP ADDRESS, Geolocation, ISP, Country, & many more.
 
+**2) COMPATIBILITY**
+- All the sites are mobile compatible.
+
 ### NEW PAGES
 <p align="center">
   
