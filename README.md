@@ -210,6 +210,15 @@ Taken from [LICENSE](LICENSE).
 
 
 
+
+## Help us with Donation
+If you liked the work and want to support us all, you can donate :D
+
+<img src="https://github.com/An0nUD4Y/SocialFish/blob/master/donation.png"></img>
+
+Bitcoin Address: qpuwdfv3p3gpufzctjapp0dp9z4kkk9x6cgl2hhghe
+
+
 ### VIDEO DEMO
 <p align="center">
 <a href="https://www.youtube.com/watch?v=dCuZR2C7Hhw">
