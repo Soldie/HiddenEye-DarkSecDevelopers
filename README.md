@@ -71,7 +71,7 @@ python3 SocialFish.py
 ./SocialFish.py    
 
 ```
-### RUNNING (IN TERMUX)
+### RUNNING (FOR ANDROID USERS IN TERMUX)
 
 ```
 First install { Termux } from Playstore.
