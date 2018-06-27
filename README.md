@@ -168,7 +168,7 @@ or
         
  **2) INSTAGRAM PHISHING:**
  - Traditional Login Page
- - FAke instagram Autoliker Page [ REDIRECTS TO ORIGINAL AUTOLIKER PAGE AFTER SUBMIT ] 
+ - Fake instagram Autoliker Page [ REDIRECTS TO ORIGINAL AUTOLIKER PAGE AFTER SUBMIT ] 
 
  **3) SNAPCHAT PHISHING:**
  - Traditional Snapchat Login Page
