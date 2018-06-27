@@ -15,7 +15,7 @@
 
 ### PREREQUISITES ( Please verify if you have installed )
 
-* Python 3 
+* Python 3
 * Wget from Python
 * PHP
 * sudo
@@ -47,6 +47,10 @@ git clone https://github.com/An0nUD4Y/SocialFish.git
 
 ```
 cd SocialFish
+```
+
+```
+sudo apt install python3-pip
 ```
 
 ```
