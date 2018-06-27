@@ -27,7 +27,7 @@
 5. Micrafast
 6. _______________________ (Waiting For Your Contribution)
 
-### TESTED BY UNDEADSEC ON
+### TESTED ON FOLLOWING
 * **Kali Linux - Rolling Edition**
 
 * **Parrot OS - Rolling Edition**
