@@ -121,14 +121,14 @@ or
 
 **+ Facebook:**
 - Traditional Facebook login page.
-- Advanced login with Facebook.
+- Advanced Poll Method.
 - Mobile Facebook login page.
 - Fake Security login with Facebook Page. 
 - Facebook messenger login page.
 
 **+ Google:**
 - Traditional Google login page.
-- Advanced login with Facebook.
+- Advanced Poll Method.
 
 **+ LinkedIn:**
 - Traditional LinkedIn login page.
@@ -161,7 +161,7 @@ or
   
 **1) FACEBOOK PHISHING:**
 - Traditional Facebook login page.
-- Advanced login with Facebook.
+- Advanced Poll Method.
 - Mobile Facebook login page.
 - Fake Security login with Facebook Page. 
 - Facebook messenger login page.
@@ -184,6 +184,10 @@ or
  
  **7) STEAM PHISHING:**
  - Traditional Steam Web Login Page
+ 
+ **8) VK PHISHING:**
+ - Traditional VK Web Login Page
+ - Advanced Poll Method
 </p>
 
 
