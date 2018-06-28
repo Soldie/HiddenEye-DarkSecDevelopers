@@ -122,7 +122,6 @@ or
 **+ Facebook:**
 - Traditional Facebook login page.
 - Advanced Poll Method.
-- Mobile Facebook login page.
 - Fake Security login with Facebook Page. 
 - Facebook messenger login page.
 
@@ -162,7 +161,6 @@ or
 **1) FACEBOOK PHISHING:**
 - Traditional Facebook login page.
 - Advanced Poll Method.
-- Mobile Facebook login page.
 - Fake Security login with Facebook Page. 
 - Facebook messenger login page.
         
