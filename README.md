@@ -186,6 +186,9 @@ or
  **8) VK PHISHING:**
  - Traditional VK Web Login Page
  - Advanced Poll Method
+ 
+ **8) ICLOUD PHISHING:**
+ - Traditional iCloud Web Login Page
 </p>
 
 
