@@ -20,12 +20,8 @@
 * PHP
 * sudo
 ## :octocat: DEVELOPERS 
-1. An0nUD4Y  [ Instagram.com/its_udy ]
-
-
-
-
-2. usama7628674
+1. usama7628674 
+2. An0nUD4Y [ Instagram.com/its_udy ]
 3. UNDEADSEC
 4. Micrafast 
 5. alexmozzhakov
