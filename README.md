@@ -88,7 +88,7 @@ After opening Follow below commands One by one
 ```
 
 ```
-pkg install git python php curl
+pkg install git python php curl openssh
 
 ```
 ```
