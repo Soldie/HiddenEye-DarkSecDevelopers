@@ -108,15 +108,15 @@ pkg install grep
 
 ```
 ```
-chmod 777 SocialFishTermux.py
+chmod 777 SocialFish.py
 
 ```
 ```
-python SocialFishTermux.py
+python SocialFish.py
 
 or
 
-./SocialFishTermux.py
+./SocialFish.py
 
 ```
 
