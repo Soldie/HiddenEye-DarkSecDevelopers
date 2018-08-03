@@ -84,7 +84,7 @@ After opening Follow below commands One by one
 ```
 
 ```
-pkg install git python php curl openssh
+pkg install git python php curl openssh grep
 
 ```
 ```
@@ -97,10 +97,6 @@ git clone https://github.com/An0nUD4Y/SocialFish
 ```
 ```
 cd SocialFish
-
-```
-```
-pkg install grep
 
 ```
 ```
