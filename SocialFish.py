@@ -294,7 +294,7 @@ def runPEnv():
     
 def serveo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > sendlink.txt 2> /dev/null & ')
-    sleep(10)
+    sleep(4)
     f = open('sendlink.txt', 'r')
     a = ['\033[32m', 'Forwarding', 'HTTP', 'traffic', 'from', '\033[0m', ' ']
     lst = []
