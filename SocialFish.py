@@ -298,6 +298,7 @@ def serveo():
     output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url", shell=True)
     url = str(output).strip("b ' \ n")
     print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(CYAN, END, GREEN) + url + "{1}".format(CYAN, END, GREEN))
+    print('\n')
         
 def runNgrok():
     system('./Server/ngrok http 1111 > /dev/null &')
