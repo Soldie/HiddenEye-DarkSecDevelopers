@@ -298,7 +298,11 @@ def serveo():
     output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url", shell=True)
     url = str(output).strip("b ' \ n")
     print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(CYAN, END, GREEN) + url + "{1}".format(CYAN, END, GREEN))
-    print('\n')
+    data = urlopen("http://tinyurl.com/api-create.php?url="+url)
+    url = data.read()
+    link = url.decode('utf-8')
+    print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(CYAN, END, GREEN) + link + "{1}".format(CYAN, END, GREEN))
+    print("\n")
         
 def runNgrok():
     system('./Server/ngrok http 1111 > /dev/null &')
@@ -310,6 +314,11 @@ def runNgrok():
         urlFile.close()
         if re.match("https://[0-9a-z]*\.ngrok.io", url) != None:
             print("\n {0}[{1}*{0}]{1} Ngrok URL: {2}".format(CYAN, END, GREEN) + url + "{1}".format(CYAN, END, GREEN))
+            data = urlopen("http://tinyurl.com/api-create.php?url="+url)
+            url = data.read()
+            link = url.decode('utf-8')
+            print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(CYAN, END, GREEN) + link + "{1}".format(CYAN, END, GREEN))
+            print("\n")
             break
     
     
