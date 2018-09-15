@@ -123,6 +123,7 @@ First install { Termux } from Playstore.
 After opening Copy and run this Single Command.
 
 ```
+```
 pkg install git python php curl openssh grep && pip3 install wget && git clone https://github.com/An0nUD4Y/SocialFish && cd SocialFish && chmod 777 SocialFish.py && python SocialFish.py
 
 ```
