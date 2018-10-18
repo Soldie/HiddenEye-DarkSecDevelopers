@@ -368,10 +368,6 @@ if __name__ == "__main__":
         waitCreds()           
 
     except KeyboardInterrupt: 
-        if didBackground:
-            logFile.close()
-        system('pkill -f ssh')
-        system('pkill -f php')
-        system('pkill -f ngrok')
         end()
         exit(0)
+
