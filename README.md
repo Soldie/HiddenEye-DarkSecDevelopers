@@ -2,7 +2,6 @@
   <img src="HiddenEyeHeaderLogo.png">  
 </p>
 
-<h1 align="center">Hidden Eye</h1>
 <p align="center">
       Modern phishing tool with advanced functionality 
 </p>
