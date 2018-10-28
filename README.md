@@ -2,10 +2,9 @@
   <img src="https://raw.githubusercontent.com/An0nUD4Y/SocialFish/master/social.png">  
 </p>
 
-<h1 align="center">SocialFish v3.0</h1>
+<h1 align="center">Hidden Eye</h1>
 <p align="center">
-      AN ADVANCED PHISHING TOOL WITH MULTIPLE FUNCTIONALITY 
-     [ Automatic keylogger, Victim Device info , Many Pages ]
+      Modern phishing tool with advanced functionality 
 </p>
 
 <p align="center">
@@ -20,14 +19,7 @@
 * Wget from Python
 * PHP
 * sudo
-## :octocat: DEVELOPERS // CONTRIBUTORS
-1. An0nUD4Y [ Instagram.com/its_udy ] - **Developer**
-2. usama7628674                       - **Developer**
-3. UNDEADSEC                          - **Developer**
-4. Micrafast                          - **Contributor** 
-5. alexmozzhakov                      - **Contributor**
-6. sTiKyt                             - **Contributor**
-7. _______________________ (Waiting For Your Contribution)
+
 
 ### TESTED ON FOLLOWING
 * **Kali Linux - Rolling Edition**
@@ -48,13 +40,13 @@
 
 ### CLONE
 ```
-git clone https://github.com/An0nUD4Y/SocialFish.git
+git clone https://github.com/DarkSecDevelopers/HiddenEye.git
 ```
 
 ### RUNNING (In Linux)
 
 ```
-cd SocialFish
+cd HiddenEye
 ```
 
 ```
@@ -66,23 +58,23 @@ sudo pip3 install -r requirements.txt
 ```
 
 ```
-chmod 777 SocialFish.py
+chmod 777 HiddenEye.py
 ```
 
 ```
-python3 SocialFish.py
+python3 HiddenEye.py
 
 ```
    OR
    
 ```
-./SocialFish.py    
+./HiddenEye.py    
 
 ```
 ### RUNNING (If distro based on Arch Linux)
 
 ```
-cd SocialFish
+cd HiddenEye
 ```
 
 ```
@@ -97,17 +89,17 @@ sudo pip3 install -r requirements.txt
 ```
 
 ```
-chmod 777 SocialFish.py
+chmod 777 HiddenEye.py
 ```
 
 ```
-python3 SocialFish.py
+python3 HiddenEye.py
 
 ```
    OR
    
 ```
-./SocialFish.py    
+./HiddenEye.py    
 
 ```
 
@@ -132,23 +124,23 @@ pip3 install wget
 
 ```
 ```
-git clone https://github.com/An0nUD4Y/SocialFish 
+git clone https://github.com/DarkSecDevelopers/HiddenEye.git
 
 ```
 ```
-cd SocialFish
+cd HiddenEye
 
 ```
 ```
-chmod 777 SocialFish.py
+chmod 777 HiddenEye.py
 
 ```
 ```
-python SocialFish.py
+python HiddenEye.py
 
 or
 
-./SocialFish.py
+./HiddenEye.py
 
 ```
 ### Running (One Code installation in termux)
@@ -164,7 +156,7 @@ After opening Copy and run this Single Command.
 
 ```
 ```
-pkg install git python php curl openssh grep && pip3 install wget && git clone https://github.com/An0nUD4Y/SocialFish && cd SocialFish && chmod 777 SocialFish.py && python SocialFish.py
+pkg install git python php curl openssh grep && pip3 install wget && git clone https://github.com/DarkSecDevelopers/HiddenEye && cd HiddenEye && chmod 777 HiddenEye.py && python HiddenEye.py
 
 ```
 
@@ -273,7 +265,7 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
   TO BE USED FOR EDUCATIONAL PURPOSES ONLY
 </p>
 
-The use of the SocialFish is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program.
+The use of the HiddenEye is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program.
 
 "DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
 FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
@@ -300,3 +292,12 @@ Bitcoin Address: qpuwdfv3p3gpufzctjapp0dp9z4kkk9x6cgl2hhghe
 <a href="https://www.youtube.com/watch?v=dCuZR2C7Hhw">
   <img src="https://raw.githubusercontent.com/An0nUD4Y/SocialFish/master/video.png" />
 </a></p>
+
+## :octocat: DEVELOPERS // CONTRIBUTORS
+1. An0nUD4Y [ Instagram.com/its_udy ] - **Developer**
+2. usama7628674                       - **Developer**
+3. UNDEADSEC                          - **Developer**
+4. Micrafast                          - **Contributor** 
+5. alexmozzhakov                      - **Contributor**
+6. sTiKyt                             - **Contributor**
+7. _______________________ (Waiting For Your Contribution)
