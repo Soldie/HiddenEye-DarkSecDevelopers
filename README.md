@@ -37,6 +37,16 @@
 
 * **Black Arch**
 
+## :octocat: DEVELOPERS // CONTRIBUTORS
+1. An0nUD4Y [ Instagram.com/its_udy ] - **Developer**
+2. usama7628674                       - **Developer**
+3. UNDEADSEC                          - **Developer**
+4. Micrafast                          - **Contributor** 
+5. alexmozzhakov                      - **Contributor**
+6. sTiKyt                             - **Contributor**
+7. _______________________ (Waiting For Your Contribution)
+
+
 ### CLONE
 ```
 git clone https://github.com/DarkSecDevelopers/HiddenEye.git
@@ -286,17 +296,5 @@ If you liked the work and want to support us all, you can donate :D
 Bitcoin Address: qpuwdfv3p3gpufzctjapp0dp9z4kkk9x6cgl2hhghe
 
 
-### VIDEO DEMO
-<p align="center">
-<a href="https://www.youtube.com/watch?v=dCuZR2C7Hhw">
-  <img src="https://raw.githubusercontent.com/An0nUD4Y/SocialFish/master/video.png" />
-</a></p>
 
-## :octocat: DEVELOPERS // CONTRIBUTORS
-1. An0nUD4Y [ Instagram.com/its_udy ] - **Developer**
-2. usama7628674                       - **Developer**
-3. UNDEADSEC                          - **Developer**
-4. Micrafast                          - **Contributor** 
-5. alexmozzhakov                      - **Contributor**
-6. sTiKyt                             - **Contributor**
-7. _______________________ (Waiting For Your Contribution)
+
