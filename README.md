@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/An0nUD4Y/SocialFish/master/social.png">  
+  <img src="HiddenEyeHeaderLogo.png">  
 </p>
 
 <h1 align="center">Hidden Eye</h1>
