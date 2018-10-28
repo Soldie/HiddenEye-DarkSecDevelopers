@@ -15,15 +15,15 @@ def checkConnection(host='http://duckduckgo.com'): #Connection check
         return True
     except:
         return False
-if checkConnection() == False:
-     print ('''
+    if checkConnection() == False:
+        print ('''
   ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
       /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
       \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
           \|
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
 '''.format(RED, DEFAULT))
-     exit(0)
+    exit(0)
 
 def checkNgrok(): #Ngrok check
     if path.isfile('Server/ngrok') == False:  #Is Ngrok downloaded?
