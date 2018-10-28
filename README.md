@@ -20,13 +20,14 @@
 * Wget from Python
 * PHP
 * sudo
-## :octocat: DEVELOPERS 
-1. An0nUD4Y [ Instagram.com/its_udy ]
-2. usama7628674  
-3. UNDEADSEC
-4. Micrafast 
-5. alexmozzhakov
-6. _______________________ (Waiting For Your Contribution)
+## :octocat: DEVELOPERS // CONTRIBUTORS
+1. An0nUD4Y [ Instagram.com/its_udy ] - **Developer**
+2. usama7628674                       - **Developer**
+3. UNDEADSEC                          - **Developer**
+4. Micrafast                          - **Contributor** 
+5. alexmozzhakov                      - **Contributor**
+6. sTiKyt                             - **Contributor**
+7. _______________________ (Waiting For Your Contribution)
 
 ### TESTED ON FOLLOWING
 * **Kali Linux - Rolling Edition**
