@@ -118,7 +118,7 @@ def runMainMenu(): #menu where user select what they wanna use
  {1}|| ██   ██ ██ ██████   ██████   ███████ ██   ███  {3}███████    ██    ███████ {1}||
  ||                                                                         ||
 <=============================================================================>
-                                             v{3}0{1}.{3}1{1} by Open Source Community{2}
+                                             v{3}0{1}.{3}1{1}.{3}0{1} by Open Source Community{2}
 
  _________________________________________________________________________________
           {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]
