@@ -249,13 +249,6 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
  **9) ICLOUD PHISHING:**
  - Traditional iCloud Web Login Page
 </p>
-
-
-
-### SCREENSHOT
-
-
-
 ## DISCLAIMER
 <p align="center">
   TO BE USED FOR EDUCATIONAL PURPOSES ONLY
