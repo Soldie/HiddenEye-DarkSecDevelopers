@@ -262,11 +262,8 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
 
 
 ### SCREENSHOT
-![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc.png)
+![Shot](https://github.com/DarkSecDevelopers/HiddenEye/blob/dev/Sceenshot.png)
 
-![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc1.png)
-
-![Shot](https://github.com/An0nUD4Y/SocialFish/blob/master/sc2.png)
 
 
 ## DISCLAIMER
