@@ -8,7 +8,7 @@ import json
 from urllib.request import urlopen
 from subprocess import check_output
 from sys import stdout, argv
-from Defs.Configurations import readConfig, ifSettingsNotExists
+from Configurations import readConfig, ifSettingsNotExists
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
 
 ifSettingsNotExists()
