@@ -223,7 +223,7 @@ def inputCustom(): #Question where user can input custom web-link
      print("\n (Leave Blank To Loop The Phishing Page)".format(RED, DEFAULT))
      print("\n {0}Insert a custom redirect url:".format(RED, DEFAULT))
      custom = input("\n {0}CUSTOM URL>>> {1}".format(RED, DEFAULT))
-     if 'http://' or 'https://' in custom:
+     if 'http://' in custom or 'https://' in custom:
          pass
      else:
          custom = 'http://' + custom
