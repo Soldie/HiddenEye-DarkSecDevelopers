@@ -15,8 +15,8 @@ def checkConnection(host='http://duckduckgo.com'): #Connection check
         return True
     except:
         return False
-    if checkConnection() == False:
-        print ('''
+if checkConnection() == False:
+    print ('''
   ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
       /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
       \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
