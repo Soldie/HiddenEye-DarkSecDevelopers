@@ -1,8 +1,8 @@
 #HiddenEye by Open Source Community
 import multiprocessing
-from Defs import Checks
-from Defs import Configurations
-from Defs import Actions
+from Defs.Checks import *
+from Defs.Configurations import *
+from Defs.Actions import *
 
 
 
