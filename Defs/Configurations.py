@@ -1,4 +1,4 @@
-#Primitive config works
+#Primitive config
 import configparser
 import os
 

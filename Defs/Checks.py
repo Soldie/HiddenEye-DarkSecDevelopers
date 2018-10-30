@@ -1,4 +1,4 @@
-#SocialFish checks functions
+#Checks functions
 
 from urllib.request import urlopen
 from os import path, system
@@ -15,12 +15,13 @@ def checkConnection(host='http://duckduckgo.com'): #Connection check
         return True
     except:
         return False
+
 if checkConnection() == False:
-    print ('''
-  ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
-      /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
-      \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
-          \|
+        print ('''{1}
+        _  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
+        |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
+        |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
+
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
 '''.format(RED, DEFAULT))
     exit(0)

