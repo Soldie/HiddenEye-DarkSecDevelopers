@@ -97,6 +97,12 @@ def runNgrok():
 def runServeo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
     sleep(7)
+    with open('link.url') as creds:
+        lines = creds.read().rstrip()
+        if len(lines) != 0:
+            pass
+        else:
+            runServeo()
     output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url", shell=True)
     url = str(output).strip("b ' \ n")
     print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
