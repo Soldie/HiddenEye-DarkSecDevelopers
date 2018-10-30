@@ -1,7 +1,7 @@
 #HiddenEye by Open Source Community
 import multiprocessing
-from Defs.Checks import checkConnection, checkNgrok
-from Defs.Configurations import createConfig, readConfig, ifSettingsNotExists
+from Defs.Checks import *
+from Defs.Configurations import *
 from Defs.Actions import *
 
 
