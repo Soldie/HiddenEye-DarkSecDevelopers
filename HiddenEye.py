@@ -27,8 +27,6 @@ readConfig()
 config = readConfig()
 
 
-
-
 if __name__ == "__main__":
     try:
         runMainMenu()
@@ -36,6 +34,7 @@ if __name__ == "__main__":
         inputCustom()
         ##############
         selectServer()
+
         multiprocessing.Process(target=runServer).start()
         getCredentials()
 
