@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #HiddenEye by Open Source Community
 import multiprocessing
 from Defs.Checks import *
