@@ -37,7 +37,9 @@
 
 * **Black Arch**
 
+
 ## HOW TO INSTALL
+
 ### CLONE
 ```
 git clone https://github.com/DarkSecDevelopers/HiddenEye.git
@@ -143,7 +145,7 @@ or
 ./HiddenEye.py
 
 ```
-### Running (One Code installation in termux)
+### Running (One Code installation in Termux)
 
 
 ```
@@ -249,12 +251,17 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
  **9) ICLOUD PHISHING:**
  - Traditional iCloud Web Login Page
 </p>
+
+### SCREENSHOT
+![Shot](https://github.com/DarkSecDevelopers/HiddenEye/blob/dev/Sceenshot.png)
+
 ## DISCLAIMER
 <p align="center">
   TO BE USED FOR EDUCATIONAL PURPOSES ONLY
 </p>
 
 The use of the HiddenEye is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program. Please read [LICENSE](LICENSE).
+
 
 
 
