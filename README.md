@@ -38,6 +38,8 @@
 * **Black Arch**
 
 
+## HOW TO INSTALL
+
 ### CLONE
 ```
 git clone https://github.com/DarkSecDevelopers/HiddenEye.git
@@ -250,29 +252,15 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
  - Traditional iCloud Web Login Page
 </p>
 
-
-
 ### SCREENSHOT
 ![Shot](https://github.com/DarkSecDevelopers/HiddenEye/blob/dev/Sceenshot.png)
-
-
 
 ## DISCLAIMER
 <p align="center">
   TO BE USED FOR EDUCATIONAL PURPOSES ONLY
 </p>
 
-The use of the HiddenEye is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program.
-
-"DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-Taken from [LICENSE](LICENSE).
-
+The use of the HiddenEye is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program. Please read [LICENSE](LICENSE).
 
 
 

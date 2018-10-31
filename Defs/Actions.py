@@ -266,7 +266,7 @@ def endMessage(): #Message when HiddenEye exit
 
                   {3}HIDDEN EYE {3}BY: DARKSEC TEAM
          {0}THANKS FOR USING IT. HELP US TO MAKE IT MORE USEFUL
-              {3}https://github.com/DarkSecDevelopers     '''.format(GREEN, DEFAULT, CYAN, RED))
+              {3}https://github.com/DarkSecDevelopers/HiddenEye     '''.format(GREEN, DEFAULT, CYAN, RED))
 
 def getCredentials():
 
