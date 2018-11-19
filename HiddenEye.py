@@ -1,8 +1,9 @@
+#!/usr/bin/python3
 #HiddenEye by Open Source Community
 import multiprocessing
-from Defs.Checks import checkConnection, checkNgrok
-from Defs.Configurations import createConfig, readConfig, ifSettingsNotExists
-from Defs.Actions import runPhishing, selectServer, runNgrok, runServeo, runMainMenu, inputCustom, runServer, endMessage, getCredentials, writeLog
+from Defs.Checks import *
+from Defs.Configurations import *
+from Defs.Actions import *
 
 
 
