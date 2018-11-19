@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hiddeneye\n"
-"POT-Creation-Date: 2018-10-31 03:33+0200\n"
-"PO-Revision-Date: 2018-10-31 03:41+0200\n"
+"POT-Creation-Date: 2018-11-19 19:39+0200\n"
+"PO-Revision-Date: 2018-11-19 19:42+0200\n"
 "Last-Translator: sTiKyt <stikyt@protonmail.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -10,12 +10,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
-"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-Basepath: ../../../Defs\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: Lang\n"
-"X-Poedit-SearchPath-1: Defs\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: Defs/Actions.py:74
+#: Actions.py:77
 #, python-brace-format
 msgid ""
 "\n"
@@ -24,7 +23,7 @@ msgstr ""
 "\n"
 " {0}Please select any available server:{1}"
 
-#: Defs/Actions.py:75
+#: Actions.py:78
 #, python-brace-format
 msgid ""
 "\n"
@@ -35,7 +34,7 @@ msgstr ""
 " {0}[{1}1{0}]{1} Ngrok\n"
 " {0}[{1}2{0}]{1} Serveo"
 
-#: Defs/Actions.py:119
+#: Actions.py:122
 #, python-brace-format
 msgid ""
 "\n"
@@ -94,12 +93,25 @@ msgstr ""
 "<=============================================================================>\n"
 "                                             "
 
-#: Defs/Actions.py:150
-#, python-format, python-brace-format
-msgid "{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait... %d%%"
-msgstr "{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait... %d%%"
+#: Actions.py:145
+msgid "[PHP INSTALLATION FOUND]"
+msgstr "[PHP INSTALLATION FOUND]"
 
-#: Defs/Actions.py:153
+#: Actions.py:148
+#, python-brace-format
+msgid ""
+" --{0}>{1} PHP NOT FOUND: \n"
+" {0}*{1} Please install PHP and run me again.http://www.php.net/"
+msgstr ""
+" --{0}>{1} PHP NOT FOUND: \n"
+" {0}*{1} Please install PHP and run me again.http://www.php.net/"
+
+#: Actions.py:153
+#, python-brace-format
+msgid "{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%"
+msgstr "{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%"
+
+#: Actions.py:157
 #, python-brace-format
 msgid ""
 "\n"
@@ -112,7 +124,7 @@ msgstr ""
 "({2}y{1}/{0}n{1})\n"
 "{2}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:155
+#: Actions.py:159
 #, python-brace-format
 msgid ""
 "\n"
@@ -127,7 +139,7 @@ msgstr ""
 "EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n"
 "\n"
 
-#: Defs/Actions.py:157
+#: Actions.py:161
 #, python-brace-format
 msgid ""
 "\n"
@@ -200,7 +212,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>>  {1}"
 
-#: Defs/Actions.py:160
+#: Actions.py:164
 #, python-brace-format
 msgid ""
 "\n"
@@ -231,7 +243,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:164
+#: Actions.py:168
 #, python-brace-format
 msgid ""
 "\n"
@@ -256,7 +268,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:188
+#: Actions.py:192
 #, python-brace-format
 msgid ""
 "\n"
@@ -279,7 +291,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:212
+#: Actions.py:216
 #, python-brace-format
 msgid ""
 "\n"
@@ -300,7 +312,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:222
+#: Actions.py:226
 #, python-brace-format
 msgid ""
 " {0}\n"
@@ -309,7 +321,7 @@ msgstr ""
 " {0}\n"
 " [{1}*{0}] module loaded. Building site...{0}"
 
-#: Defs/Actions.py:226
+#: Actions.py:230
 msgid ""
 "\n"
 " (Choose Wisely As Your Victim Will Redirect to This Link)"
@@ -317,7 +329,7 @@ msgstr ""
 "\n"
 " (Choose Wisely As Your Victim Will Redirect to This Link)"
 
-#: Defs/Actions.py:227
+#: Actions.py:231
 msgid ""
 "\n"
 " (Leave Blank To Loop The Phishing Page)"
@@ -325,7 +337,7 @@ msgstr ""
 "\n"
 " (Leave Blank To Loop The Phishing Page)"
 
-#: Defs/Actions.py:228
+#: Actions.py:232
 #, python-brace-format
 msgid ""
 "\n"
@@ -334,7 +346,7 @@ msgstr ""
 "\n"
 " {0}Insert a custom redirect url:"
 
-#: Defs/Actions.py:229
+#: Actions.py:233
 #, python-brace-format
 msgid ""
 "\n"
@@ -343,7 +355,7 @@ msgstr ""
 "\n"
 " {0}CUSTOM URL >>> {1}"
 
-#: Defs/Actions.py:260
+#: Actions.py:264
 #, python-brace-format
 msgid ""
 "\n"
@@ -372,49 +384,45 @@ msgstr ""
 "         {0}THANKS FOR USING IT. HELP US TO MAKE IT MORE USEFUL\n"
 "              {3}https://github.com/DarkSecDevelopers/HiddenEye     "
 
-#: Defs/Actions.py:277
+#: Actions.py:281
 #, python-brace-format
 msgid ""
 "{0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n"
 msgstr ""
 "{0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n"
 
-#: Defs/Actions.py:283
-#, python-format, python-brace-format
+#: Actions.py:287
+#, python-brace-format
 msgid ""
 " {0}[ CREDENTIALS FOUND ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 msgstr ""
 " {0}[ CREDENTIALS FOUND ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 
-#: Defs/Actions.py:293
-msgid "Victim Public IP: (.*?)\n"
-msgstr "Victim Public IP: (.*?)\n"
-
-#: Defs/Actions.py:298
-#, python-format, python-brace-format
+#: Actions.py:302
+#, python-brace-format
 msgid ""
 " \n"
 "{0}[ VICTIM IP BONUS ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 msgstr ""
 " \n"
 "{0}[ VICTIM IP BONUS ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 
-#: Defs/Actions.py:304
-#, python-format, python-brace-format
+#: Actions.py:308
+#, python-brace-format
 msgid ""
 " \n"
 "{0}[ VICTIM INFO FOUND ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 msgstr ""
 " \n"
 "{0}[ VICTIM INFO FOUND ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 
-#: Defs/Actions.py:305
+#: Actions.py:309
 #, python-brace-format
 msgid ""
 " \n"
@@ -425,7 +433,7 @@ msgstr ""
 "{0}Longitude: {2} \n"
 "Latitude: {3}{1}"
 
-#: Defs/Actions.py:306
+#: Actions.py:310
 #, python-brace-format
 msgid ""
 " \n"
@@ -436,7 +444,7 @@ msgstr ""
 "{0}ISP: {2} \n"
 "Country: {3}{1}"
 
-#: Defs/Actions.py:307
+#: Actions.py:311
 #, python-brace-format
 msgid ""
 " \n"
@@ -447,7 +455,7 @@ msgstr ""
 "{0}Region: {2} \n"
 "City: {3}{1}"
 
-#: Defs/Actions.py:317
+#: Actions.py:321
 #, python-format, python-brace-format
 msgid ""
 " {0}[ GETTING PRESSED KEYS ]{1}:\n"
@@ -456,12 +464,12 @@ msgstr ""
 " {0}[ GETTING PRESSED KEYS ]{1}:\n"
 " {0}%s{1}"
 
-#: Defs/Checks.py:15
+#: Checks.py:18
 #, python-brace-format
 msgid "{0}Successful connection!{1}"
 msgstr "{0}Successful connection!{1}"
 
-#: Defs/Checks.py:21
+#: Checks.py:24
 #, python-brace-format
 msgid ""
 "{1}\n"
@@ -480,6 +488,9 @@ msgstr ""
 "                    {0}[{1}!{0}]{1} Network error. Verify your connection.\n"
 "\n"
 
-#: Defs/Checks.py:32
+#: Checks.py:35
 msgid "[*] Downloading Ngrok..."
 msgstr "[*] Downloading Ngrok..."
+
+#~ msgid "Victim Public IP: (.*?)\n"
+#~ msgstr "Victim Public IP: (.*?)\n"

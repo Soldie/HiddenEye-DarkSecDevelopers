@@ -5,7 +5,10 @@ from os import path, system
 from subprocess import check_output
 from platform import system as systemos, architecture
 from wget import download
-from gettext import gettext as _
+from Defs.Languages import *
+
+checkAndSetLanguage() #WIP!!! MUST BE UPDATED
+
 
 RED, GREEN, DEFAULT = '\033[91m', '\033[1;32m', '\033[0m'
 

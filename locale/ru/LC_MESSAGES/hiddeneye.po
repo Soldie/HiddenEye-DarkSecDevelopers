@@ -1,22 +1,21 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2018-10-31 03:42+0200\n"
-"PO-Revision-Date: 2018-10-31 04:20+0200\n"
+"Project-Id-Version: hiddeneye\n"
+"POT-Creation-Date: 2018-11-19 19:35+0200\n"
+"PO-Revision-Date: 2018-11-19 19:38+0200\n"
 "Last-Translator: sTiKyt <stikyt@protonmail.com>\n"
-"Language-Team: \n"
+"Language-Team: sTiKyt\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
-"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-Basepath: ../../../Defs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Poedit-SearchPath-0: Lang\n"
-"X-Poedit-SearchPath-1: Defs\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: Defs/Actions.py:74
+#: Actions.py:77
 #, python-brace-format
 msgid ""
 "\n"
@@ -25,7 +24,7 @@ msgstr ""
 "\n"
 "{0}Пожалуйста выберите сервер из списка:{1}"
 
-#: Defs/Actions.py:75
+#: Actions.py:78
 #, python-brace-format
 msgid ""
 "\n"
@@ -36,7 +35,7 @@ msgstr ""
 " {0}[{1}1{0}]{1} Ngrok\n"
 " {0}[{1}2{0}]{1} Serveo"
 
-#: Defs/Actions.py:119
+#: Actions.py:122
 #, python-brace-format
 msgid ""
 "\n"
@@ -95,12 +94,26 @@ msgstr ""
 "<=============================================================================>\n"
 "                                             "
 
-#: Defs/Actions.py:150
-#, python-format, python-brace-format
-msgid "{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait... %d%%"
-msgstr "{0}[{1}*{0}]{1} HiddenEye открывается. Пожалуйста подождите... %d%%"
+#: Actions.py:145
+msgid "[PHP INSTALLATION FOUND]"
+msgstr "[УСТАНОВЛЕНЫЙ PHP ОБНАРУЖЕН]"
 
-#: Defs/Actions.py:153
+#: Actions.py:148
+#, python-brace-format
+msgid ""
+" --{0}>{1} PHP NOT FOUND: \n"
+" {0}*{1} Please install PHP and run me again.http://www.php.net/"
+msgstr ""
+" --{0}>{1} PHP НЕ ОБНАРУЖЕН: \n"
+" {0}*{1} Пожалуйста установите PHP и перезапустите HiddenEye. http://www.php."
+"net/"
+
+#: Actions.py:153
+#, python-brace-format
+msgid "{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%"
+msgstr "{0}[{1}*{0}]{1} HiddenEye открывается. Пожалуйста подождите... {2}%"
+
+#: Actions.py:157
 #, python-brace-format
 msgid ""
 "\n"
@@ -112,7 +125,7 @@ msgstr ""
 "{2}[{1}!{2}]{1} Согласны ли вы использовать этот инструмент исключительно в "
 "образовательных целях? (Выберите: {2}y = Да{1}/{0}n = Нет{1})"
 
-#: Defs/Actions.py:155
+#: Actions.py:159
 #, python-brace-format
 msgid ""
 "\n"
@@ -127,7 +140,7 @@ msgstr ""
 "ИСПОЛЬЗОВАНИЕ ДОПУСКАЕТСЯ ТОЛЬКО В ОБРАЗОВАТЕЛЬНЫХ ЦЕЛЯХ. ДОСВИДАНИЯ![{1} ]\n"
 "\n"
 
-#: Defs/Actions.py:157
+#: Actions.py:161
 #, python-brace-format
 msgid ""
 "\n"
@@ -200,7 +213,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>>  {1}"
 
-#: Defs/Actions.py:160
+#: Actions.py:164
 #, python-brace-format
 msgid ""
 "\n"
@@ -231,7 +244,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:164
+#: Actions.py:168
 #, python-brace-format
 msgid ""
 "\n"
@@ -256,7 +269,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:188
+#: Actions.py:192
 #, python-brace-format
 msgid ""
 "\n"
@@ -279,7 +292,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:212
+#: Actions.py:216
 #, python-brace-format
 msgid ""
 "\n"
@@ -300,7 +313,7 @@ msgstr ""
 "\n"
 "{0}HiddenEye >>> {1}"
 
-#: Defs/Actions.py:222
+#: Actions.py:226
 #, python-brace-format
 msgid ""
 " {0}\n"
@@ -309,7 +322,7 @@ msgstr ""
 " {0}\n"
 " [{1}*{0}] модуль загружен. Построение сайта...{0}"
 
-#: Defs/Actions.py:226
+#: Actions.py:230
 msgid ""
 "\n"
 " (Choose Wisely As Your Victim Will Redirect to This Link)"
@@ -317,7 +330,7 @@ msgstr ""
 "\n"
 " (Выбирайте с умом, ваша жертва будет перенаправлена по этому адресу)"
 
-#: Defs/Actions.py:227
+#: Actions.py:231
 msgid ""
 "\n"
 " (Leave Blank To Loop The Phishing Page)"
@@ -325,7 +338,7 @@ msgstr ""
 "\n"
 " (Оставьте пустым чтобы зациклить страницу)"
 
-#: Defs/Actions.py:228
+#: Actions.py:232
 #, python-brace-format
 msgid ""
 "\n"
@@ -334,7 +347,7 @@ msgstr ""
 "\n"
 " {0}Введите альтернативный адрес переадресации:"
 
-#: Defs/Actions.py:229
+#: Actions.py:233
 #, python-brace-format
 msgid ""
 "\n"
@@ -343,7 +356,7 @@ msgstr ""
 "\n"
 " {0}АЛЬТЕРНАТИВНЫЙ АДРЕС >>> {1}"
 
-#: Defs/Actions.py:260
+#: Actions.py:264
 #, python-brace-format
 msgid ""
 "\n"
@@ -373,7 +386,7 @@ msgstr ""
 "ПОЛЕЗНЕЕ\n"
 "              {3}https://github.com/DarkSecDevelopers/HiddenEye     "
 
-#: Defs/Actions.py:277
+#: Actions.py:281
 #, python-brace-format
 msgid ""
 "{0}[{1}*{0}]{1} Waiting for credentials//Keystrokes//Victim's device info. \n"
@@ -381,42 +394,38 @@ msgstr ""
 "{0}[{1}*{0}]{1} Ожидание базовой информации//нажатий клавиш//информации об "
 "устройстве жертвы. \n"
 
-#: Defs/Actions.py:283
-#, python-format, python-brace-format
+#: Actions.py:287
+#, python-brace-format
 msgid ""
 " {0}[ CREDENTIALS FOUND ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 msgstr ""
 " {0}[ ИНФОРМАЦИЯ ОБНАРУЖЕНА ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 
-#: Defs/Actions.py:293
-msgid "Victim Public IP: (.*?)\n"
-msgstr "Публичный IP жертвы: (.*?)\n"
-
-#: Defs/Actions.py:298
-#, python-format, python-brace-format
+#: Actions.py:302
+#, python-brace-format
 msgid ""
 " \n"
 "{0}[ VICTIM IP BONUS ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 msgstr ""
 " \n"
 "{0}[ Дополнительный IP жертвы ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 
-#: Defs/Actions.py:304
-#, python-format, python-brace-format
+#: Actions.py:308
+#, python-brace-format
 msgid ""
 " \n"
 "{0}[ VICTIM INFO FOUND ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 msgstr ""
 " \n"
 "{0}[ КООРДИНАТЫ ЖЕРТВЫ ОБНАРУЖЕНЫ ]{1}:\n"
-" {0}%s{1}"
+" {0}{2}{1}"
 
-#: Defs/Actions.py:305
+#: Actions.py:309
 #, python-brace-format
 msgid ""
 " \n"
@@ -427,7 +436,7 @@ msgstr ""
 "{0}Долгота: {2} \n"
 "Широта: {3}{1}"
 
-#: Defs/Actions.py:306
+#: Actions.py:310
 #, python-brace-format
 msgid ""
 " \n"
@@ -438,7 +447,7 @@ msgstr ""
 "{0}Интернет провайдер: {2} \n"
 "Страна: {3}{1}"
 
-#: Defs/Actions.py:307
+#: Actions.py:311
 #, python-brace-format
 msgid ""
 " \n"
@@ -449,7 +458,7 @@ msgstr ""
 "{0}Регион: {2} \n"
 "Город: {3}{1}"
 
-#: Defs/Actions.py:317
+#: Actions.py:321
 #, python-format, python-brace-format
 msgid ""
 " {0}[ GETTING PRESSED KEYS ]{1}:\n"
@@ -458,12 +467,12 @@ msgstr ""
 " {0}[ ПОЛУЧЕНИЕ НАЖАТЫХ КЛАВИШ ]{1}:\n"
 " {0}%s{1}"
 
-#: Defs/Checks.py:15
+#: Checks.py:18
 #, python-brace-format
 msgid "{0}Successful connection!{1}"
 msgstr "{0}Успешное соединение!{1}"
 
-#: Defs/Checks.py:21
+#: Checks.py:24
 #, python-brace-format
 msgid ""
 "{1}\n"
@@ -483,6 +492,9 @@ msgstr ""
 "подключение.\n"
 "\n"
 
-#: Defs/Checks.py:32
+#: Checks.py:35
 msgid "[*] Downloading Ngrok..."
 msgstr "[*] Загрузка Ngrok..."
+
+#~ msgid "Victim Public IP: (.*?)\n"
+#~ msgstr "Публичный IP жертвы: (.*?)\n"
