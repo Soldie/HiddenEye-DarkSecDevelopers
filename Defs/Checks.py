@@ -7,10 +7,9 @@ from platform import system as systemos, architecture
 from wget import download
 from Defs.Languages import *
 
-checkAndSetLanguage() #WIP!!! MUST BE UPDATED
-
-
 RED, GREEN, DEFAULT = '\033[91m', '\033[1;32m', '\033[0m'
+
+languageSelector()
 
 def checkConnection(host='http://duckduckgo.com'): #Connection check
     try:

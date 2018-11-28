@@ -4,18 +4,18 @@
 #
 import multiprocessing
 import gettext
+import sys
 from Defs.Checks import *
 from Defs.Configurations import *
 from Defs.Actions import *
 from Defs.Languages import *
-#ru = gettext.translation('hiddeneye',localedir='./locale', languages=['ru'])
-#ru.install()
+
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
 
-checkAndSetLanguage()
+
+languageSelector()
 checkConnection()
 checkNgrok()
-
 ifSettingsNotExists()
 readConfig()
 
