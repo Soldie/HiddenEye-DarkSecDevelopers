@@ -4,6 +4,9 @@ import sys
 import gettext
 from Defs.Configurations import readConfig
 
+def installGetText():
+    gettext.install('hiddeneye', './locale')
+
 def langRussian():
     ru = gettext.translation('hiddeneye',localedir='./locale', languages=['ru'])
     ru.install()
