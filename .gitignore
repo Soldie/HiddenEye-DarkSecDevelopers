@@ -26,3 +26,5 @@ Server/www/mobile\.html
 Server/www/usernames\.txt
 
 Settings\.ini
+
+ngrok\.url
