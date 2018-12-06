@@ -11,7 +11,7 @@ from Defs.Actions import *
 from Defs.Languages import *
 
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
-
+checkPermissions()
 installGetText()
 languageSelector()
 checkConnection()

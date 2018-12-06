@@ -1,12 +1,18 @@
 ## HOW TO INSTALL
-
+### BlackArch official repository
+```
+sudo pacman -S hidden-eye
+```
+to run just use
+```
+sudo hidden-eye
+```
 ### CLONE
 ```
 git clone https://github.com/DarkSecDevelopers/HiddenEye.git
 ```
 
 ### RUNNING (In Linux)
-
 ```
 cd HiddenEye
 ```
@@ -28,13 +34,12 @@ python3 HiddenEye.py
 
 ```
    OR
-   
+
 ```
 ./HiddenEye.py    
 
 ```
-### RUNNING (If distro based on Arch Linux)
-
+### RUNNING (Arch Linux or Manjaro)
 ```
 cd HiddenEye
 ```
@@ -55,13 +60,13 @@ chmod 777 HiddenEye.py
 ```
 
 ```
-python3 HiddenEye.py
+sudo python3 HiddenEye.py
 
 ```
    OR
-   
+
 ```
-./HiddenEye.py    
+sudo ./HiddenEye.py    
 
 ```
 
@@ -98,11 +103,11 @@ chmod 777 HiddenEye.py
 
 ```
 ```
-python HiddenEye.py
+sudo python HiddenEye.py
 
 or
 
-./HiddenEye.py
+sudo ./HiddenEye.py
 
 ```
 ### Running (One Code installation in Termux)
