@@ -157,7 +157,8 @@ def runMainMenu(): #menu where user select what they wanna use
 
     for i in range(101):
         sleep(0.05)
-        stdout.write(_("\r{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
+        stdout.write("\r")
+        stdout.write(_("{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
         stdout.flush()
 
     if input(_("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye >>> {1}").format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
