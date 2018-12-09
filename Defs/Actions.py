@@ -111,7 +111,7 @@ def runServeo():
     system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R %s:80:localhost:1111 serveo.net > link.url 2> /dev/null &' % (lnk))
     sleep(7)
     try:
-        output = check_output("grep -o '.\{0,0\}http.\{0,50\}' link.url",shell=True)
+        output = check_output("grep -o '.\{0,0\}http.\{0,100\}' link.url",shell=True)
         url = str(output).strip("b ' \ n r")
         print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
