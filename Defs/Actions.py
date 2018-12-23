@@ -123,13 +123,12 @@ def runServeo():
         print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
     except CalledProcessError:
-        print ('''
-  ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
-      /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
-      \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
-          \|
+        print (_('''{1}
+        _  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
+        |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
+        |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
-'''.format(RED, DEFAULT))
+''').format(RED, DEFAULT))
         exit(0)
 
 def runMainMenu(): #menu where user select what they wanna use
