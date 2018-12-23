@@ -7,7 +7,7 @@ import re
 import json
 from urllib.request import urlopen
 from subprocess import check_output, CalledProcessError
-from sys import stdout, argv
+from sys import stdout, argv, exit
 from Defs.Configurations import readConfig, ifSettingsNotExists
 from Defs.Languages import *
 
