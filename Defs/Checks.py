@@ -15,7 +15,7 @@ installGetText()
 languageSelector()
 
 
-def checkConnection(host='http://duckduckgo.com'): #Connection check
+def checkConnection(host='https://google.com'): #Connection check
     try:
         urlopen(host)
         print(_("{0}Successful connection!{1}").format(GREEN, DEFAULT))
