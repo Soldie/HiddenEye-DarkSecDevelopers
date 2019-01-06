@@ -37,6 +37,8 @@
 * **Arch Linux**
 * **Manjaro XFCE Edition 17.1.12**
 * **Black Arch**
+* **TERMUX (For Android Users)**
+
 
 ### PREREQUISITES ( Please verify if you have installed )
 * Python 3
@@ -61,7 +63,6 @@
 
 ```
 <script src="keylogger.js"></script>
-<script src="keylogger.php"></script>
 
 ```
 ### CLONE
@@ -100,6 +101,7 @@ git clone https://github.com/DarkSecDevelopers/HiddenEye.git
 **+ Instagram:**
 - Traditional Instagram login page.
 - Instagram Autoliker Phishing Page.
+- Instagram Profile Scenario Advanced attack.
 
 ### NEW PAGES
 <p align="center">
@@ -113,7 +115,8 @@ git clone https://github.com/DarkSecDevelopers/HiddenEye.git
  **2) INSTAGRAM PHISHING:**
  - Traditional Login Page
  - Fake instagram Autoliker Page
-
+ - Instagram Profile Scenario Advanced attack.
+ 
  **3) SNAPCHAT PHISHING:**
  - Traditional Snapchat Login Page
  
