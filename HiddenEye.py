@@ -33,6 +33,5 @@ if __name__ == "__main__":
         getCredentials()
 
     except KeyboardInterrupt:
-        system('pkill ssh')
         endMessage()
         exit(0)
