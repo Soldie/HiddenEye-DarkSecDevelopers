@@ -56,11 +56,11 @@ def checkPermissions():
             if os.getuid() == 0:
                 print("{0}Permissions granted!".format(GREEN))
             else:
-                print("{0}If possible!! Please run as sudo !!".format(RED))
+                raise PermissionError("{0}Permissions denied! Please run as '{1}sudo{0}'".format(RED, GREEN)) 
         elif systemos() == 'Windows':
             if ctypes.windll.shell32.IsUserAnAdmin() != 0:
                 print("{0}Permissions granted!".format(GREEN))
             else:
-                print("{0}If possible! Please run as administrator!".format(RED))
+                raise PermissionError("{0}Permissions denied! Please run as Administrator".format(RED))
         else:
             raise PermissionError("{0}Permissions denied! Unexpected platform".format(RED))
