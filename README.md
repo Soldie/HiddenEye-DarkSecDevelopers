@@ -140,6 +140,12 @@ git clone https://github.com/DarkSecDevelopers/HiddenEye.git
  - Traditional iCloud Web Login Page
 </p>
 
+<h3>Ascii error fix</h3>
+dpkg-reconfigure locales
+Then select: "All locales" Then select "en_US.UTF-8"
+After that reboot your machine. Then open terminal and run the command: "locale"
+There you will see "en_US.UTF-8" which is the default language. Instead of POSIX.
+
 ### SCREENSHOT
 ![Shot](https://github.com/DarkSecDevelopers/HiddenEye/blob/dev/Sceenshot.png)
 
