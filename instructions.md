@@ -91,7 +91,7 @@ pip3 install wget
 
 ```
 ```
-git clone https://github.com/DarkSecDevelopers/HiddenEye.git
+git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEye.git
 
 ```
 ```
@@ -123,6 +123,6 @@ After opening Copy and run this Single Command.
 
 ```
 ```
-pkg install git python php curl openssh grep && pip3 install wget && git clone https://github.com/DarkSecDevelopers/HiddenEye && cd HiddenEye && chmod 777 HiddenEye.py && python HiddenEye.py
+pkg install git python php curl openssh grep && pip3 install wget && git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEye.git && cd HiddenEye && chmod 777 HiddenEye.py && python HiddenEye.py
 
 ```
