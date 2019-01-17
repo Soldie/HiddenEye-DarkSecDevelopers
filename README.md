@@ -65,10 +65,7 @@
 <script src="keylogger.js"></script>
 
 ```
-### CLONE
-```
-git clone https://github.com/DarkSecDevelopers/HiddenEye.git
-```
+
 ## FOR FURTHER INSTALLATION PROCEDURE - (CHECK INSTRUCTIONS)
 
 ## AVAILABLE PAGES
