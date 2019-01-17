@@ -69,9 +69,6 @@
 ```
 git clone https://github.com/DarkSecDevelopers/HiddenEye.git
 ```
-`cd HiddenEye`
-`pip3 install requirements.txt`
-`python3 HiddenEye.py`
 ## FOR FURTHER INSTALLATION PROCEDURE - (CHECK INSTRUCTIONS)
 
 ## AVAILABLE PAGES
