@@ -103,11 +103,11 @@ chmod 777 HiddenEye.py
 
 ```
 ```
-sudo python HiddenEye.py
+python HiddenEye.py
 
 or
 
-sudo ./HiddenEye.py
+./HiddenEye.py
 
 ```
 ### Running (One Code installation in Termux)
