@@ -66,7 +66,7 @@
 ```
 
 **4) TERMUX-SUPPORT-BRANCH ADDED**
-- We care about Android Users, As Termux don't Have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
+- We care about Android Users, As Termux doesn't have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
 [CHECK HERE](https://github.com/DarkSecDevelopers/HiddenEye/blob/Termux-Support-Branch)
 - Termux Users Please Clone With This command
 ```
