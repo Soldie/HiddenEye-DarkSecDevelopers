@@ -55,25 +55,17 @@
 
 **3) KEYLOGGER**
 - Now you will also have the ability to capture all the keystokes of victim.
-
-**(CURRENTLY):- This feature is added on instagram web page and github, to less the possibility of slow functioning of generated link)
-
-**HOW TO ADD IT MANUALLY ?
--- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
-```
-<script src="keylogger.js"></script>
-
-```
-
+- You can now Deploy Keyloggers With (Y/N) option.
 **4) TERMUX-SUPPORT-BRANCH ADDED**
-- We care about Android Users, As Termux don't Have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
+- We care about Android Users, As Termux doesn't have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
 [CHECK HERE](https://github.com/DarkSecDevelopers/HiddenEye/blob/Termux-Support-Branch)
 - Termux Users Please Clone With This command
 ```
 git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEye.git
 
 ```
-
+**5) NEW LOOK PROVIDED
+- NOW FOCUS EASILY ON TASKS...
 
 ## FOR FURTHER INSTALLATION PROCEDURE - [(CHECK INSTRUCTIONS)](https://github.com/DarkSecDevelopers/HiddenEye/blob/master/instructions.md)
 
