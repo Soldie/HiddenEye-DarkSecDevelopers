@@ -318,9 +318,10 @@ def addingkeylogger():
          f = open('Server/www/index.html', 'w')
          f.write(c)
          f.close()
-         print(_("\n-------------------------------\n{0}Keylogger Added {1}Successfully.\n-------------------------------").format(RED, DEFAULT))
          
-         sleep(0.03) 
+         print(_("\n\n{1}[{0}??{1}]{0} Keylogger Added {1}Successfully...\n").format(RED, DEFAULT))
+         sleep(7.5)
+          
      else:
          with open('Server/www/index.html') as f:
              read_data = f.read()
@@ -329,6 +330,8 @@ def addingkeylogger():
          f.write(c)
          f.close()
          
+         print(_("\n\n{1}[{0}??{1}]{0} Keylogger Removed {1}Successfully...\n").format(RED, DEFAULT))
+         sleep(7.0)
 	
 	
 	
