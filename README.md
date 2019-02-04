@@ -65,7 +65,8 @@
 git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEye.git
 
 ```
-**5) NEW LOOK PROVIDED
+
+**5) NEW LOOK PROVIDED**
 - NOW FOCUS EASILY ON TASKS...
 
 ## FOR FURTHER INSTALLATION PROCEDURE - [(CHECK INSTRUCTIONS)](https://github.com/DarkSecDevelopers/HiddenEye/blob/master/instructions.md)
