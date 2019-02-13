@@ -17,14 +17,14 @@
 1) UNDEADSEC (https://github.com/UndeadSec)
 2) USAMA ABDUL SATTAR (https://github.com/usama7628674)
 3) ANONUD4Y (https://github.com/An0nUD4Y)
-4) Artur Tretiak (https://github.com/sTiKyt)
+4) sTiKyt (https://github.com/sTiKyt)
 5) Micrafast (https://github.com/Micrafast)
 6) ___________ (WAITING FOR YOU)
 
 ## CREDIT:-
 * Usama ( A Most active Developer)
 * Anonud4y ( I can't remember if i have done Anything )
-* Artur ( Guy Who recustomized everything )
+* sTiKyt ( Guy Who recustomized everything )
 * UNDEADSEC (For His wonderful repo socialfish which motivated us a lot)
 * TheLinuxChoice ( For The ideas from his repo Shellphish )
 
