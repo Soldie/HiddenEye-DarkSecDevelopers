@@ -1,18 +1,21 @@
 #Checks functions
 
 from urllib.request import urlopen
-from os import path, system
+from os import *
 from subprocess import check_output
 from platform import system as systemos, architecture
 from wget import download
 from Defs.Languages import *
-
-checkAndSetLanguage() #WIP!!! MUST BE UPDATED
-
+import os
+import ctypes
 
 RED, GREEN, DEFAULT = '\033[91m', '\033[1;32m', '\033[0m'
 
-def checkConnection(host='http://duckduckgo.com'): #Connection check
+installGetText()
+languageSelector()
+
+
+def checkConnection(host='https://google.com'): #Connection check
     try:
         urlopen(host)
         print(_("{0}Successful connection!{1}").format(GREEN, DEFAULT))
@@ -47,3 +50,17 @@ def checkNgrok(): #Ngrok check
         system('mv ngrok Server/ngrok')
         system('rm -Rf ' + filename)
         system('clear')
+
+def checkPermissions():
+        if systemos() == 'Linux':
+            if os.getuid() == 0:
+                print("{0}Permissions granted!".format(GREEN))
+            else:
+                raise PermissionError("{0}Permissions denied! Please run as '{1}sudo{0}'".format(RED, GREEN)) 
+        elif systemos() == 'Windows':
+            if ctypes.windll.shell32.IsUserAnAdmin() != 0:
+                print("{0}Permissions granted!".format(GREEN))
+            else:
+                raise PermissionError("{0}Permissions denied! Please run as Administrator".format(RED))
+        else:
+            raise PermissionError("{0}Permissions denied! Unexpected platform".format(RED))
