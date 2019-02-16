@@ -35,7 +35,7 @@ def checkAndSetLanguage():
 
 def languageSelector():
     for arg in sys.argv:
-        if arg in ["--language", "--lang"]:
+        if arg in ["--language", "--lang", "-l"]:
             for arg in sys.argv:
                 if arg in ["ru", "russian", "ru_RU"]:
                     langRussian()
