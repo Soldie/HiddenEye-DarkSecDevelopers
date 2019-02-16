@@ -17,14 +17,14 @@
 1) UNDEADSEC (https://github.com/UndeadSec)
 2) USAMA ABDUL SATTAR (https://github.com/usama7628674)
 3) ANONUD4Y (https://github.com/An0nUD4Y)
-4) Artur Tretiak (https://github.com/sTiKyt)
+4) sTiKyt (https://github.com/sTiKyt)
 5) Micrafast (https://github.com/Micrafast)
 6) ___________ (WAITING FOR YOU)
 
 ## CREDIT:-
 * Usama ( A Most active Developer)
 * Anonud4y ( I can't remember if i have done Anything )
-* Artur ( Guy Who recustomized everything )
+* sTiKyt ( Guy Who recustomized everything )
 * UNDEADSEC (For His wonderful repo socialfish which motivated us a lot)
 * TheLinuxChoice ( For The ideas from his repo Shellphish )
 
@@ -55,21 +55,21 @@
 
 **3) KEYLOGGER**
 - Now you will also have the ability to capture all the keystokes of victim.
+- You can now Deploy Keyloggers With (Y/N) option.
 
-**(CURRENTLY):- This feature is added on instagram web page and github, to less the possibility of slow functioning of generated link)
-
-**HOW TO ADD IT MANUALLY ?
--- You can add this manually by putting the codes on index page.(put these code at anywhere inside the index page // but not between any other script codes)
+**4) TERMUX-SUPPORT-BRANCH ADDED**
+- We care about Android Users, As Termux doesn't have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
+[CHECK HERE](https://github.com/DarkSecDevelopers/HiddenEye/tree/Termux-Support-Branch)
+- Termux Users Please Clone With This command
+```
+git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEye.git
 
 ```
-<script src="keylogger.js"></script>
 
-```
-### CLONE
-```
-git clone https://github.com/DarkSecDevelopers/HiddenEye.git
-```
-## FOR FURTHER INSTALLATION PROCEDURE - (CHECK INSTRUCTIONS)
+**5) NEW LOOK PROVIDED**
+- NOW FOCUS EASILY ON TASKS...
+
+## FOR FURTHER INSTALLATION PROCEDURE - [(CHECK INSTRUCTIONS)](https://github.com/DarkSecDevelopers/HiddenEye/blob/master/instructions.md)
 
 ## AVAILABLE PAGES
 
@@ -139,6 +139,17 @@ git clone https://github.com/DarkSecDevelopers/HiddenEye.git
  **9) ICLOUD PHISHING:**
  - Traditional iCloud Web Login Page
 </p>
+
+<h3>Ascii error fix</h3>
+
+`dpkg-reconfigure locales`
+
+ `Then select: "All locales" Then select "en_US.UTF-8"`
+
+  `After that reboot your machine. Then open terminal and run the command: "locale"`
+
+  `There you will see "en_US.UTF-8" which is the default language. Instead of POSIX.`
+
 
 ### SCREENSHOT
 ![Shot](https://github.com/DarkSecDevelopers/HiddenEye/blob/dev/Sceenshot.png)
