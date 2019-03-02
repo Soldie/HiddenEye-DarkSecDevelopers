@@ -19,10 +19,10 @@
 
 
 ### DEVELOPERS:-
-1) UNDEADSEC (https://github.com/UndeadSec)
+1) ANONUD4Y (https://github.com/An0nUD4Y)
 2) USAMA ABDUL SATTAR (https://github.com/usama7628674)
-3) ANONUD4Y (https://github.com/An0nUD4Y)
-4) sTiKyt (https://github.com/sTiKyt)
+3) sTiKyt (https://github.com/sTiKyt)
+4) UNDEADSEC (https://github.com/UndeadSec)
 5) Micrafast (https://github.com/Micrafast)
 6) ___________ (WAITING FOR YOU)
 
@@ -107,6 +107,7 @@ git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEy
 - Traditional Instagram login page.
 - Instagram Autoliker Phishing Page.
 - Instagram Profile Scenario Advanced attack.
+- Instagram Badge Verify Attack *[New]*
 
 ### NEW PAGES
 <p align="center">
@@ -121,6 +122,7 @@ git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEy
  - Traditional Login Page
  - Fake instagram Autoliker Page
  - Instagram Profile Scenario Advanced attack.
+ - Instagram Badge Verify Attack *[New]*
  
  **3) SNAPCHAT PHISHING:**
  - Traditional Snapchat Login Page
