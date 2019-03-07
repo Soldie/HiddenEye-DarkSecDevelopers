@@ -35,6 +35,7 @@ if checkConnection() == False:
 
 def checkNgrok(): #Ngrok check
     if path.isfile('Server/ngrok') == False:  #Is Ngrok downloaded?
+        print(_('[*] Ngrok Not Found !!'))
         print(_('[*] Downloading Ngrok...'))
         if 'Android' in str(check_output(('uname', '-a'))):
             filename = 'ngrok-stable-linux-arm.zip'
