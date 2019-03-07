@@ -61,6 +61,7 @@
 **3) KEYLOGGER**
 - Now you will also have the ability to capture all the keystokes of victim.
 - You can now Deploy Keyloggers With (Y/N) option.
+- Major issues fixed.
 
 **4) TERMUX-SUPPORT-BRANCH ADDED**
 - We care about Android Users, As Termux doesn't have 'sudo' command as default, So we have created another branch of HiddenEye For Our Termux Users.
@@ -73,6 +74,11 @@ git clone -b Termux-Support-Branch https://github.com/DarkSecDevelopers/HiddenEy
 
 **5) NEW LOOK PROVIDED**
 - NOW FOCUS EASILY ON TASKS...
+
+**6) SERVEO URL TYPE SELECTION AVAILABLE NOW**
+- Major issues with serveo is fixed.
+- Now You can choose out of CUSTOM URL and RANDOM URL.
+
 
 ## FOR FURTHER INSTALLATION PROCEDURE - [(CHECK INSTRUCTIONS)](https://github.com/DarkSecDevelopers/HiddenEye/blob/master/instructions.md)
 
