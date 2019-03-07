@@ -32,9 +32,10 @@ if checkConnection() == False:
                     {0}[{1}!{0}]{1} Network error. Verify your connection.\n
 ''').format(RED, DEFAULT))
         exit(0)
-
+	
 def checkNgrok(): #Ngrok check
     if path.isfile('Server/ngrok') == False:  #Is Ngrok downloaded?
+        print(_('[*] Ngrok Not Found !!'))
         print(_('[*] Downloading Ngrok...'))
         if 'Android' in str(check_output(('uname', '-a'))):
             filename = 'ngrok-stable-linux-arm.zip'
